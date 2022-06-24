@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract-ol.c                                         :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 17:16:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/06/24 13:30:31 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/06/24 13:28:53 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
-int main(void)
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	// bool	game_is_on;
+# include <stdlib.h>
+# include <stdbool.h>
+# include <math.h>
+# include "./minilibx/mlx.h"
 
-	mlx_ptr = mlx_init();
-	if (mlx_ptr == NULL)
-		return (1);
-	win_ptr = mlx_new_window(mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "My first window!");
-	if (win_ptr == NULL)
-	{
-		free(win_ptr);
-		return (1);
-	}
-	mlx_destroy_window(mlx_ptr, win_ptr);
-	free(mlx_ptr);
-	return (0);
-}
+# include <stdio.h>
+
+
+# define WINDOW_WIDTH 600
+# define WINDOW_HEIGHT 300
+
+#endif
