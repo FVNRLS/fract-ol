@@ -6,11 +6,11 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/06/23 17:18:57 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/06/24 11:52:06 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= 		fract-ol
+NAME 		= 		fractol
 
 CC 			= 		cc
 
@@ -21,7 +21,7 @@ SRC 		= 		./fract-ol.c									\
 OBJ 		= 		${SRC:.c=.o}
 
 ${NAME}: ${OBJ}
-	${CC} ${FLAGS} ${OBJ} -o ${NAME}
+	${CC} ${FLAGS} ${OBJ} -L ./minilibx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
 all: ${NAME}
 
