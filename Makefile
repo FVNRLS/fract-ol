@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/06/24 13:34:54 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/06/29 15:37:09 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,11 @@ NAME 		= 		fractol
 
 CC 			= 		cc
 
-FLAGS		= 		-Wall -Wextra -Werror
+FLAGS		= 		-Wall -Wextra -Werror -g3
 
 SRC 		= 		./main.c											\
 
 OBJ 		= 		${SRC:.c=.o}
-
 
 $(NAME): $(OBJ)
 	make -C ./minilibx
@@ -27,7 +26,7 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-bonus: ${BONUS_NAME}
+# bonus: ${BONUS_NAME}
 
 clean:
 	rm -f ${OBJ}
