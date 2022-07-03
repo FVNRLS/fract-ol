@@ -3,4 +3,4 @@ project(fractol C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(fractol main.c fractals/mandelbrot.c)
+add_executable(fractol main.c fractals/mandelbrot.c fractals/window.c window.c)

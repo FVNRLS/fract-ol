@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/03 18:29:05 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/03 18:30:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 # include "../minilibx/mlx.h"
 # include <stdio.h>
 
-# define WINDOW_WIDTH 500
-# define WINDOW_HEIGHT 500
+# include "window.h"
 
 typedef struct	s_data
 {
