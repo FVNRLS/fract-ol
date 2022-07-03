@@ -55,6 +55,12 @@ build CMakeFiles/fractol.dir/main.c.o: C_COMPILER__fractol_Debug /Users/rmazurit
   OBJECT_DIR = CMakeFiles/fractol.dir
   OBJECT_FILE_DIR = CMakeFiles/fractol.dir
 
+build CMakeFiles/fractol.dir/fractols/mandelbrot.c.o: C_COMPILER__fractol_Debug /Users/rmazurit/Documents/42_Projects/fractol/fractols/mandelbrot.c || cmake_object_order_depends_target_fractol
+  DEP_FILE = CMakeFiles/fractol.dir/fractols/mandelbrot.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
+  OBJECT_DIR = CMakeFiles/fractol.dir
+  OBJECT_FILE_DIR = CMakeFiles/fractol.dir/fractols
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target fractol
@@ -63,7 +69,7 @@ build CMakeFiles/fractol.dir/main.c.o: C_COMPILER__fractol_Debug /Users/rmazurit
 #############################################
 # Link the executable fractol
 
-build fractol: C_EXECUTABLE_LINKER__fractol_Debug CMakeFiles/fractol.dir/main.c.o
+build fractol: C_EXECUTABLE_LINKER__fractol_Debug CMakeFiles/fractol.dir/main.c.o CMakeFiles/fractol.dir/fractols/mandelbrot.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   OBJECT_DIR = CMakeFiles/fractol.dir
   POST_BUILD = :

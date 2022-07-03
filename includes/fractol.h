@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/01 19:01:59 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/03 18:29:05 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,33 @@
 # define WINDOW_WIDTH 500
 # define WINDOW_HEIGHT 500
 
-# define MAX_ITER 600
-
-typedef struct	s_data {
+typedef struct	s_data
+{
     void	*img;
     char	*addr;
     int		bits_per_pixel;
     int		line_length;
     int		endian;
 }				t_data;
+
+typedef struct s_fract
+{
+    double  c_re;
+    double  c_im;
+    double  z;
+    double  z_re;
+    double  z_im;
+    double  sum_re;
+    double  sum_im;
+    int     max_iter;
+
+}       t_fract;
+
+//ADDITIONAL MLX FUNCTIONS
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+
+//FRACTALS
+void    print_mandelbrot(t_data *img);
+
 
 #endif
