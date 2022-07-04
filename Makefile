@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/03 18:32:06 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/04 11:46:08 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,10 @@ CC 			= 		cc
 FLAGS		= 		-Wall -Wextra -Werror -g3
 
 SRC 		= 		./main.c											\
-					./fractals/mandelbrot.c
+					./fractals/mandelbrot.c								\
+					./fractal_creater.c									\
+					./error_manager.c									\
+					./tools/ft_strncmp.c								\
 
 OBJ 		= 		${SRC:.c=.o}
 
