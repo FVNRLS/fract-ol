@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 12:49:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/04 19:06:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,7 @@
 
 int main(int argc, char **argv)
 {
-    if (argc == 1)
-    {
-        print_error(NO_INPUT);
-        return (EXIT_FAILURE);
-    }
-    if (argc > 6)
-    {
-        print_error(TOO_MANY_ARGUMENTS);
-        return (EXIT_FAILURE);
-    }
+    check_args_nbr(argc);
     print_fractal(argv);
     system("leaks fractol");
     return (0);

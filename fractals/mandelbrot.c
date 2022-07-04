@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 16:12:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:35:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int calc_mandelbrot(t_fract *fr, double x, double y)
     return (i);
 }
 
-void    print_mandelbrot(t_data *img, t_color color, char **argv)
+void    print_mandelbrot(t_data *img, t_color *color, char **argv)
 {
     t_fract fr;
 
@@ -57,9 +57,9 @@ void    print_mandelbrot(t_data *img, t_color color, char **argv)
         {
             iter = calc_mandelbrot(&fr, x, y);
             if (iter < fr.max_iter)
-                my_mlx_pixel_put(img, x, y, color.out);
+                my_mlx_pixel_put(img, x, y, color->out);
             else
-                my_mlx_pixel_put(img, x, y, color.in);
+                my_mlx_pixel_put(img, x, y, color->in);
             x++;
         }
         x = 0;

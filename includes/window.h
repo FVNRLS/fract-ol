@@ -2,12 +2,14 @@
 #ifndef WINDOW_H
 # define WINDOW_H
 
-# include <stdlib.h>
-# include <stdbool.h>
-# include <math.h>
-# include <float.h>
-# include "../minilibx/mlx.h"
-
+typedef struct	s_data
+{
+    void	*img;
+    char	*addr;
+    int		bits_per_pixel;
+    int		line_length;
+    int		endian;
+}	    t_data;
 
 # define WINDOW_WIDTH 500
 # define WINDOW_HEIGHT 500

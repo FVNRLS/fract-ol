@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 16:07:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/04 19:02:20 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,7 @@
 # include "error_flags.h"
 # include "window.h"
 
-typedef struct	s_data
-{
-    void	*img;
-    char	*addr;
-    int		bits_per_pixel;
-    int		line_length;
-    int		endian;
-}	    t_data;
+
 
 typedef struct s_fract
 {
@@ -50,7 +43,7 @@ typedef struct s_fract
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 //FRACTALS
-void    print_mandelbrot(t_data *img, t_color color, char **argv);
+void    print_mandelbrot(t_data *img, t_color *color, char **argv);
 void    print_fractal(char **argv);
 
 //TOOLS
@@ -58,12 +51,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 //ERRORS
 void    print_error(int error);
+void    check_args_nbr(int argc);
 
 //INITIALIZERS
 void    init_mandelbrot(t_fract *fr);
-void    init_colors(char **argv, t_color *color);
+void    init_colors(char **argv, t_color *color, void **mlx, void **win);
 bool    init_main_inside_colors(char **argv, t_color *color);
-bool    init_main_additional_colors(char **argv, t_color *color);
+bool    init_additional_inside_colors(char **argv, t_color *color);
+bool    init_main_outside_colors(char **argv, t_color *color);
+bool    init_additional_outside_colors(char **argv, t_color *color);
 
 
 

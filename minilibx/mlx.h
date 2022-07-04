@@ -1,5 +1,5 @@
 /*
-** mlx.h for MinilibX in 
+** mlx.h for MinilibX out
 ** 
 ** Made by Charlie Root
 ** Login   <ol@staff.42.fr>

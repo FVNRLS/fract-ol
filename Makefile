@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/04 16:08:58 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/04 17:11:53 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SRC 		= 		./main.c												\
 					./initializers/color_initializers/color_initializer.c					\
 					./initializers/color_initializers/inside_color_initializer.c					\
 					./initializers/color_initializers/outside_color_initializer.c					\
-
 					./initializers/fractol_initializers.c								\
 
 OBJ 		= 		${SRC:.c=.o}

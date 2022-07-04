@@ -17,5 +17,6 @@
 # define WRONG_FRACTAL      1
 # define WRONG_COLOR        2
 # define TOO_MANY_ARGUMENTS 3
+# define TOO_FEW_ARGUMENTS  4
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 16:07:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:35:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,16 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-static void select_fractal(char **argv, void **mlx, void **win, t_data *img)
+
+
+static bool select_fractal(char **argv, t_data *img, t_color *color,
+                           void **mlx, void  **win)
 {
     if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
-        print_mandelbrot(img, argv);
+    {
+        print_mandelbrot(img, color, argv);
+        return (true);
+    }
 //    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
 //        exit(0); //TODO:print Julia!
     else
@@ -53,8 +59,8 @@ void    print_fractal(char **argv)
     }
     img.img = mlx_new_image(mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-    init_colors(argv, &color);
-    select_fractal(argv, &mlx, &win, &img);
+    init_colors(argv, &color, &mlx, &win);
+    select_fractal(argv, &img, &color, &mlx, &win);
     mlx_put_image_to_window(mlx, win, img.img, 0, 0);
     mlx_loop(mlx);
     mlx_destroy_window(mlx, win);
