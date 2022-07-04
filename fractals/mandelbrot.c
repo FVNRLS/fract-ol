@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 13:28:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:12:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,6 @@ static void scale_coords(t_fract *fr, double x, double y)
 {
     fr->c_re = (-2.5 + ((x / WINDOW_WIDTH) * 4));
     fr->c_im = (2 - ((y / WINDOW_HEIGHT) * 4));
-}
-
-static void    init_mandelbrot(t_fract *fr)
-{
-    fr->c_re = 0;
-    fr->c_im = 0;
-    fr->z = 0;
-    fr->z_re = 0;
-    fr->z_im = 0;
-    fr->max_iter = 200;
 }
 
 static int calc_mandelbrot(t_fract *fr, double x, double y)
@@ -51,9 +41,10 @@ static int calc_mandelbrot(t_fract *fr, double x, double y)
     return (i);
 }
 
-void    print_mandelbrot(t_data *img)
+void    print_mandelbrot(t_data *img, t_color color, char **argv)
 {
     t_fract fr;
+
     int     x;
     int     y;
     int     iter;
@@ -66,7 +57,9 @@ void    print_mandelbrot(t_data *img)
         {
             iter = calc_mandelbrot(&fr, x, y);
             if (iter < fr.max_iter)
-                my_mlx_pixel_put(img, x, y, 0x00FF0000);
+                my_mlx_pixel_put(img, x, y, color.out);
+            else
+                my_mlx_pixel_put(img, x, y, color.in);
             x++;
         }
         x = 0;

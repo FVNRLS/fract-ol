@@ -23,7 +23,7 @@ int main(int argc, char **argv)
         print_error(NO_INPUT);
         return (EXIT_FAILURE);
     }
-    if (argc > 3)
+    if (argc > 6)
     {
         print_error(TOO_MANY_ARGUMENTS);
         return (EXIT_FAILURE);
