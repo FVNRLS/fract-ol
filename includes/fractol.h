@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 19:02:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/05 10:43:40 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void    check_args_nbr(int argc);
 //INITIALIZERS
 void    init_mandelbrot(t_fract *fr);
 void    init_colors(char **argv, t_color *color, void **mlx, void **win);
-bool    init_main_inside_colors(char **argv, t_color *color);
-bool    init_additional_inside_colors(char **argv, t_color *color);
-bool    init_main_outside_colors(char **argv, t_color *color);
-bool    init_additional_outside_colors(char **argv, t_color *color);
+void    init_main_inside_colors(char **argv, t_color *color);
+void    init_additional_inside_colors(char **argv, t_color *color);
+void    init_main_outside_colors(char **argv, t_color *color);
+void    init_additional_outside_colors(char **argv, t_color *color);
 
 
 

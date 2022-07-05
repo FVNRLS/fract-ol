@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:51:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 19:49:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/05 10:33:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_color
 # define PURPLE 	    0x800080
 # define TEAL   	    0x008080
 # define NAVY   	    0x000080
-# define WRONG_COLOR    INT_MAX
+
+/*Hint: the max. RGB color value is: 16581375 (255 power 3)*/
+# define NO_COLOR    INT_MAX
 
 #endif

@@ -6,15 +6,14 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:40:24 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 19:51:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/05 10:43:40 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../includes/fractol.h"
 
-bool    init_main_inside_colors(char **argv, t_color *color)
+void    init_main_inside_colors(char **argv, t_color *color)
 {
-    color->in = WRONG_COLOR;
     if (ft_strncmp(argv[2], "WHITE", 5) == 0)
         color->in = WHITE;
     else if (ft_strncmp(argv[2], "BLACK", 5) == 0)
@@ -31,16 +30,11 @@ bool    init_main_inside_colors(char **argv, t_color *color)
         color->in = CYAN;
     else if (ft_strncmp(argv[2], "MAGENTA", 7) == 0)
     color->in = MAGENTA;
-    if (color->in == WRONG_COLOR)
-        return (false);
-    return (true);
 }
 
-bool    init_additional_inside_colors(char **argv, t_color *color)
+void    init_additional_inside_colors(char **argv, t_color *color)
 {
-    if (color->in != WRONG_COLOR)
-        return (true);
-    color->in = WRONG_COLOR;
+    color->in = NO_COLOR;
     if (ft_strncmp(argv[2], "SILVER", 6) == 0)
         color->in = SILVER;
     else if (ft_strncmp(argv[2], "GRAY", 4) == 0)
@@ -57,7 +51,4 @@ bool    init_additional_inside_colors(char **argv, t_color *color)
         color->in = TEAL;
     else if (ft_strncmp(argv[2], "NAVY", 4) == 0)
         color->in = NAVY;
-    if (color->in == WRONG_COLOR)
-        return (false);
-    return (true);
 }
