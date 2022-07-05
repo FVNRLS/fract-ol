@@ -29,14 +29,14 @@ typedef struct s_color
 # define YELLOW         0x00FFFF00
 # define CYAN           0x0000FFFF
 # define MAGENTA        0x00FF00FF
-# define SILVER         0xC0C0C0
-# define GRAY   	    0x808080
-# define MAROON	        0x800000
-# define OLIVE	        0x808000
-# define GREEN  	    0x008000
-# define PURPLE 	    0x800080
-# define TEAL   	    0x008080
-# define NAVY   	    0x000080
+# define SILVER         0x00C0C0C0
+# define GRAY   	    0x00808080
+# define MAROON	        0x00800000
+# define OLIVE	        0x00808000
+# define GREEN  	    0x00008000
+# define PURPLE 	    0x00800080
+# define TEAL   	    0x00008080
+# define NAVY   	    0x00000080
 
 /*Hint: the max. RGB color value is: 16581375 (255 power 3)*/
 # define NO_COLOR    INT_MAX

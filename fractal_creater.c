@@ -20,8 +20,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-
-
 static bool select_fractal(char **argv, t_data *img, t_color *color,
                            void **mlx, void  **win)
 {
