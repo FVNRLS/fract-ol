@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/04 17:11:53 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/05 12:04:54 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ FLAGS		= 		-Wall -Wextra -Werror -g3
 
 SRC 		= 		./main.c												\
 					./fractals/mandelbrot.c									\
+					./colorizer/colorizer.c												\
+					./colorizer/hex_rgb_converters.c											\
 					./tools/ft_strncmp.c									\
-					./colorizer.c												\
 					./error_manager.c											\
 					./fractal_creater.c												\
 					./initializers/color_initializers/color_initializer.c					\

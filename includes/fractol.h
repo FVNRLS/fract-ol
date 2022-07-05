@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/05 10:43:40 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:13:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,17 @@ void    init_main_inside_colors(char **argv, t_color *color);
 void    init_additional_inside_colors(char **argv, t_color *color);
 void    init_main_outside_colors(char **argv, t_color *color);
 void    init_additional_outside_colors(char **argv, t_color *color);
+
+//COLORIZER
+int	get_transparency(int trgb);
+int	get_red(int trgb);
+int	get_green(int trgb);
+int	get_blue(int trgb);
+int	convert_rgb_to_hex(int t, int r, int g, int b);
+int get_new_gradient(int trgb, int mod);
+
+
+
 
 
 

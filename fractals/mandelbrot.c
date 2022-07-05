@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 17:35:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:42:34 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,28 @@ void    print_mandelbrot(t_data *img, t_color *color, char **argv)
 {
     t_fract fr;
 
-    int     x;
-    int     y;
-    int     iter;
+    int x;
+    int y;
+    int iter;
+    int init_color;
 
     x = 0;
     y = 0;
+    init_color = color->out;
     while (y <= WINDOW_HEIGHT)
     {
         while (x <= WINDOW_WIDTH)
         {
             iter = calc_mandelbrot(&fr, x, y);
             if (iter < fr.max_iter)
+            {
+                if (iter <= 16)
+                    color->out = get_new_gradient(color->out, iter);
+                if (iter > 16 && iter < 100)
+                    color->out = LIME;
                 my_mlx_pixel_put(img, x, y, color->out);
+                color->out = init_color;
+            }
             else
                 my_mlx_pixel_put(img, x, y, color->in);
             x++;
