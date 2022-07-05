@@ -19,5 +19,5 @@ void    init_mandelbrot(t_fract *fr)
     fr->z = 0;
     fr->z_re = 0;
     fr->z_im = 0;
-    fr->max_iter = 200;
+    fr->max_iter = 600;
 }

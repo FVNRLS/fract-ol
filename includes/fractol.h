@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/05 12:13:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/05 15:53:56 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 # include "error_flags.h"
 # include "window.h"
 
-
-
 typedef struct s_fract
 {
     double  c_re;
@@ -37,7 +35,6 @@ typedef struct s_fract
     double  sum_im;
     int     max_iter;
 }        t_fract;
-
 
 //ADDITIONAL MLX FUNCTIONS
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
@@ -67,11 +64,8 @@ int	get_red(int trgb);
 int	get_green(int trgb);
 int	get_blue(int trgb);
 int	convert_rgb_to_hex(int t, int r, int g, int b);
-int get_new_gradient(int trgb, int mod);
-
-
-
-
+int new_bgr_gradient(int trgb, double mod);
+int new_outln_gradient(int trgb, double mod);
 
 
 #endif
