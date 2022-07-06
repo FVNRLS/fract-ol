@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/05 19:07:25 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:44:07 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int calc_mandelbrot(t_fract *fr, double x, double y)
     return (i);
 }
 
-//TODO: simplify!!!
+//TODO: simplify!!! + ADD OUTLINE
 void    print_mandelbrot(t_data *img, t_color *color, char **argv)
 {
     t_fract fr;
@@ -49,13 +49,15 @@ void    print_mandelbrot(t_data *img, t_color *color, char **argv)
     int x;
     int y;
     int iter;
-    int init_color;
+    int init_out;
+    int init_outln;
     double mod_bgr;
     double mod_outln;
 
     x = 0;
     y = 0;
-    init_color = color->out;
+    init_out = color->out;
+    init_outln = color->outln;
     while (y <= WINDOW_HEIGHT)
     {
         while (x <= WINDOW_WIDTH)
@@ -65,31 +67,32 @@ void    print_mandelbrot(t_data *img, t_color *color, char **argv)
             {
                 mod_bgr = (double)x / (double )(WINDOW_WIDTH);
                 color->out = new_bgr_gradient(color->out, mod_bgr);
+                my_mlx_pixel_put(img, x, y, color->out);
                 if (iter >= 5 && iter <= 9)
                 {
                     if (iter % 2 == 0 && mod_bgr > 0.175 && mod_bgr < 0.675)
                         color->out = new_bgr_gradient(color->out, (1 - mod_bgr));
-                    if (mod_bgr > 0.675)
-                    {
+                    else if (mod_bgr > 0.675)
                         color->out = new_bgr_gradient(color->out, (0 - mod_bgr));
-                    }
+                    my_mlx_pixel_put(img, x, y, color->out);
+                    color->out = init_out;
                 }
-                if (iter >= 10 && iter <= 16)
+
+                else if (iter >= 10 && iter <= 16)
                 {
                     if (iter % 2 == 0)
-                        color->out = LIME;
+                    {
+                        mod_outln = (double )iter / 16;
+                        color->outln = new_outln_gradient(color->out, mod_outln);
+                    }
                     else
-                        color->out = NAVY;
-                    color->out = new_bgr_gradient(color->out, mod_bgr);
-                    mod_outln = (double )iter / 16;
-                    color->out = new_outln_gradient(color->out, mod_outln);
+                        color->outln = NAVY;
+                    my_mlx_pixel_put(img, x, y, color->outln);
+                    color->outln = init_outln;
                 }
-                if (iter > 16 && iter < fr.max_iter)
-                {
-                    color->out = LIME;
-                }
-                my_mlx_pixel_put(img, x, y, color->out);
-                color->out = init_color;
+
+                else if (iter > 16 && iter < fr.max_iter)
+                    my_mlx_pixel_put(img, x, y, color->outln);
             }
             else
                 my_mlx_pixel_put(img, x, y, color->in);

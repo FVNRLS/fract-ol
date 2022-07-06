@@ -36,7 +36,7 @@ void    check_args_nbr(int argc)
         print_error(NO_INPUT);
         exit (EXIT_FAILURE);
     }
-    else if (argc < 4)
+    else if (argc < 5)
     {
         print_error(TOO_FEW_ARGUMENTS);
         exit (EXIT_FAILURE);

@@ -57,6 +57,9 @@ void    init_main_inside_colors(char **argv, t_color *color);
 void    init_additional_inside_colors(char **argv, t_color *color);
 void    init_main_outside_colors(char **argv, t_color *color);
 void    init_additional_outside_colors(char **argv, t_color *color);
+void    init_main_outline_colors(char **argv, t_color *color);
+void    init_additional_outline_colors(char **argv, t_color *color);
+
 
 //COLORIZER
 int	get_transparency(int trgb);
