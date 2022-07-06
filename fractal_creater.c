@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 13:24:05 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:24:50 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static bool select_fractal(t_gui *gui, t_color *color, char **argv)
 {
     if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
     {
-        print_mandelbrot(gui, color, argv);
+        print_mandelbrot(gui, color);
         return (true);
     }
 //    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
