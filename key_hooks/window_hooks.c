@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 17:45:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:14:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_close(t_gui *gui)
 
 int	check_keys(int keycode, t_gui *gui)
 {
-    if (keycode == 12)
+    if (keycode == ESC)
         ft_close(gui);
     return (0);
 }
