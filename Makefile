@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/06 10:04:26 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/06 10:45:14 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC 		= 		./main.c												\
 					./fractals/mandelbrot.c									\
 					./colorizer/colorizer.c												\
 					./colorizer/hex_rgb_converters.c											\
+					./colorizer/colorize_mandelbrot.c					\
 					./tools/ft_strncmp.c									\
 					./error_manager.c											\
 					./fractal_creater.c												\
@@ -27,7 +28,6 @@ SRC 		= 		./main.c												\
 					./initializers/color_initializers/inside_color_initializer.c					\
 					./initializers/color_initializers/outside_color_initializer.c					\
 					./initializers/color_initializers/outline_color_initializer.c					\
-					./initializers/color_initializers/colorize_mandelbrot.c					\
 					./initializers/fractol_initializers.c								\
 
 OBJ 		= 		${SRC:.c=.o}

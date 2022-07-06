@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/05 15:53:56 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 11:08:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ int	get_blue(int trgb);
 int	convert_rgb_to_hex(int t, int r, int g, int b);
 int new_bgr_gradient(int trgb, double mod);
 int new_outln_gradient(int trgb, double mod);
-
+void    colorize_mandelbrot(t_data *img, t_fract *fr, t_color *color, int x, int y, int iter);
 
 #endif

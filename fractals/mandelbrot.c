@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 10:44:07 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 11:08:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,53 +49,15 @@ void    print_mandelbrot(t_data *img, t_color *color, char **argv)
     int x;
     int y;
     int iter;
-    int init_out;
-    int init_outln;
-    double mod_bgr;
-    double mod_outln;
 
     x = 0;
     y = 0;
-    init_out = color->out;
-    init_outln = color->outln;
     while (y <= WINDOW_HEIGHT)
     {
         while (x <= WINDOW_WIDTH)
         {
             iter = calc_mandelbrot(&fr, x, y);
-            if (iter < fr.max_iter)
-            {
-                mod_bgr = (double)x / (double )(WINDOW_WIDTH);
-                color->out = new_bgr_gradient(color->out, mod_bgr);
-                my_mlx_pixel_put(img, x, y, color->out);
-                if (iter >= 5 && iter <= 9)
-                {
-                    if (iter % 2 == 0 && mod_bgr > 0.175 && mod_bgr < 0.675)
-                        color->out = new_bgr_gradient(color->out, (1 - mod_bgr));
-                    else if (mod_bgr > 0.675)
-                        color->out = new_bgr_gradient(color->out, (0 - mod_bgr));
-                    my_mlx_pixel_put(img, x, y, color->out);
-                    color->out = init_out;
-                }
-
-                else if (iter >= 10 && iter <= 16)
-                {
-                    if (iter % 2 == 0)
-                    {
-                        mod_outln = (double )iter / 16;
-                        color->outln = new_outln_gradient(color->out, mod_outln);
-                    }
-                    else
-                        color->outln = NAVY;
-                    my_mlx_pixel_put(img, x, y, color->outln);
-                    color->outln = init_outln;
-                }
-
-                else if (iter > 16 && iter < fr.max_iter)
-                    my_mlx_pixel_put(img, x, y, color->outln);
-            }
-            else
-                my_mlx_pixel_put(img, x, y, color->in);
+            colorize_mandelbrot(img, &fr, color, x, y, iter);
             x++;
         }
         x = 0;
