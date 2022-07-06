@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 19:11:29 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:34:37 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void    print_error(int error)
 {
     if (error == NO_INPUT)
-        write(1, "Error! (No input)\nInput for Mandelbrot fractal: "
+        write(2, "Error! (No input)\nInput for Mandelbrot fractal: "
                  "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 94);
     else if (error == WRONG_FRACTAL)
-        write(1, "Error! (Wrong input)\nChoose another <FRACTAL_NAME>\n", 51);
+        write(2, "Error! (Wrong input)\nChoose another <FRACTAL_NAME>\n", 51);
     else if (error == WRONG_COLOR)
-        write(1, "Error! (Wrong input)\nChoose another <COLOR>\n", 45);
+        write(2, "Error! (Wrong input)\nChoose another <COLOR>\n", 45);
     else if (error == TOO_MANY_ARGUMENTS)
-        write(1, "Error! (Too many arguments)\nInput for Mandelbrot fractal: "
+        write(2, "Error! (Too many arguments)\nInput for Mandelbrot fractal: "
                  "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 104);
     else if (error == TOO_FEW_ARGUMENTS)
-        write(1, "Error! (Too few arguments)\nInput for Mandelbrot fractal: "
+        write(2, "Error! (Too few arguments)\nInput for Mandelbrot fractal: "
                  "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 103);
 }
 

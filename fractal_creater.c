@@ -6,12 +6,16 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 13:24:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:33:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/fractol.h"
 
+/*
+ * The function mimics the behaviour of mlx_pixel_put but is many times faster.
+ * y and x are coordinates whee to input a pixel.
+ */
 void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
 {
     char	*dst;
@@ -38,12 +42,6 @@ static bool select_fractal(t_gui *gui, t_color *color, char **argv)
     }
 }
 
-int	key_hook(int keycode, t_gui *gui)
-{
-    printf("Hello from key_hook!\n");
-    return (0);
-}
-
 void    print_fractal(char **argv)
 {
    t_gui    gui;
@@ -63,9 +61,6 @@ void    print_fractal(char **argv)
     init_colors(argv, &color, &gui);
     select_fractal(&gui, &color, argv);
     mlx_put_image_to_window(gui.mlx, gui.win, gui.img, 0, 0);
-
-    mlx_key_hook(gui.win, key_hook, &gui); //TODO: del test
+    check_win_hooks(&gui);
     mlx_loop(gui.mlx);
-    mlx_destroy_window(gui.mlx, gui.win);
-    free(gui.mlx);
 }

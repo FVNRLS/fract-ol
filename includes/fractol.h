@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 13:29:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:13:25 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "../minilibx/mlx.h"
 # include "colors.h"
 # include "error_flags.h"
+# include "key_hooks.h"
 # include "window.h"
 
 typedef struct s_fract
@@ -74,5 +75,10 @@ int	convert_rgb_to_hex(int t, int r, int g, int b);
 int new_bgr_gradient(int trgb, double mod);
 int new_outln_gradient(int trgb, double mod);
 void    colorize_mandelbrot(t_gui *img, t_fract *fr, t_color *color);
+
+//WINDOW KEY HOOKS
+void    check_win_hooks(t_gui *gui);
+int	close_win(int keycode, t_gui *gui);
+
 
 #endif

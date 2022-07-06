@@ -29,6 +29,7 @@ SRC 		= 		./main.c												\
 					./initializers/color_initializers/outside_color_initializer.c					\
 					./initializers/color_initializers/outline_color_initializer.c					\
 					./initializers/fractol_initializers.c								\
+					./key_hooks/window_hooks.c									\
 
 OBJ 		= 		${SRC:.c=.o}
 
