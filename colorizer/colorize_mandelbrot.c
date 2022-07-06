@@ -6,13 +6,13 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:44:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 11:16:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:25:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static void colorize_bgr(t_data *img, t_color *color, int x, int y, int iter)
+static void colorize_bgr(t_gui *img, t_color *color, int x, int y, int iter)
 {
     int init_out;
 
@@ -33,7 +33,7 @@ static void colorize_bgr(t_data *img, t_color *color, int x, int y, int iter)
     }
 }
 
-static void colorize_span(t_data *img, t_color *color, int x, int y, int iter)
+static void colorize_span(t_gui *img, t_color *color, int x, int y, int iter)
 {
     int init_outln;
     double mod_outln;
@@ -50,16 +50,16 @@ static void colorize_span(t_data *img, t_color *color, int x, int y, int iter)
     color->outln = init_outln;
 }
 
-void    colorize_mandelbrot(t_data *img, t_fract *fr, t_color *color, int x,
+void    colorize_mandelbrot(t_gui *img, t_fract *fr, t_color *color, int x,
                             int y, int iter)
 {
     if (iter < fr->max_iter)
     {
        if (iter < 10)
            colorize_bgr(img, color, x, y, iter);
-        else if (iter >= 10 && iter <= 16)
+       else if (iter >= 10 && iter <= 16)
            colorize_span(img, color, x, y, iter);
-        else if (iter > 16 && iter < fr->max_iter)
+       else if (iter > 16 && iter < fr->max_iter)
             my_mlx_pixel_put(img, x, y, color->outln);
     }
     else

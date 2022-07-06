@@ -2,14 +2,16 @@
 #ifndef WINDOW_H
 # define WINDOW_H
 
-typedef struct	s_data
+typedef struct	s_gui
 {
+    void	*mlx;
+    void	*win;
     void	*img;
     char	*addr;
     int		bits_per_pixel;
     int		line_length;
     int		endian;
-}	    t_data;
+}	    t_gui;
 
 # define WINDOW_WIDTH 500
 # define WINDOW_HEIGHT 500

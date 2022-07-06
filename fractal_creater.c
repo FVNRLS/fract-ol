@@ -6,61 +6,66 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 11:08:13 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:24:05 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/fractol.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
 {
     char	*dst;
 
-    dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+    dst = gui->addr + (y * gui->line_length + x * (gui->bits_per_pixel / 8));
     *(unsigned int*)dst = color;
 }
 
-static bool select_fractal(char **argv, t_data *img, t_color *color,
-                           void **mlx, void  **win)
+static bool select_fractal(t_gui *gui, t_color *color, char **argv)
 {
     if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
     {
-        print_mandelbrot(img, color, argv);
+        print_mandelbrot(gui, color, argv);
         return (true);
     }
 //    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
 //        exit(0); //TODO:print Julia!
     else
     {
-        free(*mlx);
-        free(*win);
+        free(gui->mlx);
+        free(gui->win);
         print_error(WRONG_FRACTAL);
         exit(EXIT_FAILURE);
     }
 }
 
+int	key_hook(int keycode, t_gui *gui)
+{
+    printf("Hello from key_hook!\n");
+    return (0);
+}
+
 void    print_fractal(char **argv)
 {
-    void	*mlx;
-    void	*win;
-    t_data	img;
-    t_color color;
+   t_gui    gui;
+   t_color  color;
 
-    mlx = mlx_init();
-    if (!mlx)
+    gui.mlx = mlx_init();
+    if (!gui.mlx)
         exit(EXIT_FAILURE);
-    win = mlx_new_window(mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "fract-ol");
-    if (!win)
+    gui.win = mlx_new_window(gui.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "fract-ol");
+    if (!gui.win)
     {
-        free(mlx);
+        free(gui.mlx);
         exit(EXIT_FAILURE);
     }
-    img.img = mlx_new_image(mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
-    img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-    init_colors(argv, &color, &mlx, &win);
-    select_fractal(argv, &img, &color, &mlx, &win);
-    mlx_put_image_to_window(mlx, win, img.img, 0, 0);
-    mlx_loop(mlx);
-    mlx_destroy_window(mlx, win);
-    free(mlx);
+    gui.img = mlx_new_image(gui.mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
+    gui.addr = mlx_get_data_addr(gui.img, &gui.bits_per_pixel, &gui.line_length, &gui.endian);
+    init_colors(argv, &color, &gui);
+    select_fractal(&gui, &color, argv);
+    mlx_put_image_to_window(gui.mlx, gui.win, gui.img, 0, 0);
+
+    mlx_key_hook(gui.win, key_hook, &gui); //TODO: del test
+    mlx_loop(gui.mlx);
+    mlx_destroy_window(gui.mlx, gui.win);
+    free(gui.mlx);
 }

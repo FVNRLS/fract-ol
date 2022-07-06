@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:12:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/05 10:44:25 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:02:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void init_outline_color(char **argv, t_color *color)
     init_additional_outline_colors(argv, color);
 }
 
-void    init_colors(char **argv, t_color *color, void **mlx, void **win)
+void    init_colors(char **argv, t_color *color, t_gui *gui)
 {
 
     init_inside_color(argv, color);
@@ -52,8 +52,8 @@ void    init_colors(char **argv, t_color *color, void **mlx, void **win)
     if (color->in == NO_COLOR || color->out == NO_COLOR || color->outln == NO_COLOR)
     {
         print_error(WRONG_COLOR);
-        free(*mlx);
-        free(*win);
+        free(gui->mlx);
+        free(gui->win);
         exit (EXIT_FAILURE);
     }
 }

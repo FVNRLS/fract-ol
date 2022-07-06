@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 19:06:13 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:37:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
  * The function mimics the behaviour of mlx_pixel_put but is many times faster.
  * y and x are coordinates whee to input a pixel.
  */
+
 
 int main(int argc, char **argv)
 {
