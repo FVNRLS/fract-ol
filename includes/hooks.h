@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window_hooks.c                                     :+:      :+:    :+:   */
+/*   key_hooks.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 18:14:03 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/07/06 19:56:54 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#ifndef HOOKS_H
+# define HOOKS_H
 
-int	ft_close(t_gui *gui)
-{
-    mlx_destroy_window(gui->mlx, gui->win);
-    free(gui->mlx);
-    exit (0);
-}
+/* MAC_OS KEY HOOKS */
 
-int	check_keys(int keycode, t_gui *gui)
-{
-    if (keycode == ESC)
-        ft_close(gui);
-    return (0);
-}
+//EVENTS (BUILD IN INTERFACE ELEMENTS (e.g: red cross to close a window))
+# define ON_DESTROY 17
+
+// MOUSE HOOKS
+# define MOUSE_POINTER
+# define ZOOM_IN
+# define ZOOM_OUT
 
 
-void    check_win_hooks(t_gui *gui)
-{
+//KEYBOARD HOOKS
+# define ESC 53
 
-    mlx_key_hook(gui->win, check_keys, gui);
-    mlx_hook(gui->win, ON_DESTROY, 0, ft_close, gui);
-
-
-
-}
+#endif

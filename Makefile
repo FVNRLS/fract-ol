@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/06 10:45:14 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/06 19:35:30 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRC 		= 		./main.c												\
 					./initializers/color_initializers/outside_color_initializer.c					\
 					./initializers/color_initializers/outline_color_initializer.c					\
 					./initializers/fractol_initializers.c								\
-					./key_hooks/window_hooks.c									\
+					./hooks_and_events/key_hooks.c									\
+					./hooks_and_events/mouse_hooks.c									\
 
 OBJ 		= 		${SRC:.c=.o}
 

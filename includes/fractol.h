@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 15:13:25 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:06:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include "../minilibx/mlx.h"
 # include "colors.h"
 # include "error_flags.h"
-# include "key_hooks.h"
+# include "hooks.h"
 # include "window.h"
 
 typedef struct s_fract

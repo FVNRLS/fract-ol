@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 17:34:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:35:48 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,7 @@ void    check_args_nbr(int argc)
     }
 }
 
-//TODO: check if fractol name sets to number of args!
+//TODO:
+// check if fractol name sets to number of args!
+// check presets
+// printf the MENU
