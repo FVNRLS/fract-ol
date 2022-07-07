@@ -50,7 +50,7 @@ static void colorize_span(t_gui *img, t_color *color, t_fract *fr)
     color->outln = init_outln;
 }
 
-void    colorize_mandelbrot(t_gui *img, t_fract *fr, t_color *color)
+void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color)
 {
     if (fr->iter < fr->max_iter)
     {
@@ -59,6 +59,19 @@ void    colorize_mandelbrot(t_gui *img, t_fract *fr, t_color *color)
        else if (fr->iter >= 10 && fr->iter <= 16)
            colorize_span(img, color, fr);
        else if (fr->iter > 16 && fr->iter < fr->max_iter)
+            my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->outln);
+    }
+    else
+        my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->in);
+}
+
+void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color)
+{
+    if (fr->iter < fr->max_iter)
+    {
+        if (fr->iter < 10)
+            my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->out);
+        else if (fr->iter > 16 && fr->iter < fr->max_iter)
             my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->outln);
     }
     else

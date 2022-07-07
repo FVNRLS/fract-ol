@@ -6,11 +6,16 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 17:35:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/07 18:53:02 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/fractol.h"
+
+//TODO:
+// check if fractol name sets to number of args!
+// check presets
+// printf the MENU
 
 void    print_error(int error)
 {
@@ -29,26 +34,27 @@ void    print_error(int error)
                  "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 103);
 }
 
-void    check_args_nbr(int argc)
+bool    check_mandelbrot_args(int argc, t_gui *gui, t_color *color)
 {
-    if (argc == 1)
+    if (argc != 5)
     {
-        print_error(NO_INPUT);
-        exit (EXIT_FAILURE);
+        if (argc == 1)
+            print_error(NO_INPUT);
+        else if (argc < 5)
+            print_error(TOO_FEW_ARGUMENTS);
+        else if (argc > 5)
+            print_error(TOO_MANY_ARGUMENTS);
+        return (false);
     }
-    else if (argc < 5)
-    {
-        print_error(TOO_FEW_ARGUMENTS);
-        exit (EXIT_FAILURE);
-    }
-    else if (argc > 7)
-    {
-        print_error(TOO_MANY_ARGUMENTS);
-        exit (EXIT_FAILURE);
-    }
+    return (true);
 }
 
-//TODO:
-// check if fractol name sets to number of args!
-// check presets
-// printf the MENU
+bool    check_mandelbrot_colors(int argc, t_gui *gui, t_color *color)
+{
+    if (color->in == NO_COLOR || color->out == NO_COLOR || color->outln == NO_COLOR)
+    {
+        print_error(WRONG_COLOR);
+        return (false);
+    }
+    return (true);
+}

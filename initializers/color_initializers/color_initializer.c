@@ -49,11 +49,4 @@ void    init_colors(char **argv, t_color *color, t_gui *gui)
     init_inside_color(argv, color);
     init_outside_color(argv, color);
     init_outline_color(argv, color);
-    if (color->in == NO_COLOR || color->out == NO_COLOR || color->outln == NO_COLOR)
-    {
-        print_error(WRONG_COLOR);
-        free(gui->mlx);
-        free(gui->win);
-        exit (EXIT_FAILURE);
-    }
 }

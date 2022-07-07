@@ -31,6 +31,9 @@ SRC 		= 		./main.c												\
 					./initializers/fractol_initializers.c								\
 					./hooks_and_events/key_hooks.c									\
 					./hooks_and_events/mouse_hooks.c									\
+					./fractals/presets/presets_printer.c							\
+					./fractals/presets/mandelbrot_psychedelic.c							\
+					./fractals/presets/mandelbrot_standard.c							\
 
 OBJ 		= 		${SRC:.c=.o}
 

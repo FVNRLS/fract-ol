@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 17:06:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/07 19:09:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,27 @@ typedef struct s_fract
 
 }        t_fract;
 
+
 //ADDITIONAL MLX FUNCTIONS
 void	my_mlx_pixel_put(t_gui *data, int x, int y, int color);
 
 //FRACTALS
-void    print_mandelbrot(t_gui *gui, t_color *color);
-void    print_fractal(char **argv);
+void    print_fractal(int argc, char **argv);
+void    print_3D_mandelbrot(t_gui *gui, t_color *color);
+void    print_basic_mandelbrot(t_gui *gui, t_color *color);
+
+//PRESETS
+void    print_preset(char **argv, t_gui *gui, t_color *color);
+int     print_mandelbrot_matrix(t_gui *gui);
 
 //TOOLS
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 //ERRORS
 void    print_error(int error);
-void    check_args_nbr(int argc);
+void    check_mandelbrot(int argc, t_gui *gui, t_color *color);
+bool    check_mandelbrot_args(int argc, t_gui *gui, t_color *color);
+bool    check_mandelbrot_colors(int argc, t_gui *gui, t_color *color);
 
 //INITIALIZERS
 void    init_mandelbrot(t_fract *fr);
@@ -74,11 +82,12 @@ int	get_blue(int trgb);
 int	convert_rgb_to_hex(int t, int r, int g, int b);
 int new_bgr_gradient(int trgb, double mod);
 int new_outln_gradient(int trgb, double mod);
-void    colorize_mandelbrot(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 
 //WINDOW KEY HOOKS
 void    check_win_hooks(t_gui *gui);
-int	close_win(int keycode, t_gui *gui);
+int	    close_win(int keycode, t_gui *gui);
 
 
 #endif

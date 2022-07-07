@@ -26,7 +26,6 @@ void    check_leaks(void)
 int main(int argc, char **argv)
 {
     atexit(check_leaks);
-    check_args_nbr(argc);
-    print_fractal(argv);
+    print_fractal(argc, argv);
     return (0);
 }

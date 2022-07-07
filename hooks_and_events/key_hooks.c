@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 19:47:29 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/07 17:43:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,23 @@ int	ft_close(t_gui *gui)
 {
     mlx_destroy_window(gui->mlx, gui->win);
     free(gui->mlx);
+    gui->mlx = NULL;
     exit (0);
 }
 
-int	check_keys(int keycode, t_gui *gui)
+static int  check_keys(int keycode, t_gui *gui)
 {
     if (keycode == ESC)
         ft_close(gui);
+    else if (keycode == ONE)
+        print_mandelbrot_matrix(gui);
+
     return (0);
 }
 
 
 void    check_win_hooks(t_gui *gui)
 {
-
     mlx_key_hook(gui->win, check_keys, gui);
     mlx_hook(gui->win, ON_DESTROY, 0, ft_close, gui);
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/06 15:22:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/07 17:43:25 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int calc_mandelbrot(t_fract *fr)
     return (fr->iter);
 }
 
-void    print_mandelbrot(t_gui *gui, t_color *color)
+void    print_3D_mandelbrot(t_gui *gui, t_color *color)
 {
     t_fract fr;
 
@@ -49,7 +49,26 @@ void    print_mandelbrot(t_gui *gui, t_color *color)
         while (fr.x_cor <= WINDOW_WIDTH)
         {
             fr.iter = calc_mandelbrot(&fr);
-            colorize_mandelbrot(gui, &fr, color);
+            colorize_with_gradient(gui, &fr, color);
+            fr.x_cor++;
+        }
+        fr.x_cor = 0;
+        fr.y_cor++;
+    }
+}
+
+void    print_basic_mandelbrot(t_gui *gui, t_color *color)
+{
+    t_fract fr;
+
+    fr.x_cor = 0;
+    fr.y_cor = 0;
+    while (fr.y_cor <= WINDOW_HEIGHT)
+    {
+        while (fr.x_cor <= WINDOW_WIDTH)
+        {
+            fr.iter = calc_mandelbrot(&fr);
+            colorize_with_basic_colors(gui, &fr, color);
             fr.x_cor++;
         }
         fr.x_cor = 0;
