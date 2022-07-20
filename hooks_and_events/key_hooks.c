@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 11:15:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 13:24:34 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ static void check_presets(int keycode, t_gui *gui)
         print_mandelbrot_std_green(gui);
     else if (keycode == SIX)
         print_mandelbrot_psych_acid(gui);
+    else if (keycode == SEVEN)
+        print_mandelbrot_psych_cmyk(gui);
+    else if (keycode == EIGHT)
+        print_mandelbrot_psych_depressive(gui);
+    else if (keycode == NINE)
+        print_mandelbrot_psych_bloody(gui);
+    else if (keycode == ZERO)
+        print_mandelbrot_psych_ugly(gui);
 }
 
 

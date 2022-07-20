@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:44:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 12:47:13 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 13:51:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,7 @@ void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color)
     {
         int     init_out;
 
-        if (fr->iter <= 1)
-            my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->out);
-        else if (fr->iter > 1 && fr->iter < 10)
+        if (fr->iter < 10)
         {
             init_out = color->out;
             if (fr->iter % 2 == 0)

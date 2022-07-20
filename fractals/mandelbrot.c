@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 13:10:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 13:14:07 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void    print_3D_mandelbrot(t_gui *gui, t_color *color)
     }
 }
 
-void    print_basic_mandelbrot(t_gui *gui, t_color *color)
+void    print_standard_mandelbrot(t_gui *gui, t_color *color)
 {
     t_fract fr;
 
