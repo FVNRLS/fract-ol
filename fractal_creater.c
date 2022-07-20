@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/07 19:03:27 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:43:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void    free_all(t_gui *gui)
 {
     free(gui->mlx);
     free(gui->win);
-    free(gui->img);
-    free(gui->addr);
 }
 
 void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
