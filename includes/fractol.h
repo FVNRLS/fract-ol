@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 11:29:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 13:05:32 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_fract
     int     y_cor;
     int     iter;
     int     max_iter;
+    bool    left_padded;
 
 }        t_fract;
 

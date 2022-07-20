@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:48:45 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/05 17:22:34 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 12:48:49 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int new_aura(int trgb, t_fract *fr)
     int b;
     int new_color;
 
-    t = 200 / fr->iter;
+    t = 20 * fr->iter;
     r = get_red(trgb);
     g = get_green(trgb);
     b = get_blue(trgb);
