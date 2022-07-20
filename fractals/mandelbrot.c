@@ -75,3 +75,22 @@ void    print_basic_mandelbrot(t_gui *gui, t_color *color)
         fr.y_cor++;
     }
 }
+
+void    print_psychedelic_mandelbrot(t_gui *gui, t_color *color)
+{
+    t_fract fr;
+
+    fr.x_cor = 0;
+    fr.y_cor = 0;
+    while (fr.y_cor <= WINDOW_HEIGHT)
+    {
+        while (fr.x_cor <= WINDOW_WIDTH)
+        {
+            fr.iter = calc_mandelbrot(&fr);
+            colorize_with_aura(gui, &fr, color);
+            fr.x_cor++;
+        }
+        fr.x_cor = 0;
+        fr.y_cor++;
+    }
+}

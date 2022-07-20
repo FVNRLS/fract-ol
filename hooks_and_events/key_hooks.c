@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/07 17:43:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 11:15:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,28 @@ int	ft_close(t_gui *gui)
     exit (0);
 }
 
+static void check_presets(int keycode, t_gui *gui)
+{
+    if (keycode == ONE)
+        print_mandelbrot_matrix(gui);
+    else if (keycode == TWO)
+        print_mandelbrot_std_blue(gui);
+    else if (keycode == THREE)
+        print_mandelbrot_std_red(gui);
+    else if (keycode == FOUR)
+        print_mandelbrot_std_teal(gui);
+    else if (keycode == FIVE)
+        print_mandelbrot_std_green(gui);
+    else if (keycode == SIX)
+        print_mandelbrot_psych_acid(gui);
+}
+
+
 static int  check_keys(int keycode, t_gui *gui)
 {
     if (keycode == ESC)
         ft_close(gui);
-    else if (keycode == ONE)
-        print_mandelbrot_matrix(gui);
+    check_presets(keycode, gui);
 
     return (0);
 }

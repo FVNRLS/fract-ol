@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/07 19:09:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 11:29:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,17 @@ void	my_mlx_pixel_put(t_gui *data, int x, int y, int color);
 void    print_fractal(int argc, char **argv);
 void    print_3D_mandelbrot(t_gui *gui, t_color *color);
 void    print_basic_mandelbrot(t_gui *gui, t_color *color);
+void    print_psychedelic_mandelbrot(t_gui *gui, t_color *color);
 
 //PRESETS
 void    print_preset(char **argv, t_gui *gui, t_color *color);
-int     print_mandelbrot_matrix(t_gui *gui);
+void    print_mandelbrot_matrix(t_gui *gui);
+void    print_mandelbrot_std_blue(t_gui *gui);
+void    print_mandelbrot_std_red(t_gui *gui);
+void    print_mandelbrot_std_teal(t_gui *gui);
+void    print_mandelbrot_std_green(t_gui *gui);
+void    print_mandelbrot_psych_acid(t_gui *gui);
+
 
 //TOOLS
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -82,8 +89,10 @@ int	get_blue(int trgb);
 int	convert_rgb_to_hex(int t, int r, int g, int b);
 int new_bgr_gradient(int trgb, double mod);
 int new_outln_gradient(int trgb, double mod);
+int new_aura(int trgb, t_fract *fr);
 void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
 
 //WINDOW KEY HOOKS
 void    check_win_hooks(t_gui *gui);

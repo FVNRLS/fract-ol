@@ -44,4 +44,20 @@ int new_outln_gradient(int trgb, double mod)
     return (new_color);
 }
 
+int new_aura(int trgb, t_fract *fr)
+{
+    int t;
+    int r;
+    int g;
+    int b;
+    int new_color;
+
+    t = 200 / fr->iter;
+    r = get_red(trgb);
+    g = get_green(trgb);
+    b = get_blue(trgb);
+    new_color = convert_rgb_to_hex(t, r, g, b);
+    return (new_color);
+}
+
 
