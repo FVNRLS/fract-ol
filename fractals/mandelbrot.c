@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 13:14:07 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 16:20:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
  * -2 = min. of scope
  * 2 = max of scope
+ * The values are used to modify the positioning of the fractal.
  * */
 static void scale_mandelbrot_coords(t_fract *fr)
 {

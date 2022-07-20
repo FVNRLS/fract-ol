@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/07 18:53:02 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:14:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,39 @@ void    print_error(int error)
                  "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 103);
 }
 
-bool    check_mandelbrot_args(int argc, t_gui *gui, t_color *color)
+void    check_mandelbrot_presets(char **argv, t_gui *gui, t_color *color)
+{
+    bool    preset_valid;
+
+    preset_valid = check_print_preset(argv, gui, color);
+    if (preset_valid == true)
+        return ;
+    else
+    {
+        free_all(gui);
+        exit(EXIT_FAILURE);
+    }
+}
+
+void    check_mandelbrot_args(int argc, t_gui *gui)
 {
     if (argc != 5)
     {
-        if (argc == 1)
-            print_error(NO_INPUT);
-        else if (argc < 5)
+        if (argc < 5)
             print_error(TOO_FEW_ARGUMENTS);
         else if (argc > 5)
             print_error(TOO_MANY_ARGUMENTS);
-        return (false);
+        free_all(gui);
+        exit(EXIT_FAILURE);
     }
-    return (true);
 }
 
-bool    check_mandelbrot_colors(int argc, t_gui *gui, t_color *color)
+void    check_mandelbrot_colors(t_gui *gui, t_color *color)
 {
     if (color->in == NO_COLOR || color->out == NO_COLOR || color->outln == NO_COLOR)
     {
         print_error(WRONG_COLOR);
-        return (false);
+        free_all(gui);
+        exit(EXIT_FAILURE);
     }
-    return (true);
 }

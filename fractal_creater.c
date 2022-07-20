@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 10:52:23 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 15:45:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
  * y and x are coordinates whee to input a pixel.
  */
 
-void    free_all(t_gui *gui)
-{
-    free(gui->mlx);
-    free(gui->win);
-}
-
 void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
 {
     char	*dst;
@@ -31,7 +25,7 @@ void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-static void select_fractal(t_gui *gui, t_color *color, int argc, char **argv)
+void select_fractal(t_gui *gui, t_color *color, int argc, char **argv)
 {
     if (argc == 1)
     {
@@ -39,23 +33,8 @@ static void select_fractal(t_gui *gui, t_color *color, int argc, char **argv)
         free_all(gui);
         exit(EXIT_FAILURE);
     }
-    else if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
-    {
-        if (check_mandelbrot_args(argc, gui, color) == false)
-        {
-            free_all(gui);
-            exit(EXIT_FAILURE);
-        }
-        init_colors(argv, color, gui);
-        if (check_mandelbrot_colors(argc, gui, color) == false)
-        {
-            free_all(gui);
-            exit(EXIT_FAILURE);
-        }
-        print_3D_mandelbrot(gui, color);
-    }
-    else if (ft_strncmp(argv[1], "PRESET", 6) == 0)
-        print_preset(argv, gui, color);
+    if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
+        print_mandelbrot(argc, argv, gui, color);
 //    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
 //        exit(0); //TODO:print Julia!
 }

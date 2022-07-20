@@ -17,9 +17,10 @@
 
 typedef struct s_color
 {
-    int in;
-    int out;
-    int outln;
+    int     in;
+    int     out;
+    int     outln;
+    bool    preset_found;
 }           t_color;
 
 # define WHITE          0x00FFFFFF

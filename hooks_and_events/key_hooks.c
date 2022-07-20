@@ -6,15 +6,14 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 13:24:34 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:14:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
 /*TODO:
- * 1) ARROW KEYS (UP, DOWN, LEFT, RIGHT) -> move pos of fractol in the window
- * 2) from 1 to 9 -> different presets (psychodelic)
+ * 1) ARROW KEYS (UP, DOWN, LEFT, RIGHT) -> move pos of fractal in the window
  * 3) WASD --> look up in subject
  * 4) change transparency of background with some key (+ -)
  * 5) change gradient steps to fill (- +)
@@ -32,28 +31,29 @@ int	ft_close(t_gui *gui)
 
 static void check_presets(int keycode, t_gui *gui)
 {
-    if (keycode == ONE)
-        print_mandelbrot_matrix(gui);
-    else if (keycode == TWO)
-        print_mandelbrot_std_blue(gui);
-    else if (keycode == THREE)
-        print_mandelbrot_std_red(gui);
-    else if (keycode == FOUR)
-        print_mandelbrot_std_teal(gui);
-    else if (keycode == FIVE)
-        print_mandelbrot_std_green(gui);
-    else if (keycode == SIX)
-        print_mandelbrot_psych_acid(gui);
-    else if (keycode == SEVEN)
-        print_mandelbrot_psych_cmyk(gui);
-    else if (keycode == EIGHT)
-        print_mandelbrot_psych_depressive(gui);
-    else if (keycode == NINE)
-        print_mandelbrot_psych_bloody(gui);
-    else if (keycode == ZERO)
-        print_mandelbrot_psych_ugly(gui);
-}
+    t_color color;
 
+    if (keycode == ONE)
+        print_mandelbrot_matrix(gui, &color);
+    else if (keycode == TWO)
+        print_mandelbrot_std_blue(gui, &color);
+    else if (keycode == THREE)
+        print_mandelbrot_std_red(gui, &color);
+    else if (keycode == FOUR)
+        print_mandelbrot_std_teal(gui, &color);
+    else if (keycode == FIVE)
+        print_mandelbrot_std_green(gui, &color);
+    else if (keycode == SIX)
+        print_mandelbrot_psych_acid(gui, &color);
+    else if (keycode == SEVEN)
+        print_mandelbrot_psych_cmyk(gui, &color);
+    else if (keycode == EIGHT)
+        print_mandelbrot_psych_depressive(gui, &color);
+    else if (keycode == NINE)
+        print_mandelbrot_psych_bloody(gui, &color);
+    else if (keycode == ZERO)
+        print_mandelbrot_psych_ugly(gui, &color);
+}
 
 static int  check_keys(int keycode, t_gui *gui)
 {
@@ -63,7 +63,6 @@ static int  check_keys(int keycode, t_gui *gui)
 
     return (0);
 }
-
 
 void    check_win_hooks(t_gui *gui)
 {

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 13:38:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/20 16:35:01 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct s_fract
     int     iter;
     int     max_iter;
     bool    left_padded;
-
 }        t_fract;
 
 
@@ -48,36 +47,39 @@ void	my_mlx_pixel_put(t_gui *data, int x, int y, int color);
 
 //FRACTALS
 void    print_fractal(int argc, char **argv);
+void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_color *color);
 void    print_3D_mandelbrot(t_gui *gui, t_color *color);
 void    print_standard_mandelbrot(t_gui *gui, t_color *color);
 void    print_psychedelic_mandelbrot(t_gui *gui, t_color *color);
 
 //PRESETS
-void    print_preset(char **argv, t_gui *gui, t_color *color);
+bool    check_print_preset(char **argv, t_gui *gui, t_color *color);
 void    update_image_to_psychedelic(t_gui *gui, t_color *color);
 void    update_image_to_standard(t_gui *gui, t_color *color);
 
 
-void    print_mandelbrot_matrix(t_gui *gui);
-void    print_mandelbrot_std_blue(t_gui *gui);
-void    print_mandelbrot_std_red(t_gui *gui);
-void    print_mandelbrot_std_teal(t_gui *gui);
-void    print_mandelbrot_std_green(t_gui *gui);
-void    print_mandelbrot_psych_acid(t_gui *gui);
-void    print_mandelbrot_psych_cmyk(t_gui *gui);
-void    print_mandelbrot_psych_depressive(t_gui *gui);
-void    print_mandelbrot_psych_bloody(t_gui *gui);
-void    print_mandelbrot_psych_ugly(t_gui *gui);
+void    print_mandelbrot_matrix(t_gui *gui, t_color *color);
+void    print_mandelbrot_std_blue(t_gui *gui, t_color *color);
+void    print_mandelbrot_std_red(t_gui *gui, t_color *color);
+void    print_mandelbrot_std_teal(t_gui *gui, t_color *color);
+void    print_mandelbrot_std_green(t_gui *gui, t_color *color);
+void    print_mandelbrot_psych_acid(t_gui *gui, t_color *color);
+void    print_mandelbrot_psych_cmyk(t_gui *gui, t_color *color);
+void    print_mandelbrot_psych_depressive(t_gui *gui, t_color *color);
+void    print_mandelbrot_psych_bloody(t_gui *gui, t_color *color);
+void    print_mandelbrot_psych_ugly(t_gui *gui, t_color *color);
 
 
 //TOOLS
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	    ft_strncmp(const char *s1, const char *s2, size_t n);
+void    free_all(t_gui *gui);
 
 //ERRORS
 void    print_error(int error);
 void    check_mandelbrot(int argc, t_gui *gui, t_color *color);
-bool    check_mandelbrot_args(int argc, t_gui *gui, t_color *color);
-bool    check_mandelbrot_colors(int argc, t_gui *gui, t_color *color);
+void    check_mandelbrot_presets(char **argv, t_gui *gui, t_color *color);
+void    check_mandelbrot_args(int argc, t_gui *gui);
+void    check_mandelbrot_colors(t_gui *gui, t_color *color);
 
 //INITIALIZERS
 void    init_mandelbrot(t_fract *fr);
