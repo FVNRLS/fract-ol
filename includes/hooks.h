@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 11:07:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:50:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@
 # define EIGHT 28
 # define NINE 25
 # define ZERO 29
+
+//ARROW KEYS HOOKS
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
 
 
 #endif

@@ -11,6 +11,10 @@ typedef struct	s_gui
     int		bits_per_pixel;
     int		line_length;
     int		endian;
+
+    double vert_mod;
+    double horiz_mod;
+
 }	    t_gui;
 
 # define WINDOW_WIDTH 500
