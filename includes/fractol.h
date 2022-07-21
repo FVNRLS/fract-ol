@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 16:35:01 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:30:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,29 @@ typedef struct s_fract
     bool    left_padded;
 }        t_fract;
 
+typedef struct s_color
+{
+    int     in;
+    int     out;
+    int     outln;
+    bool    preset_found;
+}           t_color;
+
+typedef struct	s_gui
+{
+    void	*mlx;
+    void	*win;
+    void	*img;
+    char	*addr;
+    int		bits_per_pixel;
+    int		line_length;
+    int		endian;
+    double  vert_mod;
+    double  horiz_mod;
+
+    t_fract    *fract;
+    t_color    *color;
+}	    t_gui;
 
 //ADDITIONAL MLX FUNCTIONS
 void	my_mlx_pixel_put(t_gui *data, int x, int y, int color);
@@ -90,6 +113,7 @@ void    init_main_outside_colors(char **argv, t_color *color);
 void    init_additional_outside_colors(char **argv, t_color *color);
 void    init_main_outline_colors(char **argv, t_color *color);
 void    init_additional_outline_colors(char **argv, t_color *color);
+void    init_mods(t_gui *gui);
 
 
 //COLORIZER
@@ -104,6 +128,10 @@ int new_aura(int trgb, t_fract *fr);
 void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
+
+//ARROW KEYS HOOKS
+void    move_up(t_gui *gui);
+
 
 //WINDOW KEY HOOKS
 void    check_win_hooks(t_gui *gui);

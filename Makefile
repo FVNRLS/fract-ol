@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/20 15:45:31 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/21 17:24:53 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,10 @@ SRC 		= 		./main.c																\
 					./initializers/color_initializers/inside_color_initializer.c			\
 					./initializers/color_initializers/outside_color_initializer.c			\
 					./initializers/color_initializers/outline_color_initializer.c			\
+					./initializers/mods_initializer.c										\
 					./initializers/fractol_initializers.c									\
 					./hooks_and_events/key_hooks.c											\
+					./hooks_and_events/vert_horiz_mover.c									\
 					./hooks_and_events/mouse_hooks.c										\
 					./fractals/presets/presets_printer.c									\
 					./fractals/presets/mandelbrot_psychedelic.c								\

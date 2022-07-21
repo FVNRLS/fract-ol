@@ -44,6 +44,7 @@ void    print_fractal(int argc, char **argv)
    t_gui    gui;
    t_color  color;
 
+    gui.color = &color;
     gui.mlx = mlx_init();
     if (!gui.mlx)
         exit(EXIT_FAILURE);

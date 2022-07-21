@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 17:14:30 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:30:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,18 @@ static void check_presets(int keycode, t_gui *gui)
         print_mandelbrot_psych_ugly(gui, &color);
 }
 
+static void check_arrow_keys(int keycode, t_gui *gui)
+{
+    if (keycode == UP)
+        move_up(gui);
+}
+
 static int  check_keys(int keycode, t_gui *gui)
 {
     if (keycode == ESC)
         ft_close(gui);
     check_presets(keycode, gui);
-
+    check_arrow_keys(keycode, gui);
     return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 16:20:30 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:20:04 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
  * 2 = max of scope
  * The values are used to modify the positioning of the fractal.
  * */
-static void scale_mandelbrot_coords(t_fract *fr)
+static void scale_mandelbrot_coords(t_gui *gui, t_fract *fr)
 {
-    double mod_horiz;
-    double mod_vert;
+    double horiz;
+    double vert;
 
-    mod_horiz = -2.5;
-    mod_vert = 2.0;
+    horiz = -2.5;
+    vert = 2.0;
     if (fr->left_padded == true)
-        mod_horiz = -2.0;
+        horiz = -2.0;
 
-    fr->c_re = (mod_horiz + (((double)fr->x_cor / WINDOW_WIDTH) * 4));
-    fr->c_im = (mod_vert - (((double )fr->y_cor / WINDOW_HEIGHT) * 4));
+    fr->c_re = ((horiz * gui->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * 4));
+    fr->c_im = ((vert * gui->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * 4));
 }
 
-static int calc_mandelbrot(t_fract *fr)
+static int calc_mandelbrot(t_gui *gui, t_fract *fr)
 {
     init_mandelbrot(fr);
-    scale_mandelbrot_coords(fr);
+    scale_mandelbrot_coords(gui, fr);
     while(fr->z < 4 && fr->iter < fr->max_iter)
     {
         fr->z = pow(fr->z_re, 2) + pow(fr->z_im, 2);
@@ -51,6 +51,7 @@ void    print_3D_mandelbrot(t_gui *gui, t_color *color)
 {
     t_fract fr;
 
+    gui->fract = &fr;
     fr.x_cor = 0;
     fr.y_cor = 0;
     fr.left_padded = false;
@@ -58,7 +59,7 @@ void    print_3D_mandelbrot(t_gui *gui, t_color *color)
     {
         while (fr.x_cor <= WINDOW_WIDTH)
         {
-            fr.iter = calc_mandelbrot(&fr);
+            fr.iter = calc_mandelbrot(gui, &fr);
             colorize_with_gradient(gui, &fr, color);
             fr.x_cor++;
         }
@@ -71,6 +72,7 @@ void    print_standard_mandelbrot(t_gui *gui, t_color *color)
 {
     t_fract fr;
 
+    gui->fract = &fr;
     fr.x_cor = 0;
     fr.y_cor = 0;
     fr.left_padded = false;
@@ -78,7 +80,7 @@ void    print_standard_mandelbrot(t_gui *gui, t_color *color)
     {
         while (fr.x_cor <= WINDOW_WIDTH)
         {
-            fr.iter = calc_mandelbrot(&fr);
+            fr.iter = calc_mandelbrot(gui, &fr);
             colorize_with_basic_colors(gui, &fr, color);
             fr.x_cor++;
         }
@@ -91,6 +93,7 @@ void    print_psychedelic_mandelbrot(t_gui *gui, t_color *color)
 {
     t_fract fr;
 
+    gui->fract = &fr;
     fr.x_cor = 0;
     fr.y_cor = 0;
     fr.left_padded = true;
@@ -98,7 +101,7 @@ void    print_psychedelic_mandelbrot(t_gui *gui, t_color *color)
     {
         while (fr.x_cor <= WINDOW_WIDTH)
         {
-            fr.iter = calc_mandelbrot(&fr);
+            fr.iter = calc_mandelbrot(gui, &fr);
             colorize_with_aura(gui, &fr, color);
             fr.x_cor++;
         }

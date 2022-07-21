@@ -14,6 +14,7 @@
 
 void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_color *color)
 {
+    init_mods(gui);
     if (argc == 4 && ft_strncmp(argv[2], "PRESET", 6) == 0)
     {
         check_mandelbrot_presets(argv, gui, color);
