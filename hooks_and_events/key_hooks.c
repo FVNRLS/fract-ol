@@ -6,30 +6,20 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 13:46:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:13:24 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
 /*TODO:
- * 1) ARROW KEYS (UP, DOWN, LEFT, RIGHT) -> move pos of fractal in the window
- * 3) WASD --> look up in subject
+ * 1) optional: 360 degree rotation on key press
  * 4) change transparency of background with some key (+ -)
- * 5) change gradient steps to fill (- +)
  *
  *
  * */
 
-int	ft_close(t_gui *gui)
-{
-    mlx_destroy_window(gui->mlx, gui->win);
-    free(gui->mlx);
-    gui->mlx = NULL;
-    exit (0);
-}
-
-static void check_presets(int keycode, t_gui *gui)
+void check_presets(int keycode, t_gui *gui)
 {
     if (keycode == ONE)
         print_mandelbrot_matrix(gui, gui->fract, gui->color);
@@ -53,7 +43,7 @@ static void check_presets(int keycode, t_gui *gui)
         print_mandelbrot_psych_ugly(gui, gui->fract, gui->color);
 }
 
-static void check_arrow_keys(int keycode, t_gui *gui)
+void check_arrow_keys(int keycode, t_gui *gui)
 {
     if (keycode == UP)
         move_up(gui);
@@ -65,17 +55,3 @@ static void check_arrow_keys(int keycode, t_gui *gui)
         move_right(gui);
 }
 
-static int  check_keys(int keycode, t_gui *gui)
-{
-    if (keycode == ESC)
-        ft_close(gui);
-    check_presets(keycode, gui);
-    check_arrow_keys(keycode, gui);
-    return (0);
-}
-
-void    check_win_hooks(t_gui *gui)
-{
-    mlx_key_hook(gui->win, check_keys, gui);
-    mlx_hook(gui->win, ON_DESTROY, 0, ft_close, gui);
-}

@@ -82,6 +82,7 @@ void    print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 
 //PRESETS
+void    check_presets(int keycode, t_gui *gui);
 bool    check_print_preset(char **argv, t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_3D(t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_standard(t_gui *gui, t_fract *fr, t_color *color);
@@ -136,16 +137,18 @@ void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
 
+/* HOOKS */
+void    check_win_hooks(t_gui *gui);
+
 //ARROW KEYS HOOKS
+void    check_arrow_keys(int keycode, t_gui *gui);
 void    move_up(t_gui *gui);
 void    move_down(t_gui *gui);
 void    move_left(t_gui *gui);
 void    move_right(t_gui *gui);
 
-
-//WINDOW KEY HOOKS
-void    check_win_hooks(t_gui *gui);
-int	    close_win(int keycode, t_gui *gui);
+//MOUSE KEY/WHEEL HOOKS
+int	    close_window(t_gui *gui);
 
 
 #endif

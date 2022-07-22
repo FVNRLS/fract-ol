@@ -32,6 +32,7 @@ SRC 		= 		./main.c																\
 					./initializers/color_initializers/outline_color_initializer.c			\
 					./initializers/mods_initializer.c										\
 					./initializers/fractol_initializers.c									\
+					./hooks_and_events/hooks_checker.c										\
 					./hooks_and_events/key_hooks.c											\
 					./hooks_and_events/vert_horiz_mover.c									\
 					./hooks_and_events/mouse_hooks.c										\
