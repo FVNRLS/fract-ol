@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 12:06:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 16:12:57 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ static void scale_mandelbrot_coords(t_fract *fr)
     vert = 2.0;
     if (fr->left_padded == true)
         horiz = -2.0;
-
-    fr->c_re = ((horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * 4));
-    fr->c_im = ((vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * 4));
+    fr->c_re = ((horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom));
+    fr->c_im = ((vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom));
 }
 
 static int calc_mandelbrot(t_fract *fr)

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 15:46:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 16:19:19 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ void    init_main_outline_colors(char **argv, t_color *color);
 void    init_additional_outline_colors(char **argv, t_color *color);
 void    init_mods(t_fract *fr);
 void    check_mods(t_gui *gui);
+void    apply_mods(t_gui *gui);
 
 //COLORIZER
 int	    get_transparency(int trgb);
@@ -149,7 +150,7 @@ void    move_left(t_gui *gui);
 void    move_right(t_gui *gui);
 
 //MOUSE KEY/WHEEL HOOKS
-void    check_mouse_hooks(int keycode, t_gui *gui);
+int     check_mouse_hooks(int keycode, int x, int y, t_gui *gui);
 int	    close_window(t_gui *gui);
 void    zoom_in(t_gui *gui);
 void    zoom_out(t_gui *gui);
