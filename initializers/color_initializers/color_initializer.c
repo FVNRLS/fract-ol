@@ -45,7 +45,6 @@ static void init_outline_color(char **argv, t_color *color)
 
 void    init_colors(char **argv, t_color *color)
 {
-
     init_inside_color(argv, color);
     init_outside_color(argv, color);
     init_outline_color(argv, color);

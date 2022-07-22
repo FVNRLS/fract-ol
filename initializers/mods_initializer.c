@@ -26,8 +26,14 @@ static void init_vert_horiz_mods(t_fract *fr)
     fr->horiz_mod = 1;
 }
 
+static void init_zoom_factor(t_fract *fr)
+{
+    fr->zoom = 4;
+}
+
 void init_mods(t_fract *fr)
 {
     init_vert_horiz_mods(fr);
+    init_zoom_factor(fr);
 }
 

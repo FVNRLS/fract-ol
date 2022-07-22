@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/21 16:50:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:26:09 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@
 # define ON_DESTROY 17
 
 // MOUSE HOOKS
-# define MOUSE_POINTER
-# define ZOOM_IN
-# define ZOOM_OUT
-
+# define ZOOM_IN 4
+# define ZOOM_OUT 5
 
 //KEYBOARD HOOKS
 # define ESC 53
@@ -43,6 +41,5 @@
 # define DOWN 125
 # define LEFT 123
 # define RIGHT 124
-
 
 #endif
