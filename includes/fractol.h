@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 16:19:19 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 16:32:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef struct	s_gui
     int		bits_per_pixel;
     int		line_length;
     int		endian;
+    int     mouse_x_pos;
+    int     mouse_y_pos;
 
     t_fract    *fract;
     t_color    *color;
