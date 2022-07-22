@@ -20,4 +20,8 @@ void    init_mandelbrot(t_fract *fr)
     fr->z_im = 0;
     fr->iter = 0;
     fr->max_iter = 600;
+    fr->horiz = -2.5;
+    fr->vert = 2.0;
+    if (fr->left_padded == true)
+        fr->horiz = -2.0;
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 17:21:23 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 17:26:47 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_fract
     int     iter;
     int     max_iter;
     bool    left_padded;
+    double  horiz;
+    double  vert;
     double  vert_mod;
     double  horiz_mod;
     int     type;

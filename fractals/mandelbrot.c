@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 17:26:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 19:40:15 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,22 @@
  * */
 static void scale_mandelbrot_coords(t_fract *fr)
 {
-    double horiz;
-    double vert;
-
-    horiz = -2.5;
-    vert = 2.0;
-    if (fr->left_padded == true)
-        horiz = -2.0;
     if (fr->zoom_activated == false)
     {
-        fr->c_re = ((horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * 4));
-        fr->c_im = ((vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * 4));
+        fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * 4));
+        fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * 4));
     }
     else if (fr->zoom_activated == true)
     {
-        fr->c_re = ((horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod));
-        fr->c_im = ((vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod));
+        fr->horiz += fr->zoom_x_mod;
+        fr->vert -= fr->zoom_y_mod;
+        fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod));
+        fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod));
     }
 }
 
 static int calc_mandelbrot(t_fract *fr)
 {
-
     init_mandelbrot(fr);
     scale_mandelbrot_coords(fr);
     while(fr->z < 4 && fr->iter < fr->max_iter)
