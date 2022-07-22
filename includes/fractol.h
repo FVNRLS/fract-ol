@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 12:43:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:46:44 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void    print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 
 //PRESETS
 bool    check_print_preset(char **argv, t_gui *gui, t_fract *fr, t_color *color);
+void    update_image_to_3D(t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_standard(t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_psychedelic(t_gui *gui, t_fract *fr, t_color *color);
 
@@ -120,7 +121,7 @@ void    init_additional_outside_colors(char **argv, t_color *color);
 void    init_main_outline_colors(char **argv, t_color *color);
 void    init_additional_outline_colors(char **argv, t_color *color);
 void    init_mods(t_fract *fr);
-
+void    check_mods(t_gui *gui);
 
 //COLORIZER
 int	    get_transparency(int trgb);
@@ -137,6 +138,9 @@ void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
 
 //ARROW KEYS HOOKS
 void    move_up(t_gui *gui);
+void    move_down(t_gui *gui);
+void    move_left(t_gui *gui);
+void    move_right(t_gui *gui);
 
 
 //WINDOW KEY HOOKS

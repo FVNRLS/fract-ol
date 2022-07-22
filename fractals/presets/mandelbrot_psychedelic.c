@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:58:16 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 18:46:21 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:43:50 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void    print_mandelbrot_psych_acid(t_gui *gui, t_fract *fr, t_color *color)
 {
+    init_mods(fr);
     color->out = LIME;
     color->in = PURPLE;
     color->outln = YELLOW;
@@ -30,6 +31,7 @@ void    print_mandelbrot_psych_cmyk(t_gui *gui, t_fract *fr, t_color *color)
 
 void    print_mandelbrot_psych_depressive(t_gui *gui, t_fract *fr, t_color *color)
 {
+    init_mods(fr);
     color->out = GRAY;
     color->in = BLACK;
     color->outln = SILVER;
@@ -38,6 +40,7 @@ void    print_mandelbrot_psych_depressive(t_gui *gui, t_fract *fr, t_color *colo
 
 void    print_mandelbrot_psych_bloody(t_gui *gui, t_fract *fr, t_color *color)
 {
+    init_mods(fr);
     gui->img = mlx_new_image(gui->mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
     gui->addr = mlx_get_data_addr(gui->img, &gui->bits_per_pixel, &gui->line_length, &gui->endian);
     color->out = WHITE;
@@ -58,6 +61,7 @@ void    print_mandelbrot_psych_bloody(t_gui *gui, t_fract *fr, t_color *color)
 
 void    print_mandelbrot_psych_ugly(t_gui *gui, t_fract *fr, t_color *color)
 {
+    init_mods(fr);
     color->out = OLIVE;
     color->in = GREEN;
     color->outln = RED;
