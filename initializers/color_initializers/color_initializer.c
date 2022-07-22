@@ -43,7 +43,7 @@ static void init_outline_color(char **argv, t_color *color)
     init_additional_outline_colors(argv, color);
 }
 
-void    init_colors(char **argv, t_color *color, t_gui *gui)
+void    init_colors(char **argv, t_color *color)
 {
 
     init_inside_color(argv, color);

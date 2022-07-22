@@ -12,38 +12,38 @@
 
 #include "../../includes/fractol.h"
 
-void    print_mandelbrot_psych_acid(t_gui *gui, t_color *color)
+void    print_mandelbrot_psych_acid(t_gui *gui, t_fract *fr, t_color *color)
 {
     color->out = LIME;
     color->in = PURPLE;
     color->outln = YELLOW;
-    update_image_to_psychedelic(gui, color);
+    update_image_to_psychedelic(gui, fr, color);
 }
 
-void    print_mandelbrot_psych_cmyk(t_gui *gui, t_color *color)
+void    print_mandelbrot_psych_cmyk(t_gui *gui, t_fract *fr, t_color *color)
 {
     color->out = MAGENTA;
     color->in = CYAN;
     color->outln = YELLOW;
-    update_image_to_psychedelic(gui, color);
+    update_image_to_psychedelic(gui, fr, color);
 }
 
-void    print_mandelbrot_psych_depressive(t_gui *gui, t_color *color)
+void    print_mandelbrot_psych_depressive(t_gui *gui, t_fract *fr, t_color *color)
 {
     color->out = GRAY;
     color->in = BLACK;
     color->outln = SILVER;
-    update_image_to_psychedelic(gui, color);
+    update_image_to_psychedelic(gui, fr, color);
 }
 
-void    print_mandelbrot_psych_bloody(t_gui *gui, t_color *color)
+void    print_mandelbrot_psych_bloody(t_gui *gui, t_fract *fr, t_color *color)
 {
     gui->img = mlx_new_image(gui->mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
     gui->addr = mlx_get_data_addr(gui->img, &gui->bits_per_pixel, &gui->line_length, &gui->endian);
     color->out = WHITE;
     color->in = BLACK;
     color->outln = NAVY;
-    print_3D_mandelbrot(gui, color);
+    print_3D_mandelbrot(gui, fr, color);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
     mlx_destroy_image(gui->mlx, gui->img);
     color->out = MAROON;
@@ -51,15 +51,15 @@ void    print_mandelbrot_psych_bloody(t_gui *gui, t_color *color)
     color->outln = WHITE;
     gui->img = mlx_new_image(gui->mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
     gui->addr = mlx_get_data_addr(gui->img, &gui->bits_per_pixel, &gui->line_length, &gui->endian);
-    print_psychedelic_mandelbrot(gui, color);
+    print_psychedelic_mandelbrot(gui, fr, color);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
     color->preset_found = true;
 }
 
-void    print_mandelbrot_psych_ugly(t_gui *gui, t_color *color)
+void    print_mandelbrot_psych_ugly(t_gui *gui, t_fract *fr, t_color *color)
 {
     color->out = OLIVE;
     color->in = GREEN;
     color->outln = RED;
-    update_image_to_psychedelic(gui, color);
+    update_image_to_psychedelic(gui, fr, color);
 }

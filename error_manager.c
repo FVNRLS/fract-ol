@@ -34,11 +34,11 @@ void    print_error(int error)
                  "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 103);
 }
 
-void    check_mandelbrot_presets(char **argv, t_gui *gui, t_color *color)
+void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
     bool    preset_valid;
 
-    preset_valid = check_print_preset(argv, gui, color);
+    preset_valid = check_print_preset(argv, gui, fr, color);
     if (preset_valid == true)
         return ;
     else

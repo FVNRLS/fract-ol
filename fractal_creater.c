@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 15:45:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:06:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-void select_fractal(t_gui *gui, t_color *color, int argc, char **argv)
+void select_fractal(t_gui *gui, t_fract *fr, t_color *color, int argc, char **argv)
 {
     if (argc == 1)
     {
@@ -34,7 +34,7 @@ void select_fractal(t_gui *gui, t_color *color, int argc, char **argv)
         exit(EXIT_FAILURE);
     }
     if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
-        print_mandelbrot(argc, argv, gui, color);
+        print_mandelbrot(argc, argv, gui, fr, color);
 //    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
 //        exit(0); //TODO:print Julia!
 }
@@ -42,8 +42,10 @@ void select_fractal(t_gui *gui, t_color *color, int argc, char **argv)
 void    print_fractal(int argc, char **argv)
 {
    t_gui    gui;
-   t_color  color;
+   t_fract fr;
+   t_color color;
 
+    gui.fract = &fr;
     gui.color = &color;
     gui.mlx = mlx_init();
     if (!gui.mlx)
@@ -56,7 +58,7 @@ void    print_fractal(int argc, char **argv)
     }
     gui.img = mlx_new_image(gui.mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
     gui.addr = mlx_get_data_addr(gui.img, &gui.bits_per_pixel, &gui.line_length, &gui.endian);
-    select_fractal(&gui, &color, argc, argv);
+    select_fractal(&gui, &fr, &color, argc, argv);
     mlx_put_image_to_window(gui.mlx, gui.win, gui.img, 0, 0);
     check_win_hooks(&gui);
     mlx_loop(gui.mlx);

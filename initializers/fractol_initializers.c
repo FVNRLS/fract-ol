@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:03:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 11:26:28 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 11:29:38 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void    init_mandelbrot(t_fract *fr)
 {
     fr->c_re = 0;
-    fr->c_im = 0;
     fr->z = 0;
     fr->z_re = 0;
     fr->z_im = 0;
