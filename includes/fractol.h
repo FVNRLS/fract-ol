@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/21 17:30:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 11:32:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@
 # include "error_flags.h"
 # include "hooks.h"
 # include "window.h"
+
+//FRACTAL TYPES MACROS
+# define MANDELBROT_3D 1
+# define MANDELBROT_STD 2
+# define MANDELBROT_PSYCHEDELIC 3
 
 typedef struct s_fract
 {
@@ -58,8 +63,10 @@ typedef struct	s_gui
     int		bits_per_pixel;
     int		line_length;
     int		endian;
+
     double  vert_mod;
     double  horiz_mod;
+    int     type;
 
     t_fract    *fract;
     t_color    *color;

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/21 17:20:04 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 11:32:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void    print_3D_mandelbrot(t_gui *gui, t_color *color)
     fr.x_cor = 0;
     fr.y_cor = 0;
     fr.left_padded = false;
+    gui->type = MANDELBROT_3D;
     while (fr.y_cor <= WINDOW_HEIGHT)
     {
         while (fr.x_cor <= WINDOW_WIDTH)
@@ -76,6 +77,7 @@ void    print_standard_mandelbrot(t_gui *gui, t_color *color)
     fr.x_cor = 0;
     fr.y_cor = 0;
     fr.left_padded = false;
+    gui->type = MANDELBROT_STD;
     while (fr.y_cor <= WINDOW_HEIGHT)
     {
         while (fr.x_cor <= WINDOW_WIDTH)
@@ -97,6 +99,7 @@ void    print_psychedelic_mandelbrot(t_gui *gui, t_color *color)
     fr.x_cor = 0;
     fr.y_cor = 0;
     fr.left_padded = true;
+    gui->type = MANDELBROT_PSYCHEDELIC;
     while (fr.y_cor <= WINDOW_HEIGHT)
     {
         while (fr.x_cor <= WINDOW_WIDTH)
