@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:08:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 15:49:22 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 17:21:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ static void init_vert_horiz_mods(t_fract *fr)
 
 static void init_zoom_factor(t_fract *fr)
 {
-    fr->zoom = 4;
+    fr->zoom_x_mod = 0;
+    fr->zoom_x_mod = 0;
+    fr->zoom_activated = false;
+    fr->zoom_mod = 4;
 }
 
 void init_mods(t_fract *fr)

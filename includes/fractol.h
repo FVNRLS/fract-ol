@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 16:32:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/22 17:21:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ typedef struct s_fract
     double  vert_mod;
     double  horiz_mod;
     int     type;
-    double  zoom;
+    double  zoom_mod;
+    double  zoom_x_mod;
+    double  zoom_y_mod;
+    bool    zoom_activated;
 }        t_fract;
 
 typedef struct s_color
@@ -67,8 +70,8 @@ typedef struct	s_gui
     int		bits_per_pixel;
     int		line_length;
     int		endian;
-    int     mouse_x_pos;
-    int     mouse_y_pos;
+    double  mouse_x_pos;
+    double  mouse_y_pos;
 
     t_fract    *fract;
     t_color    *color;
