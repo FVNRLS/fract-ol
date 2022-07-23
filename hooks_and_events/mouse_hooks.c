@@ -41,14 +41,8 @@ int    check_mouse_hooks(int keycode, int x, int y, t_gui *gui)
 //    printf("zoom x: %lf\n", gui->mouse_x_pos);
 //    printf("zoom y: %lf\n", gui->mouse_y_pos);
     if (keycode == ZOOM_IN)
-    {
-        gui->fract->zoom_activated = true;
         zoom_in(gui);
-    }
     else if (keycode == ZOOM_OUT)
-    {
-        gui->fract->zoom_activated = true;
         zoom_out(gui);
-    }
     return (0);
 }

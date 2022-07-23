@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:08:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 17:21:23 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:38:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void init_zoom_factor(t_fract *fr)
 {
     fr->zoom_x_mod = 0;
     fr->zoom_x_mod = 0;
-    fr->zoom_activated = false;
     fr->zoom_mod = 4;
 }
 
@@ -49,6 +48,8 @@ void apply_mods(t_gui *gui)
         update_image_to_standard(gui, gui->fract, gui->color);
     else if (gui->fract->type == MANDELBROT_PSYCHEDELIC)
         update_image_to_psychedelic(gui, gui->fract, gui->color);
+    else if (gui->fract->type == JULIA)
+        update_image_to_julia(gui, gui->fract, gui->color);
 }
 
 

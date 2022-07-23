@@ -19,16 +19,8 @@
  * */
 static void scale_mandelbrot_coords(t_fract *fr)
 {
-    if (fr->zoom_activated == false)
-    {
-        fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * 4));
-        fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * 4));
-    }
-    else if (fr->zoom_activated == true)
-    {
-        fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod));
-        fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod));
-    }
+    fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod));
+    fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod));
 }
 
 static int calc_mandelbrot(t_fract *fr)

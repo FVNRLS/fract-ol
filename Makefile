@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/23 14:03:13 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/23 18:25:04 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC 		= 		./main.c																\
 					./fractals/julia.c														\
 					./colorizer/colorizer.c													\
 					./colorizer/hex_rgb_converters.c										\
-					./colorizer/colorize_mandelbrot.c										\
+					./colorizer/mandelbrot_colorizer.c										\
+					./colorizer/julia_colorizer.c											\
 					./tools/ft_atoi.c														\
 					./tools/ft_atof.c														\
 					./tools/ft_strlen.c														\

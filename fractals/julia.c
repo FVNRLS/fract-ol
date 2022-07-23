@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/23 17:54:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:37:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void scale_julia_coords(t_fract *fr)
 {
-    fr->c_re = (fr->horiz * 1) + (((double)fr->x_cor / WINDOW_WIDTH) * 4);
-    fr->c_im = (fr->vert * 1) - (((double )fr->y_cor / WINDOW_HEIGHT) * 4);
+    fr->c_re = (fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod);
+    fr->c_im = (fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod);
 }
 
 static int calc_julia(t_fract *fr)
@@ -40,20 +40,26 @@ void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color)
 {
     fr->x_cor = 0;
     fr->y_cor = 0;
-    fr->left_padded = false;
+    fr->type = JULIA;
     while (fr->y_cor <= WINDOW_HEIGHT)
     {
         while (fr->x_cor <= WINDOW_WIDTH)
         {
             fr->iter = calc_julia(fr);
-            if (fr->iter < fr->max_iter)
-                my_mlx_pixel_put(gui, fr->x_cor, fr->y_cor, RED);
-            else
-                my_mlx_pixel_put(gui, fr->x_cor, fr->y_cor, BLACK);
+            colorize_julia_with_gradient(gui, fr, color);
             fr->x_cor++;
         }
         fr->iter = 0;
         fr->x_cor = 0;
         fr->y_cor++;
     }
+}
+
+void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color)
+{
+    colorize_img_to_black(gui);
+    mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
+    print_standard_julia(gui, fr, color);
+    mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
+    color->preset_found = true;
 }

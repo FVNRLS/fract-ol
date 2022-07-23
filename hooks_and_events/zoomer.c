@@ -21,7 +21,6 @@ void    zoom_in(t_gui *gui)
     gui->fract->zoom_x_mod = gui->mouse_x_pos;
     gui->fract->zoom_y_mod = gui->mouse_y_pos;
     apply_mods(gui);
-    gui->fract->zoom_activated = false;
 }
 
 void    zoom_out(t_gui *gui)
@@ -30,5 +29,4 @@ void    zoom_out(t_gui *gui)
     gui->fract->zoom_x_mod = gui->mouse_x_pos;
     gui->fract->zoom_y_mod = gui->mouse_y_pos;
     apply_mods(gui);
-    gui->fract->zoom_activated = false;
 }

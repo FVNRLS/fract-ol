@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:03:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 11:29:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:45:32 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void    init_julia(t_fract *fr)
     fr->z_re = 0;
     fr->z_im = 0;
     fr->iter = 0;
-    fr->max_iter = 200;
+    fr->max_iter = 600;
     fr->horiz = -2.0;
     fr->vert = 2.0;
 }

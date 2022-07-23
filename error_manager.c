@@ -86,7 +86,5 @@ void    check_julia_args(int argc, char **argv, t_gui *gui)
     {
         gui->fract->j_re = atof(argv[2]);
         gui->fract->j_im = atof(argv[3]);
-        printf("j_re: %lf\n", gui->fract->j_re);
-        printf("j_im: %lf\n", gui->fract->j_im);
     }
 }

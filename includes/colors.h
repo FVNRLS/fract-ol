@@ -15,8 +15,6 @@
 
 # include <limits.h>
 
-
-
 # define WHITE          0x00FFFFFF
 # define BLACK          0x00000000
 # define RED            0x00FF0000

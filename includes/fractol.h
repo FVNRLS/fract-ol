@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/23 14:12:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:35:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@
 # include "window.h"
 
 //FRACTAL TYPES MACROS
-# define MANDELBROT_3D 1
-# define MANDELBROT_STD 2
-# define MANDELBROT_PSYCHEDELIC 3
+# define MANDELBROT_3D              1
+# define MANDELBROT_STD             2
+# define MANDELBROT_PSYCHEDELIC     3
+# define JULIA                      4
+
 
 typedef struct s_fract
 {
@@ -54,7 +56,6 @@ typedef struct s_fract
     double  zoom_mod;
     double  zoom_x_mod;
     double  zoom_y_mod;
-    bool    zoom_activated;
 }        t_fract;
 
 typedef struct s_color
@@ -92,7 +93,7 @@ void    print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color);
 void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color);
-
+void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color);
 
 //PRESETS
 void    check_presets(int keycode, t_gui *gui);
@@ -100,8 +101,6 @@ bool    check_print_preset(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 void    update_image_to_3D(t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_standard(t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_psychedelic(t_gui *gui, t_fract *fr, t_color *color);
-
-
 void    print_mandelbrot_matrix(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_std_blue(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_std_red(t_gui *gui, t_fract *fr, t_color *color);
@@ -112,7 +111,6 @@ void    print_mandelbrot_psych_cmyk(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_psych_depressive(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_psych_bloody(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_psych_ugly(t_gui *gui, t_fract *fr, t_color *color);
-
 
 //TOOLS
 double	ft_atof(const char *s);
@@ -154,6 +152,7 @@ int     new_outln_gradient(int trgb, double mod);
 int     new_aura(int trgb, t_fract *fr);
 void    colorize_img_to_black(t_gui *gui);
 void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
 
