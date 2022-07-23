@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:35:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 17:33:40 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 12:52:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*TODO:
  * 1) ZOOM (IN + OUT) to the actual point
  * 2) Left click = change julia
- * 3) Right click = change another fractal
+ * 3) Right click = change burning ship
  *
  * */
 
@@ -29,8 +29,8 @@ int close_window(t_gui *gui)
 
 static void convert_mouse_pos(t_gui *gui)
 {
-    gui->mouse_x_pos /= WINDOW_WIDTH;
-    gui->mouse_y_pos /= WINDOW_HEIGHT;
+    gui->mouse_x_pos = (gui->mouse_x_pos / WINDOW_WIDTH) * 2;
+    gui->mouse_y_pos = (gui->mouse_y_pos / WINDOW_HEIGHT) * (-2);
 }
 
 int    check_mouse_hooks(int keycode, int x, int y, t_gui *gui)

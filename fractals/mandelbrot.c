@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 19:40:15 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:02:24 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ static void scale_mandelbrot_coords(t_fract *fr)
     }
     else if (fr->zoom_activated == true)
     {
-        fr->horiz += fr->zoom_x_mod;
-        fr->vert -= fr->zoom_y_mod;
         fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod));
         fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod));
     }

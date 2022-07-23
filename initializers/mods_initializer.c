@@ -42,7 +42,7 @@ void    check_mods(t_gui *gui)
 
 void apply_mods(t_gui *gui)
 {
-    check_mods(gui);
+//    check_mods(gui);
     if (gui->fract->type == MANDELBROT_3D)
         update_image_to_3D(gui, gui->fract, gui->color);
     else if (gui->fract->type == MANDELBROT_STD)

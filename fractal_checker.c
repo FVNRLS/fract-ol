@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:36:36 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 19:29:02 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:56:41 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,12 @@ void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_fract *fr, t_color
         check_mandelbrot_colors(gui, color);
         print_3D_mandelbrot(gui, fr, color);
     }
+}
+
+void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color)
+{
+        check_julia_args(argc, argv, gui);
+//        init_colors(argv, color);
+//        check_mandelbrot_colors(gui, color);
+//        print_standard_julia(gui, fr, color);
 }

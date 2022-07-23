@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 17:26:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 14:12:38 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_fract
 {
     double  c_re;
     double  c_im;
+    double  j_re;
+    double  j_im;
     double  z;
     double  z_re;
     double  z_im;
@@ -88,6 +90,9 @@ void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_fract *fr, t_color
 void    print_3D_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
+void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color);
+void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color);
+
 
 //PRESETS
 void    check_presets(int keycode, t_gui *gui);
@@ -110,6 +115,9 @@ void    print_mandelbrot_psych_ugly(t_gui *gui, t_fract *fr, t_color *color);
 
 
 //TOOLS
+double	ft_atof(const char *s);
+int	    ft_atoi(const char *str);
+int     ft_strlen(char *str);
 int	    ft_strncmp(const char *s1, const char *s2, size_t n);
 void    free_all(t_gui *gui);
 
@@ -119,9 +127,11 @@ void    check_mandelbrot(int argc, t_gui *gui, t_color *color);
 void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color);
 void    check_mandelbrot_args(int argc, t_gui *gui);
 void    check_mandelbrot_colors(t_gui *gui, t_color *color);
+void    check_julia_args(int argc, char **argv, t_gui *gui);
 
 //INITIALIZERS
 void    init_mandelbrot(t_fract *fr);
+void    init_julia(t_fract *fr);
 void    init_colors(char **argv, t_color *color);
 void    init_main_inside_colors(char **argv, t_color *color);
 void    init_additional_inside_colors(char **argv, t_color *color);
@@ -142,6 +152,7 @@ int	    convert_rgb_to_hex(int t, int r, int g, int b);
 int     new_bgr_gradient(int trgb, double mod);
 int     new_outln_gradient(int trgb, double mod);
 int     new_aura(int trgb, t_fract *fr);
+void    colorize_img_to_black(t_gui *gui);
 void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);

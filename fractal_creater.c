@@ -35,8 +35,8 @@ void select_fractal(t_gui *gui, t_fract *fr, t_color *color, int argc, char **ar
     }
     if (ft_strncmp(argv[1], "MANDELBROT", 10) == 0)
         print_mandelbrot(argc, argv, gui, fr, color);
-//    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
-//        exit(0); //TODO:print Julia!
+    else if (ft_strncmp(argv[1], "JULIA", 5) == 0)
+      print_julia(argc, argv, gui, fr, color);
 }
 
 void    print_fractal(int argc, char **argv)

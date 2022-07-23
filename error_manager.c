@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 17:14:30 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:56:41 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,25 @@ void    check_mandelbrot_colors(t_gui *gui, t_color *color)
         print_error(WRONG_COLOR);
         free_all(gui);
         exit(EXIT_FAILURE);
+    }
+}
+
+void    check_julia_args(int argc, char **argv, t_gui *gui)
+{
+    if (argc != 4)
+    {
+        if (argc < 4)
+            print_error(TOO_FEW_ARGUMENTS);
+        else if (argc > 4)
+            print_error(TOO_MANY_ARGUMENTS);
+        free_all(gui);
+        exit(EXIT_FAILURE);
+    }
+    else
+    {
+        gui->fract->j_re = atof(argv[2]);
+        gui->fract->j_im = atof(argv[3]);
+        printf("j_re: %lf\n", gui->fract->j_re);
+        printf("j_im: %lf\n", gui->fract->j_im);
     }
 }

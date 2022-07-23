@@ -6,11 +6,30 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:48:45 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 12:48:49 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/23 12:26:28 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+
+void    colorize_img_to_black(t_gui *gui)
+{
+    int x_cor;
+    int y_cor;
+
+    x_cor = 0;
+    y_cor = 0;
+    while (y_cor <= WINDOW_HEIGHT)
+    {
+        while (x_cor <= WINDOW_WIDTH)
+        {
+            my_mlx_pixel_put(gui, x_cor, y_cor, BLACK);
+            x_cor++;
+        }
+        x_cor = 0;
+        y_cor++;
+    }
+}
 
 int new_bgr_gradient(int trgb, double mod)
 {
