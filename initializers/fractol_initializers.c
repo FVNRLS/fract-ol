@@ -33,9 +33,7 @@ void    init_julia(t_fract *fr)
     fr->z_re = 0;
     fr->z_im = 0;
     fr->iter = 0;
-    fr->max_iter = 600;
-    fr->horiz = -2.5;
+    fr->max_iter = 200;
+    fr->horiz = -2.0;
     fr->vert = 2.0;
-    if (fr->left_padded == true)
-        fr->horiz = -2.0;
 }

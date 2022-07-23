@@ -34,5 +34,5 @@ void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *col
         check_julia_args(argc, argv, gui);
 //        init_colors(argv, color);
 //        check_mandelbrot_colors(gui, color);
-//        print_standard_julia(gui, fr, color);
+        print_standard_julia(gui, fr, color);
 }
