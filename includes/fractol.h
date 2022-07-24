@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 11:01:34 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 11:20:39 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void    print_mandelbrot_psych_ugly(t_gui *gui, t_fract *fr, t_color *color);
 double	ft_atof(const char *s);
 int	    ft_atoi(const char *str);
 int     ft_strlen(char *str);
-int	    ft_strncmp(const char *s1, const char *s2, size_t n);
+int	    ft_strcmp(const char *s1, const char *s2);
 void    free_all(t_gui *gui);
 
 //ERRORS

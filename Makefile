@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/23 18:25:04 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/24 11:20:02 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC 		= 		./main.c																\
 					./initializers/color_initializers/outline_color_initializer.c			\
 					./initializers/mods_initializer.c										\
 					./initializers/fractol_initializers.c									\
+					./hooks_and_events/image_updater.c										\
 					./hooks_and_events/hooks_checker.c										\
 					./hooks_and_events/key_hooks.c											\
 					./hooks_and_events/vert_horiz_mover.c									\
@@ -43,7 +44,7 @@ SRC 		= 		./main.c																\
 					./tools/ft_atoi.c														\
 					./tools/ft_atof.c														\
 					./tools/ft_strlen.c														\
-					./tools/ft_strncmp.c													\
+					./tools/ft_strcmp.c														\
 					./error_manager.c														\
 
 OBJ 		= 		${SRC:.c=.o}

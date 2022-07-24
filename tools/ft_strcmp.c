@@ -6,16 +6,15 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:12:46 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/04 11:13:13 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 11:18:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The function int strncmp(const char *str1, const char *str2, size_t n)
-compares at most the first n bytes of str1 and str2.
+/* Mimics the function strcmp(const char *str1, const char *str2)
 This function return values that are as follows −
-1) if Return value < 0 then it indicates str1 is less than str2.
-2) if Return value > 0 then it indicates str2 is less than str1.
-3) if Return value = 0 then it indicates str1 is equal to str2.
+1) if Return value < 0, then it indicates str1 is less than str2.
+2) if Return value > 0, then it indicates str2 is less than str1.
+3) if Return value = 0, then it indicates str1 is equal to str2.
 */
 
 #include <stddef.h>

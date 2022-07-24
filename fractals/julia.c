@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/23 19:37:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 10:33:48 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,3 @@ void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color)
     }
 }
 
-void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color)
-{
-    colorize_img_to_black(gui);
-    mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
-    print_standard_julia(gui, fr, color);
-    mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
-    color->preset_found = true;
-}
