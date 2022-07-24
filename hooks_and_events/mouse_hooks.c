@@ -44,5 +44,7 @@ int    check_mouse_hooks(int keycode, int x, int y, t_gui *gui)
         zoom_in(gui);
     else if (keycode == ZOOM_OUT)
         zoom_out(gui);
+    else if (keycode == LEFT_CLICK)
+        update_image_to_julia(gui, gui->fract, gui->color);
     return (0);
 }

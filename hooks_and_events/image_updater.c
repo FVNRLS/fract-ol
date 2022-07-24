@@ -45,5 +45,4 @@ void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color)
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
     print_standard_julia(gui, fr, color);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
-    color->preset_found = true;
 }

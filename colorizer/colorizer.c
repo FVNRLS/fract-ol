@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:48:45 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/23 12:26:28 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:00:07 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,21 @@ int new_aura(int trgb, t_fract *fr)
     return (new_color);
 }
 
+int invert_colors(int trgb, t_fract *fr)
+{
+    int t;
+    int r;
+    int g;
+    int b;
+    int new_color;
 
+    t = 20 * fr->iter;
+    r = get_red(trgb);
+    g = get_green(trgb);
+    b = get_blue(trgb);
+    r = 255 - r;
+    g = 255 - g;
+    b = 255 - b;
+    new_color = convert_rgb_to_hex(t, r, g, b);
+    return (new_color);
+}

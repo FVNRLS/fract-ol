@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 11:51:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 11:53:42 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,3 @@ void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color)
         fr->y_cor++;
     }
 }
-

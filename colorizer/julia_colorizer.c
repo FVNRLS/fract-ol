@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:27:14 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/23 19:28:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:05:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,20 @@ static void colorize_inner_part(t_gui *img, t_color *color, t_fract *fr)
     color->in = init_in;
 }
 
+//TODO: finish!
+void    colorize_with_inverted_colors(t_gui *img, t_fract *fr, t_color *color)
+{
+    int inv;
+
+    inv = 0;
+    if (fr->iter >= 100 && fr->iter < 200)
+        inv = invert_colors(color->in, fr);
+    else if (fr->iter >= 200 && fr->iter < 300)
+        inv = invert_colors(color->out, fr);
+    else if (fr->iter >= 300 && fr->iter < 400)
+        inv = invert_colors(color->outln, fr);
+    my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, inv);
+}
 
 void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color)
 {
@@ -59,13 +73,9 @@ void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color)
             colorize_bgr(img, color, fr);
         else if (fr->iter >= 20 && fr->iter < 100)
             colorize_span(img, color, fr);
-        else if (fr->iter >= 100 && fr->iter < 200)
-            my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, NAVY);
-        else if (fr->iter >= 200 && fr->iter < 300)
-            my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, SILVER);
-        else if (fr->iter >= 300 && fr->iter <= 400)
-            my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, PURPLE);
-        else if (fr->iter > 400 && fr->iter < fr->max_iter)
+        else if (fr->iter >= 100 && fr->iter < 400)
+            colorize_with_inverted_colors(img, fr, color);
+        else if (fr->iter >= 400 && fr->iter < fr->max_iter)
             colorize_inner_part(img, color, fr);
     }
     else

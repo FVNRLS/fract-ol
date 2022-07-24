@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 11:22:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 12:56:28 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,8 +152,10 @@ int	    convert_rgb_to_hex(int t, int r, int g, int b);
 int     new_bgr_gradient(int trgb, double mod);
 int     new_outln_gradient(int trgb, double mod);
 int     new_aura(int trgb, t_fract *fr);
+int     invert_colors(int trgb, t_fract *fr);
 void    colorize_img_to_black(t_gui *gui);
 void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_with_inverted_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
@@ -173,6 +175,7 @@ int     check_mouse_hooks(int keycode, int x, int y, t_gui *gui);
 int	    close_window(t_gui *gui);
 void    zoom_in(t_gui *gui);
 void    zoom_out(t_gui *gui);
+
 
 
 #endif
