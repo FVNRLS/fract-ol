@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:27:14 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 13:05:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:39:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,24 @@ static void colorize_inner_part(t_gui *img, t_color *color, t_fract *fr)
     color->in = init_in;
 }
 
-//TODO: finish!
 void    colorize_with_inverted_colors(t_gui *img, t_fract *fr, t_color *color)
 {
+    int init_color;
     int inv;
 
-    inv = 0;
+    inv = NO_COLOR;
+    init_color = NO_COLOR;
     if (fr->iter >= 100 && fr->iter < 200)
-        inv = invert_colors(color->in, fr);
+        init_color = color->in;
     else if (fr->iter >= 200 && fr->iter < 300)
-        inv = invert_colors(color->out, fr);
+        init_color = color->out;
     else if (fr->iter >= 300 && fr->iter < 400)
-        inv = invert_colors(color->outln, fr);
-    my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, inv);
+        init_color = color->outln;
+    inv = invert_colors(init_color, fr);
+    if (fr->iter % 2 == 0)
+        my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, inv);
+    else
+        my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, init_color);
 }
 
 void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color)
