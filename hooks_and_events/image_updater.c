@@ -46,3 +46,12 @@ void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color)
     print_standard_julia(gui, fr, color);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
 }
+
+void    update_image_to_burningship(t_gui *gui, t_fract *fr, t_color *color)
+{
+    colorize_img_to_black(gui);
+    mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
+    print_standard_burning_ship(gui, fr, color);
+    mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
+}
+

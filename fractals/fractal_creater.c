@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 10:59:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 15:02:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void select_fractal(t_gui *gui, t_fract *fr, t_color *color, int argc, char **ar
         print_mandelbrot(argc, argv, gui, fr, color);
     else if (ft_strcmp(argv[1], "JULIA") == 0)
         print_julia(argc, argv, gui, fr, color);
+    else if (ft_strcmp(argv[1], "BURNING_SHIP") == 0)
+        print_burning_ship(argc, argv, gui, fr, color);
 }
 
 void    print_fractal(int argc, char **argv)

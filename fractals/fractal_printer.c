@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:36:36 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 11:15:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 15:51:08 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,13 @@ void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *col
     gui->fract->j_re = atof(argv[5]);
     gui->fract->j_im = atof(argv[6]);
     print_standard_julia(gui, fr, color);
+}
+
+void    print_burning_ship(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color)
+{
+    init_mods(fr);
+    check_burning_ship_args(argc, gui);
+    init_colors(argv, color);
+    check_colors(gui, color);
+    print_standard_burning_ship(gui, fr, color);
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 15:13:24 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 15:35:09 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void check_presets(int keycode, t_gui *gui)
         print_mandelbrot_psych_ugly(gui, gui->fract, gui->color);
 }
 
-void check_arrow_keys(int keycode, t_gui *gui)
+void    check_arrow_keys(int keycode, t_gui *gui)
 {
     if (keycode == UP)
         move_up(gui);
@@ -55,3 +55,10 @@ void check_arrow_keys(int keycode, t_gui *gui)
         move_right(gui);
 }
 
+void    check_fractal_hotkeys(int keycode, t_gui *gui)
+{
+    if (keycode == J)
+        update_image_to_julia(gui, gui->fract, gui->color);
+    if (keycode == B)
+        update_image_to_burningship(gui, gui->fract, gui->color);
+}

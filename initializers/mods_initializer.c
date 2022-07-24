@@ -50,6 +50,8 @@ void apply_mods(t_gui *gui)
         update_image_to_psychedelic(gui, gui->fract, gui->color);
     else if (gui->fract->type == JULIA)
         update_image_to_julia(gui, gui->fract, gui->color);
+    else if (gui->fract->type == BURNING_SHIP)
+        update_image_to_burningship(gui, gui->fract, gui->color);
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:26:13 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/22 13:46:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:40:04 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 void    move_up(t_gui *gui)
 {
-    gui->fract->vert_mod -= 0.15;
+    gui->fract->vert_mod -= 0.10 * gui->fract->zoom_mod;
     apply_mods(gui);
 }
 
 void    move_down(t_gui *gui)
 {
-    gui->fract->vert_mod += 0.15;
+    gui->fract->vert_mod += 0.10 * gui->fract->zoom_mod;
     apply_mods(gui);
 }
 
 void    move_left(t_gui *gui)
 {
-    gui->fract->horiz_mod -= 0.15;
+    gui->fract->horiz_mod -= 0.10 * gui->fract->zoom_mod;
     apply_mods(gui);
 }
 
 void    move_right(t_gui *gui)
 {
-    gui->fract->horiz_mod += 0.15;
+    gui->fract->horiz_mod += 0.10 * gui->fract->zoom_mod;
     apply_mods(gui);
 }

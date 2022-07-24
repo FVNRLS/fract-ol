@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/24 11:20:02 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/24 11:36:22 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC 		= 		./main.c																\
 					./fractals/fractal_printer.c											\
 					./fractals/mandelbrot.c													\
 					./fractals/julia.c														\
+					./fractals/burning_ship.c												\
 					./fractals/presets/presets_printer.c									\
 					./fractals/presets/mandelbrot_psychedelic.c								\
 					./fractals/presets/mandelbrot_standard.c								\
@@ -28,6 +29,7 @@ SRC 		= 		./main.c																\
 					./colorizer/hex_rgb_converters.c										\
 					./colorizer/mandelbrot_colorizer.c										\
 					./colorizer/julia_colorizer.c											\
+					./colorizer/burning_ship_colorizer.c									\
 					./initializers/color_initializers/color_initializer.c					\
 					./initializers/color_initializers/inside_color_initializer.c			\
 					./initializers/color_initializers/outside_color_initializer.c			\

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 13:12:10 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 15:37:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 //KEYBOARD HOOKS
 # define ESC 53
 
+//PRESETS KEYS
 # define ONE 18
 # define TWO 19
 # define THREE 20
@@ -43,5 +44,10 @@
 # define DOWN 125
 # define LEFT 123
 # define RIGHT 124
+
+//FRACTAL HOTKEYS
+# define J 38
+# define B 11
+
 
 #endif

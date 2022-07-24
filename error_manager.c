@@ -83,3 +83,16 @@ void    check_julia_args(int argc, t_gui *gui)
         exit(EXIT_FAILURE);
     }
 }
+
+void    check_burning_ship_args(int argc, t_gui *gui)
+{
+    if (argc != 5)
+    {
+        if (argc < 5)
+            print_error(TOO_FEW_ARGUMENTS);
+        else if (argc > 5)
+            print_error(TOO_MANY_ARGUMENTS);
+        free_all(gui);
+        exit(EXIT_FAILURE);
+    }
+}

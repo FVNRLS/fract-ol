@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 12:56:28 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:09:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define MANDELBROT_STD             2
 # define MANDELBROT_PSYCHEDELIC     3
 # define JULIA                      4
-
+# define BURNING_SHIP               5
 
 typedef struct s_fract
 {
@@ -95,14 +95,19 @@ void    print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color);
 void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color);
+void    print_burning_ship(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color);
+void    print_standard_burning_ship(t_gui *gui, t_fract *fr, t_color *color);
+
+//IMAGE UPDATERS
+void    update_image_to_3D(t_gui *gui, t_fract *fr, t_color *color);
+void    update_image_to_standard(t_gui *gui, t_fract *fr, t_color *color);
+void    update_image_to_psychedelic(t_gui *gui, t_fract *fr, t_color *color);
 void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color);
+void    update_image_to_burningship(t_gui *gui, t_fract *fr, t_color *color);
 
 //PRESETS
 void    check_presets(int keycode, t_gui *gui);
 bool    check_print_preset(char **argv, t_gui *gui, t_fract *fr, t_color *color);
-void    update_image_to_3D(t_gui *gui, t_fract *fr, t_color *color);
-void    update_image_to_standard(t_gui *gui, t_fract *fr, t_color *color);
-void    update_image_to_psychedelic(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_matrix(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_std_blue(t_gui *gui, t_fract *fr, t_color *color);
 void    print_mandelbrot_std_red(t_gui *gui, t_fract *fr, t_color *color);
@@ -128,10 +133,12 @@ void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *
 void    check_mandelbrot_args(int argc, t_gui *gui);
 void    check_colors(t_gui *gui, t_color *color);
 void    check_julia_args(int argc, t_gui *gui);
+void    check_burning_ship_args(int argc, t_gui *gui);
 
 //INITIALIZERS
 void    init_mandelbrot(t_fract *fr);
 void    init_julia(t_fract *fr);
+void    init_burning_ship(t_fract *fr);
 void    init_colors(char **argv, t_color *color);
 void    init_main_inside_colors(char **argv, t_color *color);
 void    init_additional_inside_colors(char **argv, t_color *color);
@@ -156,15 +163,17 @@ int     invert_colors(int trgb, t_fract *fr);
 void    colorize_img_to_black(t_gui *gui);
 void    colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_inverted_colors(t_gui *img, t_fract *fr, t_color *color);
-void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void    colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color);
+void    colorize_burning_ship(t_gui *img, t_fract *fr, t_color *color);
 
 /* HOOKS */
 void    check_win_hooks(t_gui *gui);
 
 //ARROW KEYS HOOKS
 void    check_arrow_keys(int keycode, t_gui *gui);
+void    check_fractal_hotkeys(int keycode, t_gui *gui);
 void    move_up(t_gui *gui);
 void    move_down(t_gui *gui);
 void    move_left(t_gui *gui);
@@ -175,7 +184,6 @@ int     check_mouse_hooks(int keycode, int x, int y, t_gui *gui);
 int	    close_window(t_gui *gui);
 void    zoom_in(t_gui *gui);
 void    zoom_out(t_gui *gui);
-
 
 
 #endif

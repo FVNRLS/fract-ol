@@ -18,6 +18,7 @@ static int  check_keys(int keycode, t_gui *gui)
         close_window(gui);
     check_presets(keycode, gui);
     check_arrow_keys(keycode, gui);
+    check_fractal_hotkeys(keycode, gui);
     return (0);
 }
 
