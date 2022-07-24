@@ -14,24 +14,24 @@
 
 void    move_up(t_gui *gui)
 {
-    gui->fract->vert_mod -= 0.10 * gui->fract->zoom_mod;
+    gui->fract->vert_mod -= 0.05 * gui->fract->zoom_mod;
     apply_mods(gui);
 }
 
 void    move_down(t_gui *gui)
 {
-    gui->fract->vert_mod += 0.10 * gui->fract->zoom_mod;
+    gui->fract->vert_mod += 0.05 * gui->fract->zoom_mod;
     apply_mods(gui);
 }
 
 void    move_left(t_gui *gui)
 {
-    gui->fract->horiz_mod -= 0.10 * gui->fract->zoom_mod;
+    gui->fract->horiz_mod -= 0.05 * gui->fract->zoom_mod;
     apply_mods(gui);
 }
 
 void    move_right(t_gui *gui)
 {
-    gui->fract->horiz_mod += 0.10 * gui->fract->zoom_mod;
+    gui->fract->horiz_mod += 0.05 * gui->fract->zoom_mod;
     apply_mods(gui);
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 14:11:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 16:46:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 18:22:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int calc_burning_ship(t_fract *fr)
     {
         fr->z = pow(fr->z_re, 2) + pow(fr->z_im, 2);
         fr->sum_re = pow(fr->z_re, 2) - pow(fr->z_im, 2) + fr->c_re;
-        fr->sum_im = fabs(2 * (fr->z_re * fr->z_im)) + fr->c_im;
+        fr->sum_im = fabs(2 * (fr->z_re * fr->z_im)) - fr->c_im;
         fr->z_re = fr->sum_re;
         fr->z_im = fr->sum_im;
         fr->iter++;

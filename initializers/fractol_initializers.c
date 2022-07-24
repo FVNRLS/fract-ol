@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:03:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 17:36:19 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:36:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ void    init_burning_ship(t_fract *fr)
     fr->iter = 0;
     fr->max_iter = 600;
     fr->horiz = -2.5;
-    fr->vert = 1.5;
+    fr->vert = 2.5;
 }

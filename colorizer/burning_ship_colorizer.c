@@ -23,19 +23,14 @@ static void colorize_bgr(t_gui *img, t_color *color, t_fract *fr)
 
 static void colorize_span(t_gui *img, t_color *color, t_fract *fr)
 {
-    int     init_outln;
-    double  mod_outln;
+    int     init_out;
+    double  mod_out;
 
-    init_outln = color->outln;
-    if (fr->iter % 2 == 0)
-    {
-        mod_outln = (double)fr->iter / 16;
-        color->outln = new_outln_gradient(color->out, mod_outln);
-    }
-    else
-        color->outln = BLUE;
-    my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->outln);
-    color->outln = init_outln;
+    init_out = color->out;
+    mod_out = (double)fr->iter / 24;
+    color->out = new_outln_gradient(color->out, mod_out);
+    my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->out);
+    color->out = init_out;
 }
 
 void    colorize_burning_ship(t_gui *img, t_fract *fr, t_color *color)
@@ -44,17 +39,10 @@ void    colorize_burning_ship(t_gui *img, t_fract *fr, t_color *color)
     {
         if (fr->iter < 10)
             colorize_bgr(img, color, fr);
-        else if (fr->iter >= 10 && fr->iter < 16)
+        else if (fr->iter >= 10 && fr->iter < 32)
             colorize_span(img, color, fr);
-        else if (fr->iter >= 16 && fr->iter < fr->max_iter)
-        {
-            if (fr->iter % 3 == 0 && fr->iter % 10 != 0)
-                my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, SILVER);
-            if (fr->iter % 10 == 0)
-                my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, TEAL);
-            else
+        else if (fr->iter >= 32 && fr->iter < fr->max_iter)
                 my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->outln);
-        }
     }
     else
         my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->in);
