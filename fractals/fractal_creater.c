@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 /*
  * The function mimics the behaviour of mlx_pixel_put but is many times faster.

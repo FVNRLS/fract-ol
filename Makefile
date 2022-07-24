@@ -17,20 +17,17 @@ CC 			= 		cc
 FLAGS		= 		-Wall -Wextra -Werror -g3
 
 SRC 		= 		./main.c																\
+					./fractals/fractal_creater.c											\
+					./fractals/fractal_printer.c											\
 					./fractals/mandelbrot.c													\
 					./fractals/julia.c														\
+					./fractals/presets/presets_printer.c									\
+					./fractals/presets/mandelbrot_psychedelic.c								\
+					./fractals/presets/mandelbrot_standard.c								\
 					./colorizer/colorizer.c													\
 					./colorizer/hex_rgb_converters.c										\
 					./colorizer/mandelbrot_colorizer.c										\
 					./colorizer/julia_colorizer.c											\
-					./tools/ft_atoi.c														\
-					./tools/ft_atof.c														\
-					./tools/ft_strlen.c														\
-					./tools/ft_strncmp.c													\
-					./tools/memory_freer.c													\
-					./error_manager.c														\
-					./fractal_creater.c														\
-					./fractal_checker.c														\
 					./initializers/color_initializers/color_initializer.c					\
 					./initializers/color_initializers/inside_color_initializer.c			\
 					./initializers/color_initializers/outside_color_initializer.c			\
@@ -42,9 +39,12 @@ SRC 		= 		./main.c																\
 					./hooks_and_events/vert_horiz_mover.c									\
 					./hooks_and_events/mouse_hooks.c										\
 					./hooks_and_events/zoomer.c												\
-					./fractals/presets/presets_printer.c									\
-					./fractals/presets/mandelbrot_psychedelic.c								\
-					./fractals/presets/mandelbrot_standard.c								\
+					./tools/memory_freer.c													\
+					./tools/ft_atoi.c														\
+					./tools/ft_atof.c														\
+					./tools/ft_strlen.c														\
+					./tools/ft_strncmp.c													\
+					./error_manager.c														\
 
 OBJ 		= 		${SRC:.c=.o}
 

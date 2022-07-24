@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
