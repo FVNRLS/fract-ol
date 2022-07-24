@@ -19,8 +19,10 @@
  * */
 static void scale_mandelbrot_coords(t_fract *fr)
 {
-    fr->c_re = ((fr->horiz * fr->horiz_mod) + (((double)fr->x_cor / WINDOW_WIDTH) * fr->zoom_mod));
-    fr->c_im = ((fr->vert * fr->vert_mod) - (((double )fr->y_cor / WINDOW_HEIGHT) * fr->zoom_mod));
+    fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
+    fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
+    fr->c_re = (fr->horiz * fr->horiz_mod) + (fr->x_scal * fr->zoom_mod);
+    fr->c_im = (fr->vert * fr->vert_mod) - (fr->y_scal * fr->zoom_mod);
 }
 
 static int calc_mandelbrot(t_fract *fr)
