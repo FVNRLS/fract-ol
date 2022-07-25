@@ -17,6 +17,7 @@ static void colorize_bgr(t_gui *img, t_color *color, t_fract *fr)
     int     init_out;
     double  mod_bgr;
 
+
     init_out = color->out;
     mod_bgr = (double)fr->x_cor / (double )(WINDOW_WIDTH);
     color->out = new_bgr_gradient(color->out, mod_bgr);

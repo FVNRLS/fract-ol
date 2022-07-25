@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 11:34:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 11:36:22 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 12:46:48 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ void    update_image_to_psychedelic(t_gui *gui, t_fract *fr, t_color *color)
 
 void    update_image_to_julia(t_gui *gui, t_fract *fr, t_color *color)
 {
+    if (fr->type != JULIA)
+    {
+        gui->fract->j_re = -0.7269;
+        gui->fract->j_im = 0.1889;
+    }
     colorize_img_to_black(gui);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
     print_standard_julia(gui, fr, color);
