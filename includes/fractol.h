@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 17:09:58 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:33:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,10 @@ typedef struct s_fract
     double  vert_mod;
     double  horiz_mod;
     int     type;
-    double  zoom_mod;
+    double  view_scope;
     double  zoom_x_mod;
     double  zoom_y_mod;
+    bool    zoom_activated;
 }        t_fract;
 
 typedef struct s_color
@@ -182,7 +183,7 @@ void    move_right(t_gui *gui);
 //MOUSE KEY/WHEEL HOOKS
 int     check_mouse_hooks(int keycode, int x, int y, t_gui *gui);
 int	    close_window(t_gui *gui);
-void    zoom_in(t_gui *gui);
+void	zoom_in(t_gui *gui, int x, int y);
 void    zoom_out(t_gui *gui);
 
 

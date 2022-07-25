@@ -21,8 +21,8 @@ static void scale_burning_ship(t_fract *fr)
 {
     fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
     fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
-    fr->c_re = (fr->horiz * fr->horiz_mod) + (fr->x_scal * fr->zoom_mod);
-    fr->c_im = (fr->vert * fr->vert_mod) - (fr->y_scal * fr->zoom_mod);
+    fr->c_re = (fr->horiz * fr->horiz_mod) + (fr->x_scal * fr->view_scope);
+    fr->c_im = (fr->vert * fr->vert_mod) - (fr->y_scal * fr->view_scope);
 }
 
 static int calc_burning_ship(t_fract *fr)
