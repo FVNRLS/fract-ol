@@ -30,7 +30,7 @@ void    increase_blue(t_gui *gui)
             b = 255;
     }
     gui->color->out = convert_rgb_to_hex(t, r, g, b);
-    apply_mods(gui);
+    update_image(gui);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
 }
 
@@ -52,6 +52,6 @@ void    decrease_blue(t_gui *gui)
             b = 0;
     }
     gui->color->out = convert_rgb_to_hex(t, r, g, b);
-    apply_mods(gui);
+    update_image(gui);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
 }

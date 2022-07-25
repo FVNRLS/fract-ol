@@ -15,23 +15,23 @@
 void    move_up(t_gui *gui)
 {
     gui->fract->vert_mod -= 0.10 * gui->fract->view_scope;
-    apply_mods(gui);
+    update_image(gui);
 }
 
 void    move_down(t_gui *gui)
 {
     gui->fract->vert_mod += 0.10 * gui->fract->view_scope;
-    apply_mods(gui);
+    update_image(gui);
 }
 
 void    move_left(t_gui *gui)
 {
     gui->fract->horiz_mod -= 0.10 * gui->fract->view_scope;
-    apply_mods(gui);
+    update_image(gui);
 }
 
 void    move_right(t_gui *gui)
 {
     gui->fract->horiz_mod += 0.10 * gui->fract->view_scope;
-    apply_mods(gui);
+    update_image(gui);
 }

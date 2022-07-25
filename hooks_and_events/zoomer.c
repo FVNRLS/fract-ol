@@ -25,7 +25,7 @@ void	zoom_in(t_gui *gui, int x, int y)
     fr->view_scope = ZOOM * gui->fract->view_scope;
     fr->new_x_offset = re_pos - (((double)x / WINDOW_WIDTH) * fr->view_scope);
     fr->new_y_offset = im_pos + (((double)y / WINDOW_HEIGHT) * fr->view_scope);
-    apply_mods(gui);
+    update_image(gui);
 }
 
 void    zoom_out(t_gui *gui, int x, int y)
@@ -43,5 +43,5 @@ void    zoom_out(t_gui *gui, int x, int y)
     fr->view_scope = zoom * gui->fract->view_scope;
     fr->new_x_offset = re_pos - (((double) x / WINDOW_WIDTH) * fr->view_scope);
     fr->new_y_offset = im_pos + (((double) y / WINDOW_HEIGHT) * fr->view_scope);
-    apply_mods(gui);
+    update_image(gui);
 }

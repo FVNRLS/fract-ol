@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:34:57 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 18:40:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:42:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    increase_red(t_gui *gui)
             r = 255;
     }
     gui->color->out = convert_rgb_to_hex(t, r, g, b);
-    apply_mods(gui);
+    update_image(gui);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
 }
 
@@ -52,6 +52,6 @@ void    decrease_red(t_gui *gui)
             r = 0;
     }
     gui->color->out = convert_rgb_to_hex(t, r, g, b);
-    apply_mods(gui);
+    update_image(gui);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
 }

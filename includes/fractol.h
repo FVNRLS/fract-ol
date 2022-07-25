@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 18:30:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:45:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void    init_main_outline_colors(char **argv, t_color *color);
 void    init_additional_outline_colors(char **argv, t_color *color);
 void    init_mods(t_fract *fr);
 void    check_mods(t_gui *gui);
-void    apply_mods(t_gui *gui);
+void    update_image(t_gui *gui);
 
 //COLOR RANGE SHIFTER
 void    increase_red(t_gui *gui);

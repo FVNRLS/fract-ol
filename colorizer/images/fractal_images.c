@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
 void    update_image_to_3D(t_gui *gui, t_fract *fr, t_color *color)
 {

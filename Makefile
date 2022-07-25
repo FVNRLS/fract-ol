@@ -30,6 +30,8 @@ SRC 		= 		./main.c																\
 					./color_range_shifter/green_shifter.c									\
 					./color_range_shifter/blue_shifter.c									\
 					./colorizer/effects.c													\
+					./colorizer/images/image_updater.c										\
+					./colorizer/images/fractal_images.c										\
 					./colorizer/mandelbrot_colorizer.c										\
 					./colorizer/julia_colorizer.c											\
 					./colorizer/burning_ship_colorizer.c									\
@@ -39,7 +41,6 @@ SRC 		= 		./main.c																\
 					./initializers/color_initializers/outline_color_initializer.c			\
 					./initializers/mods_initializer.c										\
 					./initializers/fractol_initializers.c									\
-					./hooks_and_events/image_updater.c										\
 					./hooks_and_events/hooks_checker.c										\
 					./hooks_and_events/key_hooks.c											\
 					./hooks_and_events/vert_horiz_mover.c									\
@@ -74,9 +75,3 @@ re: fclean all
 
 
 .PHONY: all clean fclean re bonus
-
-
-
-
-##add alater to compile without errors (see Makefile from Anna):
-# -L ./minilibx -lmlx -framework OpenGL -framework AppKit
