@@ -6,18 +6,11 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 15:35:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:30:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-/*TODO:
- * 1) optional: 360 degree rotation on key press
- * 4) change transparency of background with some key (+ -)
- *
- *
- * */
 
 void check_presets(int keycode, t_gui *gui)
 {
@@ -58,7 +51,29 @@ void    check_arrow_keys(int keycode, t_gui *gui)
 void    check_fractal_hotkeys(int keycode, t_gui *gui)
 {
     if (keycode == J)
+    {
+        gui->fract->zoom_activated = false;
         update_image_to_julia(gui, gui->fract, gui->color);
+    }
     if (keycode == B)
+    {
+        gui->fract->zoom_activated = false;
         update_image_to_burningship(gui, gui->fract, gui->color);
+    }
+}
+
+void    check_color_shift_keys(int keycode, t_gui *gui)
+{
+    if (keycode == Q)
+        increase_red(gui);
+    if (keycode == A)
+        decrease_red(gui);
+    if (keycode == W)
+        increase_green(gui);
+    if (keycode == S)
+        decrease_green(gui);
+    if (keycode == E)
+        increase_blue(gui);
+    if (keycode == D)
+        decrease_blue(gui);
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 15:37:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:11:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,12 @@
 # define J 38
 # define B 11
 
+//COLOR RANGE INCREASE/DECREASE KEY HOOKS
+# define Q 12
+# define W 13
+# define E 14
+# define A 0
+# define S 1
+# define D 2
 
 #endif

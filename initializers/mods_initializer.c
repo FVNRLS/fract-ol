@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:08:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 13:27:45 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:10:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void init_vert_horiz_mods(t_fract *fr)
 
 static void init_zoom_factor(t_fract *fr)
 {
-    fr->zoom_x_mod = 0;
-    fr->zoom_x_mod = 0;
+    fr->new_x_offset = 0;
+    fr->new_y_offset = 0;
     fr->zoom_activated = false;
 }
 
@@ -32,17 +32,8 @@ void init_mods(t_fract *fr)
     init_zoom_factor(fr);
 }
 
-void    check_mods(t_gui *gui)
-{
-    if (gui->fract->vert_mod <= -0.5 || gui->fract->vert_mod >= 2.5)
-        init_mods(gui->fract);
-    else if (gui->fract->horiz_mod <= -0.2 || gui->fract->horiz_mod >= 2.2)
-        init_mods(gui->fract);
-}
-
 void apply_mods(t_gui *gui)
 {
-//    check_mods(gui);
     if (gui->fract->type == MANDELBROT_3D)
         update_image_to_3D(gui, gui->fract, gui->color);
     else if (gui->fract->type == MANDELBROT_STD)
@@ -54,6 +45,3 @@ void apply_mods(t_gui *gui)
     else if (gui->fract->type == BURNING_SHIP)
         update_image_to_burningship(gui, gui->fract, gui->color);
 }
-
-
-

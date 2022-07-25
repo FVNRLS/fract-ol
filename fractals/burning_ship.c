@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 14:11:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 18:22:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:04:39 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ static void scale_burning_ship(t_fract *fr)
 {
     fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
     fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
-    fr->c_re = (fr->horiz * fr->horiz_mod) + (fr->x_scal * fr->view_scope);
-    fr->c_im = (fr->vert * fr->vert_mod) - (fr->y_scal * fr->view_scope);
+    if (fr->zoom_activated == true)
+    {
+        fr->x_offset = fr->new_x_offset;
+        fr->y_offset = fr->new_y_offset;
+    }
+    fr->c_re = (fr->x_offset * fr->horiz_mod) + (fr->x_scal * fr->view_scope);
+    fr->c_im = (fr->y_offset * fr->vert_mod) - (fr->y_scal * fr->view_scope);
 }
 
 static int calc_burning_ship(t_fract *fr)

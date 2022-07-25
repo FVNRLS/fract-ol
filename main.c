@@ -15,7 +15,6 @@
 //TODO:
 // PROBLEM 1: segfault with window HEIGHT > 550!!!
 // PROBLEM 2: with WINDOW_WIDTH 800 and HEIGHT 500 only 3/4 of fractol is rendered
-// implement KEY and MOUSE hooks!
 // implement printf to print errors!
 
 void    check_leaks(void)

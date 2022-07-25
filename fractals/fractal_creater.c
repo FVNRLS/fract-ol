@@ -39,6 +39,12 @@ void select_fractal(t_gui *gui, t_fract *fr, t_color *color, int argc, char **ar
         print_julia(argc, argv, gui, fr, color);
     else if (ft_strcmp(argv[1], "BURNING_SHIP") == 0)
         print_burning_ship(argc, argv, gui, fr, color);
+    else
+    {
+        print_error(WRONG_FRACTAL);
+        free_all(gui);
+        exit(EXIT_FAILURE);
+    }
 }
 
 void    print_fractal(int argc, char **argv)

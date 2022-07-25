@@ -6,20 +6,24 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 13:27:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:43:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-//TODO: problem: when input mandel params and then left click - no julia! (only cirle)
-// switch formulas on leftclick
+//TODO: switch formulas on leftclick
 static void scale_julia_coords(t_fract *fr)
 {
     fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
     fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
-    fr->x_scal = (fr->horiz * fr->horiz_mod) + (fr->x_scal * fr->view_scope);
-    fr->y_scal = (fr->vert * fr->vert_mod) - (fr->y_scal * fr->view_scope);
+    if (fr->zoom_activated == true)
+    {
+        fr->x_offset = fr->new_x_offset;
+        fr->y_offset = fr->new_y_offset;
+    }
+    fr->x_scal = (fr->x_offset * fr->horiz_mod) + (fr->x_scal * fr->view_scope);
+    fr->y_scal = (fr->y_offset * fr->vert_mod) - (fr->y_scal * fr->view_scope);
 }
 
 static int calc_julia(t_fract *fr)

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 13:33:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:30:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ typedef struct s_fract
     int     iter;
     int     max_iter;
     bool    left_padded;
-    double  horiz;
-    double  vert;
+    double  x_offset;
+    double  y_offset;
     double  vert_mod;
     double  horiz_mod;
     int     type;
     double  view_scope;
-    double  zoom_x_mod;
-    double  zoom_y_mod;
+    double  new_x_offset;
+    double  new_y_offset;
     bool    zoom_activated;
 }        t_fract;
 
@@ -151,6 +151,14 @@ void    init_mods(t_fract *fr);
 void    check_mods(t_gui *gui);
 void    apply_mods(t_gui *gui);
 
+//COLOR RANGE SHIFTER
+void    increase_red(t_gui *gui);
+void    decrease_red(t_gui *gui);
+void    increase_green(t_gui *gui);
+void    decrease_green(t_gui *gui);
+void    increase_blue(t_gui *gui);
+void    decrease_blue(t_gui *gui);
+
 //COLORIZER
 int	    get_transparency(int trgb);
 int	    get_red(int trgb);
@@ -175,6 +183,7 @@ void    check_win_hooks(t_gui *gui);
 //ARROW KEYS HOOKS
 void    check_arrow_keys(int keycode, t_gui *gui);
 void    check_fractal_hotkeys(int keycode, t_gui *gui);
+void    check_color_shift_keys(int keycode, t_gui *gui);
 void    move_up(t_gui *gui);
 void    move_down(t_gui *gui);
 void    move_left(t_gui *gui);
@@ -184,7 +193,7 @@ void    move_right(t_gui *gui);
 int     check_mouse_hooks(int keycode, int x, int y, t_gui *gui);
 int	    close_window(t_gui *gui);
 void	zoom_in(t_gui *gui, int x, int y);
-void    zoom_out(t_gui *gui);
+void    zoom_out(t_gui *gui, int x, int y);
 
 
 #endif
