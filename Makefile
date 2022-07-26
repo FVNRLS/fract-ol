@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/26 18:17:43 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/26 18:17:48 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,6 @@ $(NAME): $(OBJ)
 	make -C ./libs/minilibx
 	make -C ./libs/ft_printf
 	${CC} ${FLAGS} ${OBJ} ${LIBS} -o fractol ${FLAGS} -L ./libs/minilibx -lmlx -framework OpenGL -framework AppKit
-	make clean
 
 all: $(NAME)
 
