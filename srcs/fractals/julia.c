@@ -6,13 +6,12 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 15:43:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:23:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-//TODO: switch formulas on leftclick
 static void scale_julia_coords(t_fract *fr)
 {
     fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
