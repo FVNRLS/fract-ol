@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:29 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 18:45:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:48:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void print_main_hotkeys_info()
               "|    MENU KEYS:                                       |\n"
               "|    I       SHOW VERBOSE USAGE INFORMATION           |\n"
               "|    C       SHOW VALID COLORS AND PRESETS            |\n"
-              "|    K       SHOW VALID SHOW VALID JULIA CONSTANTS    |\n"
+              "|    K       SHOW VALID JULIA CONSTANTS               |\n"
               "|    H       SHOW HOTKEYS                             |\n"
               "|    ESC     EXIT THE PROGRAM                         |\n"
               "|                                                     |\n"

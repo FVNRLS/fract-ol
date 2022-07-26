@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:36:36 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 17:39:15 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:23:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *col
     gui->fract->j_re = atof(argv[5]);
     gui->fract->j_im = atof(argv[6]);
     if (gui->fract->j_re > 1 || gui->fract->j_im > 1)
+    {
         print_error(WRONG_CONSTANTS);
+        free_all(gui);
+        exit(EXIT_FAILURE);
+    }
     print_standard_julia(gui, fr, color);
     print_current_fractal_info(gui->fract, gui->color);
 }

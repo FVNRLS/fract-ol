@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 18:37:11 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:57:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void    print_terminal_usage()
 {
-    ft_printf("                                     ✩░▒▓▆▅▃▂▁USAGE▁▂▃▅▆▓▒░✩\n");
+    ft_printf("\n                                     ✩░▒▓▆▅▃▂▁USAGE▁▂▃▅▆▓▒░✩\n");
     ft_printf(".-----------------------------------------------------------"
               "-----------------------------------------.\n"
               "|    MANDELBROT:     MANDELBROT INSIDE_COLOR OUTSIDE_COLOR"
@@ -60,19 +60,19 @@ void    print_error(int error)
 {
     if (error == NO_INPUT)
     {
-        ft_printf("\nError! (No input)\nInput a fractal name "
+        ft_printf("\n\nError! (No input)\nInput a fractal name "
                   "as a first parameter!\n\n");
     }
     else if (error == WRONG_FRACTAL)
-        ft_printf("\nError! (Wrong input)\nInput a valid fractal name!\n\n");
+        ft_printf("\n\nError! (Wrong input)\nInput a valid fractal name!\n\n");
     else if (error == WRONG_COLOR)
-        ft_printf("\nError! (Wrong input)\nInput a valid color!\n\n");
+        ft_printf("\n\nError! (Wrong input)\nInput a valid color!\n\n");
     else if (error == TOO_MANY_ARGUMENTS)
-        ft_printf("\nError! (Too many arguments)\n\n");
+        ft_printf("\n\nError! (Too many arguments)\n\n");
     else if (error == TOO_FEW_ARGUMENTS)
-        ft_printf("\nError! (Too few arguments)\n\n");
+        ft_printf("\n\nError! (Too few arguments)\n\n");
     else if (error == WRONG_CONSTANTS)
-        ft_printf("\nError! (The provided constants are invalid)\n\n");
+        ft_printf("\n\nError! (The provided constants are invalid)\n\n");
     print_terminal_usage();
     print_valid_colors();
     print_valid_julia_consts();
