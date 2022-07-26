@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/26 12:36:47 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/26 18:17:43 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,43 +16,43 @@ CC 			= 		cc
 
 FLAGS		= 		-Wall -Wextra -Werror -g3
 
-SRC 		= 		./main.c																\
-					./fractals/fractal_creater.c											\
-					./fractals/fractal_printer.c											\
-					./fractals/mandelbrot.c													\
-					./fractals/julia.c														\
-					./fractals/burning_ship.c												\
-					./fractals/presets/presets_printer.c									\
-					./fractals/presets/mandelbrot_psychedelic.c								\
-					./fractals/presets/mandelbrot_standard.c								\
-					./color_range_shifter/hex_rgb_converter.c								\
-					./color_range_shifter/red_shifter.c										\
-					./color_range_shifter/green_shifter.c									\
-					./color_range_shifter/blue_shifter.c									\
-					./colorizer/effects.c													\
-					./colorizer/images/image_updater.c										\
-					./colorizer/images/fractal_images.c										\
-					./colorizer/mandelbrot_colorizer.c										\
-					./colorizer/julia_colorizer.c											\
-					./colorizer/burning_ship_colorizer.c									\
-					./initializers/color_initializers/color_initializer.c					\
-					./initializers/color_initializers/inside_color_initializer.c			\
-					./initializers/color_initializers/outside_color_initializer.c			\
-					./initializers/color_initializers/outline_color_initializer.c			\
-					./initializers/mods_initializer.c										\
-					./initializers/fractol_initializers.c									\
-					./hooks_and_events/hooks_checker.c										\
-					./hooks_and_events/key_hooks.c											\
-					./hooks_and_events/vert_horiz_mover.c									\
-					./hooks_and_events/mouse_hooks.c										\
-					./hooks_and_events/zoomer.c												\
-					./tools/memory_freer.c													\
-					./tools/ft_atoi.c														\
-					./tools/ft_atof.c														\
-					./tools/ft_strcmp.c														\
-					./io_controller/info_printer.c											\
-					./io_controller/input_checker.c											\
-					./io_controller/valid_param_printer.c									\
+SRC 		= 		./main.c																		\
+					./srcs/fractals/fractal_creater.c											\
+					./srcs/fractals/fractal_printer.c											\
+					./srcs/fractals/mandelbrot.c												\
+					./srcs/fractals/julia.c														\
+					./srcs/fractals/burning_ship.c												\
+					./srcs/fractals/presets/presets_printer.c									\
+					./srcs/fractals/presets/mandelbrot_psychedelic.c							\
+					./srcs/fractals/presets/mandelbrot_standard.c								\
+					./srcs/color_range_shifter/hex_rgb_converter.c								\
+					./srcs/color_range_shifter/red_shifter.c									\
+					./srcs/color_range_shifter/green_shifter.c									\
+					./srcs/color_range_shifter/blue_shifter.c									\
+					./srcs/colorizer/effects.c													\
+					./srcs/colorizer/images/image_updater.c										\
+					./srcs/colorizer/images/fractal_images.c									\
+					./srcs/colorizer/mandelbrot_colorizer.c										\
+					./srcs/colorizer/julia_colorizer.c											\
+					./srcs/colorizer/burning_ship_colorizer.c									\
+					./srcs/initializers/color_initializers/color_initializer.c					\
+					./srcs/initializers/color_initializers/inside_color_initializer.c			\
+					./srcs/initializers/color_initializers/outside_color_initializer.c			\
+					./srcs/initializers/color_initializers/outline_color_initializer.c			\
+					./srcs/initializers/mods_initializer.c										\
+					./srcs/initializers/fractol_initializers.c									\
+					./srcs/hooks_and_events/hooks_checker.c										\
+					./srcs/hooks_and_events/key_hooks.c											\
+					./srcs/hooks_and_events/vert_horiz_mover.c									\
+					./srcs/hooks_and_events/mouse_hooks.c										\
+					./srcs/hooks_and_events/zoomer.c											\
+					./srcs/tools/memory_freer.c													\
+					./srcs/tools/ft_atoi.c														\
+					./srcs/tools/ft_atof.c														\
+					./srcs/tools/ft_strcmp.c													\
+					./srcs/io_controller/info_printer.c											\
+					./srcs/io_controller/input_checker.c										\
+					./srcs/io_controller/valid_param_printer.c									\
 
 OBJ 		= 		${SRC:.c=.o}
 
