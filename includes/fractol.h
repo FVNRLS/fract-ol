@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 18:45:58 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 10:28:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include <math.h>
 # include <stdio.h>
 
-# include "../minilibx/mlx.h"
+# include "../libs/minilibx/mlx.h"
+# include "../libs/ft_printf/ft_printf.h"
 # include "colors.h"
 # include "error_flags.h"
 # include "hooks.h"

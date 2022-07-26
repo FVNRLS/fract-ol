@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 17:16:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 19:32:46 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/06 13:47:28 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/06 13:47:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
-
-//TODO:
-// PROBLEM 1: segfault with window HEIGHT > 550!!!
-// PROBLEM 2: with WINDOW_WIDTH 800 and HEIGHT 500 only 3/4 of fractol is rendered
-// implement printf to print errors!
-
-void    check_leaks(void)
+int	ft_isdigit(int c)
 {
-    system("leaks fractol");
-}
-
-int main(int argc, char **argv)
-{
-    atexit(check_leaks);
-    print_fractal(argc, argv);
-    return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

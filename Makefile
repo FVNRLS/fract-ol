@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/25 18:03:19 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/26 11:35:18 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,29 +49,35 @@ SRC 		= 		./main.c																\
 					./tools/memory_freer.c													\
 					./tools/ft_atoi.c														\
 					./tools/ft_atof.c														\
-					./tools/ft_strlen.c														\
 					./tools/ft_strcmp.c														\
-					./error_manager.c														\
+					./io_controller/error_printer.c											\
+					./io_controller/input_checkers.c										\
 
 OBJ 		= 		${SRC:.c=.o}
 
+LIBS		= 		./libs/ft_printf/libftprintf.a 											\
+
 $(NAME): $(OBJ)
-	make -C ./minilibx
-	${CC} ${FLAGS} ${OBJ} -o fractol ${FLAGS} -L ./minilibx -lmlx -framework OpenGL -framework AppKit
+	make -C ./libs/minilibx
+	make -C ./libs/ft_printf
+	${CC} ${FLAGS} ${OBJ} ${LIBS} -o fractol ${FLAGS} -L ./libs/minilibx -lmlx -framework OpenGL -framework AppKit
+	make clean
 
 all: $(NAME)
 
-# bonus: ${BONUS_NAME}
-
 clean:
+	cd ./libs/minilibx && make clean && cd .. && cd ..
+	cd ./libs/ft_printf && make fclean && cd .. && cd ..
 	rm -f ${OBJ}
-	cd ./minilibx && make clean && cd ..
 
-fclean: clean
+fclean:
+	cd ./libs/minilibx && make clean && cd .. && cd ..
+	cd ./libs/ft_printf && make fclean && cd .. && cd ..
+	rm -f ${OBJ}
 	rm -f ${NAME}
-	cd ./minilibx && make clean && cd ..
 
 re: fclean all
 
+bonus: all
 
 .PHONY: all clean fclean re bonus

@@ -12,6 +12,18 @@
 
 #include "../includes/fractol.h"
 
+
+static int	count_digits(char *s)
+{
+    int	i;
+
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
+}
+
+
 double	ft_atof(const char *s)
 {
     char	*str;
@@ -26,7 +38,7 @@ double	ft_atof(const char *s)
     if (*str == '.')
         str++;
     double_val = (double)ft_atoi(str);
-    len = ft_strlen(str);
+    len = count_digits(str);
     while (len--)
         double_val /= 10;
     if ((int_val + int_val) > 0)

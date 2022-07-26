@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 14:04:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/23 14:04:53 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/06 13:47:46 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/17 10:30:22 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../ft_printf.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

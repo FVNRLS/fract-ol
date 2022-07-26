@@ -1,38 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_manager.c                                    :+:      :+:    :+:   */
+/*   input_checkers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 11:06:46 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/07/26 11:37:06 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/07/26 11:37:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
-
-//TODO:
-// check if fractol name sets to number of args!
-// check presets
-// printf the MENU
-
-void    print_error(int error)
-{
-    if (error == NO_INPUT)
-        write(2, "Error! (No input)\nInput for Mandelbrot fractal: "
-                 "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 94);
-    else if (error == WRONG_FRACTAL)
-        write(2, "Error! (Wrong input)\nChoose another <FRACTAL_NAME>\n", 51);
-    else if (error == WRONG_COLOR)
-        write(2, "Error! (Wrong input)\nChoose another <COLOR>\n", 45);
-    else if (error == TOO_MANY_ARGUMENTS)
-        write(2, "Error! (Too many arguments)\nInput for Mandelbrot fractal: "
-                 "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 104);
-    else if (error == TOO_FEW_ARGUMENTS)
-        write(2, "Error! (Too few arguments)\nInput for Mandelbrot fractal: "
-                 "<FRACTAL_NAME> <INSIDE_COLOR> <OUTSIDE_COLOR>\n", 103);
-}
+#include "../includes/fractol.h"
 
 void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
