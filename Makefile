@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/26 11:35:18 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/26 12:36:47 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC 		= 		./main.c																\
 					./fractals/presets/presets_printer.c									\
 					./fractals/presets/mandelbrot_psychedelic.c								\
 					./fractals/presets/mandelbrot_standard.c								\
-					./color_range_shifter/hex_rgb_converters.c								\
+					./color_range_shifter/hex_rgb_converter.c								\
 					./color_range_shifter/red_shifter.c										\
 					./color_range_shifter/green_shifter.c									\
 					./color_range_shifter/blue_shifter.c									\
@@ -50,8 +50,9 @@ SRC 		= 		./main.c																\
 					./tools/ft_atoi.c														\
 					./tools/ft_atof.c														\
 					./tools/ft_strcmp.c														\
-					./io_controller/error_printer.c											\
-					./io_controller/input_checkers.c										\
+					./io_controller/info_printer.c											\
+					./io_controller/input_checker.c											\
+					./io_controller/valid_param_printer.c									\
 
 OBJ 		= 		${SRC:.c=.o}
 

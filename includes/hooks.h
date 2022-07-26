@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 18:11:30 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:58:18 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # define ON_DESTROY 17
 
 // MOUSE HOOKS
-# define LEFT_CLICK     1
-# define RIGHT_CLICK    2
 # define ZOOM_IN        5
 # define ZOOM_OUT       4
 
@@ -56,5 +54,10 @@
 # define A 0
 # define S 1
 # define D 2
+
+//INFO PRINTERS
+# define C 8
+# define K 40
+# define I 34
 
 #endif

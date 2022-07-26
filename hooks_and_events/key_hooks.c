@@ -55,7 +55,7 @@ void    check_fractal_hotkeys(int keycode, t_gui *gui)
         gui->fract->zoom_activated = false;
         update_image_to_julia(gui, gui->fract, gui->color);
     }
-    if (keycode == B)
+    else if (keycode == B)
     {
         gui->fract->zoom_activated = false;
         update_image_to_burningship(gui, gui->fract, gui->color);
@@ -66,14 +66,24 @@ void    check_color_shift_keys(int keycode, t_gui *gui)
 {
     if (keycode == Q)
         increase_red(gui);
-    if (keycode == A)
+    else if (keycode == A)
         decrease_red(gui);
-    if (keycode == W)
+    else if (keycode == W)
         increase_green(gui);
-    if (keycode == S)
+    else if (keycode == S)
         decrease_green(gui);
-    if (keycode == E)
+    else if (keycode == E)
         increase_blue(gui);
-    if (keycode == D)
+    else if (keycode == D)
         decrease_blue(gui);
+}
+
+void    check_info_printing_keys(int keycode)
+{
+    if (keycode == I)
+        print_usage_info();
+    else if (keycode == C)
+        print_valid_colors();
+    else if (keycode == K)
+        print_valid_julia_consts();
 }

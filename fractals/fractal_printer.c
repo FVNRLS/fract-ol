@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:36:36 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 15:51:08 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:20:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,15 @@ void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_fract *fr, t_color
 
 void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
+    fr->type = JULIA;
     init_mods(fr);
     check_julia_args(argc, gui);
     init_colors(argv, color);
     check_colors(gui, color);
     gui->fract->j_re = atof(argv[5]);
     gui->fract->j_im = atof(argv[6]);
+    if (gui->fract->j_re > 1 || gui->fract->j_im > 1)
+        print_error(WRONG_CONSTANTS);
     print_standard_julia(gui, fr, color);
 }
 

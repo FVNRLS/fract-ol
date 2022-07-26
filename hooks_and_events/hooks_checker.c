@@ -20,6 +20,7 @@ static int  check_keys(int keycode, t_gui *gui)
     check_arrow_keys(keycode, gui);
     check_fractal_hotkeys(keycode, gui);
     check_color_shift_keys(keycode, gui);
+    check_info_printing_keys(keycode);
     return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 10:28:11 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:10:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdbool.h>
 # include <unistd.h>
 # include <math.h>
-# include <stdio.h>
 
 # include "../libs/minilibx/mlx.h"
 # include "../libs/ft_printf/ft_printf.h"
@@ -128,8 +127,13 @@ int     ft_strlen(char *str);
 int	    ft_strcmp(const char *s1, const char *s2);
 void    free_all(t_gui *gui);
 
-//ERRORS
+//INPUT CONTROLLERS AND ERROR MANAGEMENT
 void    print_error(int error);
+void    print_usage_info(void);
+void    print_valid_colors(void);
+void    print_valid_julia_consts(void);
+void    print_main_hotkeys_info();
+void    print_add_hotkeys_info();
 void    check_mandelbrot(int argc, t_gui *gui, t_color *color);
 void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color);
 void    check_mandelbrot_args(int argc, t_gui *gui);
@@ -185,6 +189,7 @@ void    check_win_hooks(t_gui *gui);
 void    check_arrow_keys(int keycode, t_gui *gui);
 void    check_fractal_hotkeys(int keycode, t_gui *gui);
 void    check_color_shift_keys(int keycode, t_gui *gui);
+void    check_info_printing_keys(int keycode);
 void    move_up(t_gui *gui);
 void    move_down(t_gui *gui);
 void    move_left(t_gui *gui);
