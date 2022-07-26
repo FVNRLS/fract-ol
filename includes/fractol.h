@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 17:50:56 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:15:57 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,7 @@ void    print_error(int error);
 void    print_usage_info(void);
 void    print_valid_colors(void);
 void    print_valid_julia_consts(void);
-void    print_main_hotkeys_info();
-void    print_add_hotkeys_info();
+void    print_all_hotkeys();
 void    print_current_fractal_info(t_fract *fr, t_color *color);
 
 //ARGUMENTS CHECKERS

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 17:34:49 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:37:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ static void    print_terminal_usage()
               "OUTSIDE_COLOR OUTLINE_COLOR                           |\n"
               "|    PRESETS:        MANDELBROT PRESET PRESET_NAME"
               "                                                   |\n"
-              "|                                                     "
-              "                                               |\n"
-              "|    (PRESS 'C' TO SHOW VALID COLORS AND PRESETS)          "
-              "                                          |\n"
-              "|    (PRESS 'K' TO SHOW VALID JULIA CONSTANTS         "
-              "                                               |\n"
               ".---------------------------------------------------------"
               "-------------------------------------------.\n");
 }
@@ -79,6 +73,10 @@ void    print_error(int error)
         ft_printf("\nError! (Too few arguments)\n\n");
     else if (error == WRONG_CONSTANTS)
         ft_printf("\nError! (The provided constants are invalid)\n\n");
+    print_terminal_usage();
+    print_valid_colors();
+    print_valid_julia_consts();
+
 }
 
 void    print_usage_info(void)
@@ -86,7 +84,5 @@ void    print_usage_info(void)
     print_terminal_usage();
     print_valid_colors();
     print_valid_julia_consts();
-    ft_printf("                 ✩░▒▓▆▅▃▂▁HOTKEYS▁▂▃▅▆▓▒░✩\n");
-    print_main_hotkeys_info();
-    print_add_hotkeys_info();
+    print_all_hotkeys();
 }

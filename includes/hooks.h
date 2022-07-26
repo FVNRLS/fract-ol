@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 15:58:18 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:45:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@
 # define C 8
 # define K 40
 # define I 34
+# define H 4
 
 #endif

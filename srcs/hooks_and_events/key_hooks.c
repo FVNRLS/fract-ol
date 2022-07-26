@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:53:58 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 18:30:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:23:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,6 @@ void    check_info_printing_keys(int keycode)
         print_valid_colors();
     else if (keycode == K)
         print_valid_julia_consts();
+    else if (keycode == H)
+        print_all_hotkeys();
 }

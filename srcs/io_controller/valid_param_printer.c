@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:29 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 17:05:42 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:45:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,14 @@ void    print_valid_julia_consts(void)
               ".------------------------------.\n");
 }
 
-void    print_main_hotkeys_info()
+static void print_main_hotkeys_info()
 {
     ft_printf(".-----------------------------------------------------.\n"
               "|    MENU KEYS:                                       |\n"
-              "|    I       SHOW USAGE INFO                          |\n"
-              "|    C       SHOW VALID COLORS                        |\n"
+              "|    I       SHOW VERBOSE USAGE INFORMATION           |\n"
+              "|    C       SHOW VALID COLORS AND PRESETS            |\n"
               "|    K       SHOW VALID SHOW VALID JULIA CONSTANTS    |\n"
+              "|    H       SHOW HOTKEYS                             |\n"
               "|    ESC     EXIT THE PROGRAM                         |\n"
               "|                                                     |\n"
               "|    MANDELBROT PRESETS:                              |\n"
@@ -79,7 +80,7 @@ void    print_main_hotkeys_info()
               "|    B       SWITCH TO BURNING SHIP                   |\n");
 }
 
-void    print_add_hotkeys_info()
+static void print_add_hotkeys_info()
 {
     ft_printf("|                                                     |\n"
               "|    MOUSEWHEEL SCROLLING:                            |\n"
@@ -100,4 +101,11 @@ void    print_add_hotkeys_info()
               "|    E       INCREASE BLUE VALUE                      |\n"
               "|    D       DECREASE BLUE VALUE                      |\n"
               ".-----------------------------------------------------.\n");
+}
+
+void    print_all_hotkeys()
+{
+    ft_printf("                 ✩░▒▓▆▅▃▂▁HOTKEYS▁▂▃▅▆▓▒░✩\n");
+    print_main_hotkeys_info();
+    print_add_hotkeys_info();
 }
