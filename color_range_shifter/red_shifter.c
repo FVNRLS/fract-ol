@@ -45,10 +45,10 @@ void    decrease_red(t_gui *gui)
     r = get_red(gui->color->out);
     g = get_green(gui->color->out);
     b = get_blue(gui->color->out);
-    if (r >= 0)
+    if (r > 0)
     {
         r -= SHIFT_FACTOR;
-        if (r < 255)
+        if (r <= 0)
             r = 0;
     }
     gui->color->out = convert_rgb_to_hex(t, r, g, b);

@@ -6,14 +6,11 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 16:49:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:34:49 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-//TODO:
-// printf the MENU
 
 static void    print_terminal_usage()
 {
@@ -30,14 +27,40 @@ static void    print_terminal_usage()
               "                                                   |\n"
               "|                                                     "
               "                                               |\n"
-              "|    (PRESS 'C' TO SHOW VALID COLORS)          "
-              "                                                      |\n"
+              "|    (PRESS 'C' TO SHOW VALID COLORS AND PRESETS)          "
+              "                                          |\n"
               "|    (PRESS 'K' TO SHOW VALID JULIA CONSTANTS         "
               "                                               |\n"
               ".---------------------------------------------------------"
               "-------------------------------------------.\n");
 }
 
+static void print_fractal_type(t_fract *fr)
+{
+    if (fr->type == MANDELBROT_3D)
+        ft_printf("\nCurrent fractal:                   3D Mandelbrot\n");
+    else if (fr->type == MANDELBROT_STD)
+        ft_printf("\nCurrent fractal:                   Standard Mandelbrot\n");
+    else if (fr->type == MANDELBROT_PSYCHEDELIC)
+        ft_printf("\nCurrent fractal:                   Psychedelic Mandelbrot\n");
+    else if (fr->type == JULIA)
+        ft_printf("\nCurrent fractal:                   Julia \n");
+    else if (fr->type == BURNING_SHIP)
+        ft_printf("\nCurrent fractal:                   Burning Ship \n");
+}
+
+void    print_current_fractal_info(t_fract *fr, t_color *color)
+{
+    int r;
+    int g;
+    int b;
+
+    print_fractal_type(fr);
+    r = get_red(color->out);
+    g = get_green(color->out);
+    b = get_blue(color->out);
+    ft_printf("Current background RGB Value:      %d  %d  %d\n\n", r, g, b);
+}
 
 void    print_error(int error)
 {

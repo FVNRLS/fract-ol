@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:29 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 16:36:34 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:05:42 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 void    print_valid_colors(void)
 {
-    ft_printf("✩░▒▓▆▅▃▂▁VALID COLORS▁▂▃▅▆▓▒░✩\n");
-    ft_printf(".----------------------------.\n"
-              "|            WHITE           |\n"
-              "|            BLACK           |\n"
-              "|            RED             |\n"
-              "|            LIME            |\n"
-              "|            BLUE            |\n"
-              "|            YELLOW          |\n"
-              "|            CYAN            |\n"
-              "|            MAGENTA         |\n"
-              "|            SILVER          |\n"
-              "|            GRAY            |\n"
-              "|            MAROON          |\n"
-              "|            OLIVE           |\n"
-              "|            GREEN           |\n"
-              "|            PURPLE          |\n"
-              "|            TEAL            |\n"
-              "|            NAVY            |\n"
-              ".----------------------------.\n");
+    ft_printf("     ✩░▒▓▆▅▃▂▁COLORS AND PRESETS▁▂▃▅▆▓▒░✩\n");
+    ft_printf(".--------------------------------------------.\n"
+              "|            COLORS:         PRESETS:        |\n"
+              "|                                            |\n"
+              "|            WHITE           MATRIX          |\n"
+              "|            BLACK           STD_BLUE        |\n"
+              "|            RED             STD_RED         |\n"
+              "|            LIME            STD_TEAL        |\n"
+              "|            BLUE            STD_GREEN       |\n"
+              "|            YELLOW          ACID            |\n"
+              "|            CYAN            CMYK            |\n"
+              "|            MAGENTA         DEPRESSIVE      |\n"
+              "|            SILVER          BLOODY          |\n"
+              "|            GRAY            UGLY            |\n"
+              "|            MAROON                          |\n"
+              "|            OLIVE                           |\n"
+              "|            GREEN                           |\n"
+              "|            PURPLE                          |\n"
+              "|            TEAL                            |\n"
+              "|            NAVY                            |\n"
+              ".--------------------------------------------.\n");
 }
 
 void    print_valid_julia_consts(void)
@@ -90,12 +92,12 @@ void    print_add_hotkeys_info()
               "|    LEFT    MOVE PICTURE LEFT                        |\n"
               "|    RIGHT   MOVE PICTURE RIGHT                       |\n"
               "|                                                     |\n"
-              "|    PLAY WITH RGB COLORS:                            |\n"
+              "|    PLAY WITH BACKGROUND COLOR:                      |\n"
               "|    Q       INCREASE RED VALUE                       |\n"
-              "|    W       INCREASE GREEN VALUE                     |\n"
-              "|    E       INCREASE BLUE VALUE                      |\n"
               "|    A       DECREASE RED VALUE                       |\n"
+              "|    W       INCREASE GREEN VALUE                     |\n"
               "|    S       DECREASE GREEN VALUE                     |\n"
+              "|    E       INCREASE BLUE VALUE                      |\n"
               "|    D       DECREASE BLUE VALUE                      |\n"
               ".-----------------------------------------------------.\n");
 }

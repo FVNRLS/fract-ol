@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 16:10:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:02:33 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,17 +123,19 @@ void    print_mandelbrot_psych_ugly(t_gui *gui, t_fract *fr, t_color *color);
 //TOOLS
 double	ft_atof(const char *s);
 int	    ft_atoi(const char *str);
-int     ft_strlen(char *str);
 int	    ft_strcmp(const char *s1, const char *s2);
 void    free_all(t_gui *gui);
 
-//INPUT CONTROLLERS AND ERROR MANAGEMENT
+//INPUT OUTPUT CONTROLLERS
 void    print_error(int error);
 void    print_usage_info(void);
 void    print_valid_colors(void);
 void    print_valid_julia_consts(void);
 void    print_main_hotkeys_info();
 void    print_add_hotkeys_info();
+void    print_current_fractal_info(t_fract *fr, t_color *color);
+
+//ARGUMENTS CHECKERS
 void    check_mandelbrot(int argc, t_gui *gui, t_color *color);
 void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color);
 void    check_mandelbrot_args(int argc, t_gui *gui);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:36:36 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 15:20:27 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:30:17 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void    print_mandelbrot(int argc, char **argv, t_gui *gui, t_fract *fr, t_color
         check_colors(gui, color);
         print_3D_mandelbrot(gui, fr, color);
     }
+    print_current_fractal_info(gui->fract, gui->color);
 }
 
 void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color)
@@ -41,6 +42,7 @@ void    print_julia(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *col
     if (gui->fract->j_re > 1 || gui->fract->j_im > 1)
         print_error(WRONG_CONSTANTS);
     print_standard_julia(gui, fr, color);
+    print_current_fractal_info(gui->fract, gui->color);
 }
 
 void    print_burning_ship(int argc, char **argv, t_gui *gui, t_fract *fr, t_color *color)
@@ -50,4 +52,5 @@ void    print_burning_ship(int argc, char **argv, t_gui *gui, t_fract *fr, t_col
     init_colors(argv, color);
     check_colors(gui, color);
     print_standard_burning_ship(gui, fr, color);
+    print_current_fractal_info(gui->fract, gui->color);
 }
