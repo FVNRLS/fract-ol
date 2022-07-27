@@ -56,7 +56,7 @@ SRC 		= 		./main.c																	\
 
 OBJ 		= 		${SRC:.c=.o}
 
-LIBS		= 		./libs/ft_printf/libftprintf.a 											\
+LIBS		= 		./libs/ft_printf/libftprintf.a 												\
 
 $(NAME): $(OBJ)
 	make -C ./libs/minilibx

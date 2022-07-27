@@ -66,7 +66,7 @@ void	ft_print_uint(t_input *input, t_mod *mods);
 
 //TOOLS
 int		ft_isdigit(int c);
-int	    ft_strlen(char *s);
+int		ft_strlen(char *s);
 char	*ft_strchr(const char *s, int c);
 void	ft_putstr(char *str, t_input *input, t_mod *mods);
 void	ft_print_pads(t_input *input, t_mod *mods);

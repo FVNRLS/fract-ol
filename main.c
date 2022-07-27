@@ -20,7 +20,6 @@ void    check_leaks(void)
 int main(int argc, char **argv)
 {
 //    atexit(check_leaks);
-    print_usage_info();
     print_fractal(argc, argv);
     return (0);
 }

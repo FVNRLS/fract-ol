@@ -6,14 +6,16 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:56:54 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 18:45:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:09:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HOOKS_H
 # define HOOKS_H
 
-/* MAC_OS KEY HOOKS */
+# include "structs.h"
+
+/* *****************MAC_OS KEY HOOKS ***************** */
 
 //EVENTS (BUILD IN INTERFACE ELEMENTS (e.g: red cross to close a window))
 # define ON_DESTROY 17
@@ -60,5 +62,8 @@
 # define K 40
 # define I 34
 # define H 4
+
+/* HOOKS FUNCTIONS */
+void	check_win_hooks(t_gui *gui);
 
 #endif
