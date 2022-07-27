@@ -13,10 +13,11 @@
 #include "../../includes/fractol.h"
 
 /*
- * The function mimics the behaviour of mlx_pixel_put but is many times faster.
- * y and x are coordinates whee to input a pixel.
+ 	The function mimics the behaviour of mlx_pixel_put but is many times faster.
+ 	y and x are coordinates where to input a pixel.
+ 	line_length and bits_per_pixel values are system values and are
+ 	calculated from the function mlx_get_data_addr
  */
-
 void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
 {
 	char	*dst;
@@ -25,6 +26,12 @@ void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
+/*
+	Selects a fractal based on the user input.
+	If the fractal name is incorrect or the user does not enter anything,
+	the corresponding error message appears and the program exits in clean way
+	(set pointer memory is freed).
+*/
 void	select_fractal(t_gui *gui, t_fract *fr, t_color *c, t_args *args)
 {
 	if (args->argc == 1)
@@ -56,6 +63,14 @@ static void	protect_malloc(t_gui *gui)
 	}
 }
 
+/*
+ 	Initializes all required structures.
+	Creates a new window and a new image.
+	Selects and prints a fractal based on the user input.
+	Starts check_win_hooks loop that checks for user input (hooks)
+ 	from keyboard and mouse.
+	Starts mlx_loop that constantly updates the image.
+ */
 void	print_fractal(int argc, char **argv)
 {
 	t_gui	gui;

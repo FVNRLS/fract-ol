@@ -12,6 +12,10 @@
 
 #include "../../includes/fractol.h"
 
+/*
+	Compare the input keycode with presets codes (from 0 to 9).
+ 	If the user input matches the existing keycode - print appropriate preset.
+*/
 void	check_presets(int keycode, t_gui *gui)
 {
 	if (keycode == ONE)
@@ -36,6 +40,10 @@ void	check_presets(int keycode, t_gui *gui)
 		print_mandelbrot_psych_ugly(gui, gui->fract, gui->color);
 }
 
+/*
+	Compare the input keycode with arrow keys keycodes.
+ 	Move the picture towards the appropriate direction if matches found.
+*/
 void	check_arrow_keys(int keycode, t_gui *gui)
 {
 	if (keycode == UP)
@@ -48,6 +56,10 @@ void	check_arrow_keys(int keycode, t_gui *gui)
 		move_right(gui);
 }
 
+/*
+ 	Compare the input keycode with keys 'J' and 'B'.
+ 	If matches found: print Julia/Burning Ship fractals.
+*/
 void	check_fractal_hotkeys(int keycode, t_gui *gui)
 {
 	if (keycode == J)
@@ -62,6 +74,11 @@ void	check_fractal_hotkeys(int keycode, t_gui *gui)
 	}
 }
 
+/*
+	Compare the input keycode with keys (Q,A,W,S,E,D).
+ 	If there is a match:
+ 	Change the background RGB color value according to the pressed key.
+*/
 void	check_color_shift_keys(int keycode, t_gui *gui)
 {
 	if (keycode == Q)
@@ -78,6 +95,11 @@ void	check_color_shift_keys(int keycode, t_gui *gui)
 		decrease_blue(gui);
 }
 
+/*
+	Compare the input keycode with keys (I, C, K, H)
+ 	If there is a match:
+ 	Print the appropriate information to the stdout.
+*/
 void	check_info_printing_keys(int keycode)
 {
 	if (keycode == I)

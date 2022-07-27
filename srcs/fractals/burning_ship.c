@@ -40,10 +40,10 @@
 	Geometrically sets the scope of the circle in which the fractal is limited.
 	Initially view_scope is set to 4, so the total window scope is from -2 to 2,
 	what is a standard for fractals like Mandelbrot/Julia/Burning_Ship
-	If view_scope inscreases, the fractal picture becomes smaller (zoom out).
+	If view_scope increases, the fractal picture becomes smaller (zoom out).
 	If view_scope decreases, the fractal picture becomes bigger (zoom in).	
 */
-static void	scale_burning_ship(t_fract *fr)
+static void	scale_burning_ship_coords(t_fract *fr)
 {
 	fr->x_scal = (double)fr->x_cor / WINSIZE;
 	fr->y_scal = (double)fr->y_cor / WINSIZE;
@@ -58,33 +58,35 @@ static void	scale_burning_ship(t_fract *fr)
 
 /*
 	The Burning Ship fractal is a slight variant of the Mandelbrot set fractal. 
-	The calculation of absolute_value distinguishes the fractal from Mandelbrot.
+	The calculation of absolute_value (abs)distinguishes the fractal
+    from Mandelbrot.
 
 	Formula:
-	z=abs(z)^2+c.
+	z= (abs(z)^2) + c
 
 	c is calculated from the provided scaled x and y coordinates.
 	x forms the real constant c_re
 	y forms the imaginary constant c_im
 
-	The Z consists of the real and imaginary part and is at the beginning 0.
-	With the iterations grows the z_real and z_imaginary
+	The z is a complex number, consists of the real and imaginary parts
+ 	and is at the beginning 0.
 	As long as the (z_real^2 + z_imaginary^2) are smaller than 4,
 	the values remain in the Burning ship set and do not leave the scope, 
 	so the new z will be calculated, based on the previous z_real 
 	and z_imaginary values.
 
-	The next z_real is calculated like this: 
-	(z_real^2 + z_imaginary^2) + real constant c_re 
-	(scaled and modified x coordinate).
-	The next z_imaginary is determined like this: 
-	absolute_value_of (z_real^2 + z_imaginary^2) + imaginary constant c_im
-	(scaled and modified y coordinate)
+    For each iteration:
+	--> The next z_real is calculated like this:
+		(z_real^2 + z_imaginary^2) + real constant c_re
+		(scaled and modified x coordinate).
+	--> The next z_imaginary is determined like this:
+		(absolute_value_of (z_real + z_imaginary)) + imaginary constant c_im
+		(scaled and modified y coordinate)
 */
 static int	calc_burning_ship(t_fract *fr)
 {
 	init_burning_ship(fr);
-	scale_burning_ship(fr);
+	scale_burning_ship_coords(fr);
 	while (fr->z < 4 && fr->iter < fr->max_iter)
 	{
 		fr->z = pow(fr->z_re, 2) + pow(fr->z_im, 2);
@@ -98,7 +100,8 @@ static int	calc_burning_ship(t_fract *fr)
 }
 
 /*
-Concept:
+	Concept:
+
 	Go through each coordinate (pixel) from the window and throw it 
 	into the burning ship formula to calculate the the number of iterations.
 	Based on iterations decide with which color the pixel will be colorized.

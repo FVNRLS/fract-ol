@@ -12,6 +12,10 @@
 
 #include "../../includes/fractol.h"
 
+/*
+	Function to different keycodes.
+ 	See srcs/hooks_and_events/key_hooks.c for more info.
+*/
 static int	check_keys(int keycode, t_gui *gui)
 {
 	if (keycode == ESC)
@@ -24,6 +28,15 @@ static int	check_keys(int keycode, t_gui *gui)
 	return (0);
 }
 
+/*
+	Checks for following actions and performs them respectively:
+ 	1)	mlx_hook:
+ 		Interaction with the window elements (minimize, close)
+ 	2)  mlx_key_hook:
+ 		Interaction with keyboard.
+	3)	mlx_mouse_hook:
+		Interaction with keyboard.
+*/
 void	check_win_hooks(t_gui *gui)
 {
 	mlx_hook(gui->win, ON_DESTROY, 0, close_window, gui);

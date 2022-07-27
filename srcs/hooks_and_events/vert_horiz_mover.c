@@ -12,6 +12,10 @@
 
 #include "../../includes/fractol.h"
 
+/*
+ 	Modifies the view_scope (see fractals scaling functions) to move
+ 	the fractal picture up/down/left/right.
+*/
 void	move_up(t_gui *gui)
 {
 	gui->fract->vert_mod -= 0.10 * gui->fract->view_scope;
