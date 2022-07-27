@@ -6,15 +6,16 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:48:07 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 14:59:32 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:42:10 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
 /*
- * Separate colors and combine them back together with bit shifting method.
- * */
+	Separate colors and combine them back together with bit shifting method.
+	The trgb paramter is always an int, represented as HEX Value.
+*/
 int	get_transparency(int trgb)
 {
 	return ((trgb >> 24) & 0xFF);

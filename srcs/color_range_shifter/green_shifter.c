@@ -6,12 +6,25 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:03:22 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 14:58:36 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:37:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
+/*
+	Increases the Green value of the RGB value of a predefined color 
+	by a constant value 'SHIFT_FACTOR'.
+	The constant is located and can be modified under: /includes/bonus.h
+
+	The shifting is realized in the following steps:
+	1) TRGB values are extracted from the HEX color value.
+	2) Green is increased by SHIFT_FACTOR.
+		If G is already at max. value (255) it will not be increased further.
+	3) The TRGB value is converted back to HEX color value.
+	4) The new HEX color value is assigned to background color color->out.
+	5) The changed fractol is printed.
+*/
 void	increase_green(t_gui *gui)
 {
 	int	t;
@@ -34,6 +47,19 @@ void	increase_green(t_gui *gui)
 	mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);
 }
 
+/*
+	Decreases the Green value of the RGB value of a predefined color 
+	by a constant value 'SHIFT_FACTOR'.
+	The constant is located and can be modified under: /includes/bonus.h
+
+	The shifting is realized in the following steps:
+	1) TRGB values are extracted from the HEX color value.
+	2) Green is increased by SHIFT_FACTOR.
+		If B is already at min. value (0) it will not be decreased further.
+	3) The TRGB value is converted back to HEX color value.
+	4) The new HEX color value is assigned to background color color->out.
+	5) The changed fractol is printed.
+*/
 void	decrease_green(t_gui *gui)
 {
 	int	t;
