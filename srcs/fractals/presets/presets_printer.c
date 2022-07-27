@@ -6,12 +6,20 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:18:21 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:27:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:56:21 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/fractol.h"
 
+/*
+	Checks user preset input.
+	The return is a bool value, which indicates if the preset was found or not,
+	which is then used by the function check_presets.
+	If the input matches available presets - print the respective preset.
+	If the preset is not found, the check_presets function throws an error 
+	and the program is exited.
+*/
 bool	print_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
 	color->preset_found = false;

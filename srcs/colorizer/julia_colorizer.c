@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:27:14 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 17:58:59 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:34:10 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	colorize_with_inverted_colors(t_gui *img, t_fract *fr, t_color *color)
 		i colorized with different inverted colors, depending on the
 		iterations.
 	4) The deepest inner Julia part is colorized with gradient.
-	5) All values above fr->max_iter are colorized with coor->in'.
+	5) All values above fr->max_iter are colorized with color->in.
 		They are very deep in the Julia formula - that means 
 		they will most likely not leave the scope.
 */

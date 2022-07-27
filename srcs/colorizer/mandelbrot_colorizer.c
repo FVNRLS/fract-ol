@@ -6,12 +6,30 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:44:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:12:56 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:38:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
+/*
+	Colorizes the fractal background with a slight gradient (light -> dark).
+	To calculate the gradient, firstly a modifiator mod_bgr is calculated.
+	For this, the pixel x-coordinate is divided by the window size.
+	The modifier is used by the new_bgr_gradient function to set new color.
+	Finally the pixel is printed to the image.
+	Also creates a simple 3D effect by printing for iterations between 5 and 9
+	a new gradient color, based on the background color and the modifier.
+	Otherwise a color with opposite transparency is printed.
+	But this is only for coordinates with even iterations and is limited in 
+	scope mod_bgr (from left and right), so the Mandelbrot is limited from
+	both sides on the x-axis (left: 0.175 right:0.675).
+	The scope is calculated with following formula:
+		current_x_coordinate / WINSIZE
+	If you try to move the fractal with arrow keys, you will notice that the 
+	fractal leaves the scope (small animation effect), because the scope 
+	values do not adapt to the changed coordinates.
+*/
 static void	colorize_bgr(t_gui *img, t_color *color, t_fract *fr)
 {
 	int		init_out;
@@ -32,6 +50,16 @@ static void	colorize_bgr(t_gui *img, t_color *color, t_fract *fr)
 	}
 }
 
+/*
+	Colorizes the iner transitions (span) of the Mandelbrot fractal.
+	The initial value of color->outln (outline color) is stored in init_outln.
+	Based on the current iter. value a new color is assigned to color->outln.
+	The pixel is then printed on the image.
+	The color value is reset to the initial value.
+	All even-iteration-coordinates are colorized with the modified outline color.
+	Otherwise - with Black. 
+		--> creation of contrast-effect.
+*/
 static void	colorize_span(t_gui *img, t_color *color, t_fract *fr)
 {
 	int		init_outln;
@@ -49,6 +77,20 @@ static void	colorize_span(t_gui *img, t_color *color, t_fract *fr)
 	color->outln = init_outln;
 }
 
+/*
+	Decides on the basis of the iterations how to colorize Mandelbrot.
+	1) Coordinates that are far from the set value fr->max_iter
+		are marked as background (0-10 iterations).
+		The background is colorized with 3D effect, based on iterations
+		and scope modification.
+	2) Coordinates with iterations between 10 and 16 are the span.
+		(transition from the background to outline part of Mandelbrot).
+	3) Outline is everything between 16 and fr->max_iter and is colorized
+		with color->outln
+	4) All values above fr->max_iter are colorized with color->in.
+		They are very deep in the Mandelbrot formula - that means 
+		they will most likely not leave the scope.
+*/
 void	colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color)
 {
 	if (fr->iter < fr->max_iter)
@@ -64,19 +106,44 @@ void	colorize_with_gradient(t_gui *img, t_fract *fr, t_color *color)
 		my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->in);
 }
 
+/*
+	Decides on the basis of the iterations how to colorize Mandelbrot.
+	1) Coordinates that are far from the set value fr->max_iter
+		are marked as background (0-10 iterations).
+		The background is colorized with a basic persistent color.
+	2) Outline is everything between 16 and fr->max_iter and is colorized
+		with color->outln
+	3) All values above fr->max_iter are colorized with color->in.
+		They are very deep in the Mandelbrot formula - that means 
+		they will most likely not leave the scope.
+*/
 void	colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color)
 {
 	if (fr->iter < fr->max_iter)
 	{
-		if (fr->iter < 10)
+		if (fr->iter < 16)
 			my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->out);
-		else if (fr->iter > 16 && fr->iter < fr->max_iter)
+		else if (fr->iter >= 16 && fr->iter < fr->max_iter)
 			my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->outln);
 	}
 	else
 		my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->in);
 }
 
+/*
+	Decides on the basis of the iterations how to colorize Mandelbrot.
+	1) Coordinates that are far from the set value fr->max_iter
+		are marked as background (0-10 iterations).
+		The background is colorized with Psychedelic effect, based on 
+		iteration numbers.
+	2) Coordinates with iterations between 10 and 16 are the span.
+		(transition from the background to outline part of Mandelbrot).
+	3) Outline is everything between 16 and fr->max_iter and is colorized
+		with color->outln.
+	4) All values above fr->max_iter are colorized with color->in.
+		They are very deep in the Mandelbrot formula - that means 
+		they will most likely not leave the scope.
+*/
 void	colorize_with_aura(t_gui *img, t_fract *fr, t_color *color)
 {
 	int	init_out;
