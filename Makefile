@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/26 19:53:10 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/27 15:39:08 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 		= 		fractol
 
 CC 			= 		cc
 
-FLAGS		= 		-Wall -Wextra -Werror -g3 -fsanitize=address
+FLAGS		= 		-Wall -Wextra -Werror
 
 SRC 		= 		./main.c																	\
 					./srcs/fractals/fractal_creater.c											\
