@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:32:45 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:12:26 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 //FRACTALS
 void	print_fractal(int argc, char **argv);
 void	print_mandelbrot(t_args *args, t_gui *gui, t_fract *fr, t_color *color);
-void    print_3d_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
+void	print_3d_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void	print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void	print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color);
 void	print_julia(t_args *args, t_gui *gui, t_fract *fr, t_color *color);

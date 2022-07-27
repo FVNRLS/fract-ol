@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   memory_freer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 16:20:35 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/20 16:20:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:10:26 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-void    free_all(t_gui *gui)
+void	free_all(t_gui *gui)
 {
-    free(gui->mlx);
-    free(gui->win);
+	free(gui->mlx);
+	free(gui->win);
 }

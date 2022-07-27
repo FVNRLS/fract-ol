@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_checkers.c                                   :+:      :+:    :+:   */
+/*   input_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:37:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 13:38:27 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:54:17 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,62 +14,64 @@
 
 void	check_pres_input(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
-    bool    preset_valid;
+	bool	preset_valid;
 
-    preset_valid = print_presets(argv, gui, fr, color);
-    if (preset_valid == true)
-        return ;
-    else
-    {
-        free_all(gui);
-        exit(EXIT_FAILURE);
-    }
+	preset_valid = print_presets(argv, gui, fr, color);
+	if (preset_valid == true)
+		return ;
+	else
+	{
+		free_all(gui);
+		exit(EXIT_FAILURE);
+	}
 }
 
-void    check_mandelbrot_args(int argc, t_gui *gui)
+void	check_mandelbrot_args(int argc, t_gui *gui)
 {
-    if (argc != 5) {
-        if (argc < 5)
-            print_error(TOO_FEW_ARGUMENTS);
-        else if (argc > 5)
-            print_error(TOO_MANY_ARGUMENTS);
-        free_all(gui);
-        exit(EXIT_FAILURE);
-    }
+	if (argc != 5)
+	{
+		if (argc < 5)
+			print_error(TOO_FEW_ARGUMENTS);
+		else if (argc > 5)
+			print_error(TOO_MANY_ARGUMENTS);
+		free_all(gui);
+		exit(EXIT_FAILURE);
+	}
 }
 
-void    check_colors(t_gui *gui, t_color *color)
+void	check_colors(t_gui *gui, t_color *color)
 {
-    if (color->in == NO_COLOR || color->out == NO_COLOR || color->outln == NO_COLOR)
-    {
-        print_error(WRONG_COLOR);
-        free_all(gui);
-        exit(EXIT_FAILURE);
-    }
+	if (color->in == NO_COLOR || color->out == NO_COLOR
+		|| color->outln == NO_COLOR)
+	{
+		print_error(WRONG_COLOR);
+		free_all(gui);
+		exit(EXIT_FAILURE);
+	}
 }
 
-void    check_julia_args(int argc, t_gui *gui)
+void	check_julia_args(int argc, t_gui *gui)
 {
-    if (argc != 7)
-    {
-        if (argc < 7)
-            print_error(TOO_FEW_ARGUMENTS);
-        else if (argc > 7)
-            print_error(TOO_MANY_ARGUMENTS);
-        free_all(gui);
-        exit(EXIT_FAILURE);
-    }
+	if (argc != 7)
+	{
+		if (argc < 7)
+			print_error(TOO_FEW_ARGUMENTS);
+		else if (argc > 7)
+			print_error(TOO_MANY_ARGUMENTS);
+		free_all(gui);
+		exit(EXIT_FAILURE);
+	}
 }
 
-void    check_burning_ship_args(int argc, t_gui *gui)
+void	check_burning_ship_args(int argc, t_gui *gui)
 {
-    if (argc != 5)
-    {
-        if (argc < 5)
-            print_error(TOO_FEW_ARGUMENTS);
-        else if (argc > 5)
-            print_error(TOO_MANY_ARGUMENTS);
-        free_all(gui);
-        exit(EXIT_FAILURE);
-    }
+	if (argc != 5)
+	{
+		if (argc < 5)
+			print_error(TOO_FEW_ARGUMENTS);
+		else if (argc > 5)
+			print_error(TOO_MANY_ARGUMENTS);
+		free_all(gui);
+		exit(EXIT_FAILURE);
+	}
 }

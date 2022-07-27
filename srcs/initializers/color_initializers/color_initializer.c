@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initializers.c                                     :+:      :+:    :+:   */
+/*   color_initializer.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:12:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/24 10:47:43 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:46:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../../includes/fractol.h"
+#include "../../../includes/fractol.h"
 
-static void init_inside_color(char **argv, t_color *color)
+static void	init_inside_color(char **argv, t_color *color)
 {
-    color->in = NO_COLOR;
-    init_main_inside_colors(argv, color);
-    if (color->in != NO_COLOR)
-        return ;
-    init_additional_inside_colors(argv, color);
+	color->in = NO_COLOR;
+	init_main_inside_colors(argv, color);
+	if (color->in != NO_COLOR)
+		return ;
+	init_additional_inside_colors(argv, color);
 }
 
-static void init_outside_color(char **argv, t_color *color)
+static void	init_outside_color(char **argv, t_color *color)
 {
-    color->out = NO_COLOR;
-    if (color->in == NO_COLOR)
-        return ;
-    init_main_outside_colors(argv, color);
-    if (color->out != NO_COLOR)
-        return ;
-    init_additional_outside_colors(argv, color);
+	color->out = NO_COLOR;
+	if (color->in == NO_COLOR)
+		return ;
+	init_main_outside_colors(argv, color);
+	if (color->out != NO_COLOR)
+		return ;
+	init_additional_outside_colors(argv, color);
 }
 
-static void init_outline_color(char **argv, t_color *color)
+static void	init_outline_color(char **argv, t_color *color)
 {
-    color->outln = NO_COLOR;
-    if (color->in == NO_COLOR || color->out == NO_COLOR)
-        return ;
-    init_main_outline_colors(argv, color);
-    if (color->outln != NO_COLOR)
-        return ;
-    init_additional_outline_colors(argv, color);
+	color->outln = NO_COLOR;
+	if (color->in == NO_COLOR || color->out == NO_COLOR)
+		return ;
+	init_main_outline_colors(argv, color);
+	if (color->outln != NO_COLOR)
+		return ;
+	init_additional_outline_colors(argv, color);
 }
 
-void    init_colors(char **argv, t_color *color)
+void	init_colors(char **argv, t_color *color)
 {
-    init_inside_color(argv, color);
-    init_outside_color(argv, color);
-    init_outline_color(argv, color);
+	init_inside_color(argv, color);
+	init_outside_color(argv, color);
+	init_outline_color(argv, color);
 }
