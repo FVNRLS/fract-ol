@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zoomer.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:42:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 10:50:02 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:44:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 
 void	zoom_in(t_gui *gui, int x, int y)
 {
-    t_fract *fr;
-    double	re_pos;
-    double	im_pos;
+	t_fract	*fr;
+	double	re_pos;
+	double	im_pos;
 
-    fr = gui->fract;
-    fr->zoom_activated = true;
-    re_pos = fr->x_offset + (((double)x / WINSIZE) * fr->view_scope);
-    im_pos = fr->y_offset - (((double)y / WINSIZE) * fr->view_scope);
-    fr->view_scope = ZOOM * gui->fract->view_scope;
-    fr->new_x_offset = re_pos - (((double)x / WINSIZE) * fr->view_scope);
-    fr->new_y_offset = im_pos + (((double)y / WINSIZE) * fr->view_scope);
-    update_image(gui);
+	fr = gui->fract;
+	fr->zoom_activated = true;
+	re_pos = fr->x_offset + (((double)x / WINSIZE) * fr->view_scope);
+	im_pos = fr->y_offset - (((double)y / WINSIZE) * fr->view_scope);
+	fr->view_scope = ZOOM * gui->fract->view_scope;
+	fr->new_x_offset = re_pos - (((double)x / WINSIZE) * fr->view_scope);
+	fr->new_y_offset = im_pos + (((double)y / WINSIZE) * fr->view_scope);
+	update_image(gui);
 }
 
-void    zoom_out(t_gui *gui, int x, int y)
+void	zoom_out(t_gui *gui, int x, int y)
 {
-    t_fract *fr;
-    double  zoom;
-    double	re_pos;
-    double	im_pos;
+	t_fract	*fr;
+	double	zoom;
+	double	re_pos;
+	double	im_pos;
 
-    zoom = 1/ZOOM;
-    fr = gui->fract;
-    fr->zoom_activated = true;
-    re_pos = fr->x_offset + (((double) x / WINSIZE) * fr->view_scope);
-    im_pos = fr->y_offset - (((double) y / WINSIZE) * fr->view_scope);
-    fr->view_scope = zoom * gui->fract->view_scope;
-    fr->new_x_offset = re_pos - (((double) x / WINSIZE) * fr->view_scope);
-    fr->new_y_offset = im_pos + (((double) y / WINSIZE) * fr->view_scope);
-    update_image(gui);
+	zoom = 1 / ZOOM;
+	fr = gui->fract;
+	fr->zoom_activated = true;
+	re_pos = fr->x_offset + (((double) x / WINSIZE) * fr->view_scope);
+	im_pos = fr->y_offset - (((double) y / WINSIZE) * fr->view_scope);
+	fr->view_scope = zoom * gui->fract->view_scope;
+	fr->new_x_offset = re_pos - (((double) x / WINSIZE) * fr->view_scope);
+	fr->new_y_offset = im_pos + (((double) y / WINSIZE) * fr->view_scope);
+	update_image(gui);
 }
