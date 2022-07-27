@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 14:11:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 16:04:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/26 19:52:08 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
  * */
 static void scale_burning_ship(t_fract *fr)
 {
-    fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
-    fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
+    fr->x_scal = (double)fr->x_cor / WINSIZE;
+    fr->y_scal = (double)fr->y_cor / WINSIZE;
     if (fr->zoom_activated == true)
     {
         fr->x_offset = fr->new_x_offset;
@@ -51,9 +51,9 @@ void    print_standard_burning_ship(t_gui *gui, t_fract *fr, t_color *color)
     fr->x_cor = 0;
     fr->y_cor = 0;
     fr->type = BURNING_SHIP;
-    while (fr->y_cor <= WINDOW_HEIGHT)
+    while (fr->y_cor <= WINSIZE)
     {
-        while (fr->x_cor <= WINDOW_WIDTH)
+        while (fr->x_cor <= WINSIZE)
         {
             fr->iter = calc_burning_ship(fr);
             colorize_burning_ship(gui, fr, color);

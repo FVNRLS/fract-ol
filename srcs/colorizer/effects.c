@@ -19,9 +19,9 @@ void    colorize_img_to_black(t_gui *gui)
 
     x_cor = 0;
     y_cor = 0;
-    while (y_cor <= WINDOW_HEIGHT)
+    while (y_cor <= WINSIZE)
     {
-        while (x_cor <= WINDOW_WIDTH)
+        while (x_cor <= WINSIZE)
         {
             my_mlx_pixel_put(gui, x_cor, y_cor, BLACK);
             x_cor++;

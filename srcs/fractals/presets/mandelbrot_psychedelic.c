@@ -41,7 +41,7 @@ void    print_mandelbrot_psych_depressive(t_gui *gui, t_fract *fr, t_color *colo
 void    print_mandelbrot_psych_bloody(t_gui *gui, t_fract *fr, t_color *color)
 {
     init_mods(fr);
-    gui->img = mlx_new_image(gui->mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
+    gui->img = mlx_new_image(gui->mlx, WINSIZE, WINSIZE);
     gui->addr = mlx_get_data_addr(gui->img, &gui->bits_per_pixel, &gui->line_length, &gui->endian);
     color->out = WHITE;
     color->in = BLACK;
@@ -52,7 +52,7 @@ void    print_mandelbrot_psych_bloody(t_gui *gui, t_fract *fr, t_color *color)
     color->out = MAROON;
     color->in = BLACK;
     color->outln = WHITE;
-    gui->img = mlx_new_image(gui->mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
+    gui->img = mlx_new_image(gui->mlx, WINSIZE, WINSIZE);
     gui->addr = mlx_get_data_addr(gui->img, &gui->bits_per_pixel, &gui->line_length, &gui->endian);
     print_psychedelic_mandelbrot(gui, fr, color);
     mlx_put_image_to_window(gui->mlx, gui->win, gui->img, 0, 0);

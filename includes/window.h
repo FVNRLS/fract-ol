@@ -4,8 +4,7 @@
 
 # include "fractol.h"
 
-# define WINDOW_WIDTH   551
-# define WINDOW_HEIGHT  551
-# define ZOOM           0.75
+# define WINSIZE  500
+# define ZOOM     0.75
 
 #endif

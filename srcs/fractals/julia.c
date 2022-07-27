@@ -14,8 +14,8 @@
 
 static void scale_julia_coords(t_fract *fr)
 {
-    fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
-    fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
+    fr->x_scal = (double)fr->x_cor / WINSIZE;
+    fr->y_scal = (double)fr->y_cor / WINSIZE;
     if (fr->zoom_activated == true)
     {
         fr->x_offset = fr->new_x_offset;
@@ -48,9 +48,9 @@ void    print_standard_julia(t_gui *gui, t_fract *fr, t_color *color)
     fr->x_cor = 0;
     fr->y_cor = 0;
     fr->type = JULIA;
-    while (fr->y_cor <= WINDOW_HEIGHT)
+    while (fr->y_cor <= WINSIZE)
     {
-        while (fr->x_cor <= WINDOW_WIDTH)
+        while (fr->x_cor <= WINSIZE)
         {
             fr->iter = calc_julia(fr);
             colorize_julia_with_gradient(gui, fr, color);

@@ -19,8 +19,8 @@
  * */
 static void scale_mandelbrot_coords(t_fract *fr)
 {
-    fr->x_scal = (double)fr->x_cor / WINDOW_WIDTH;
-    fr->y_scal = (double)fr->y_cor / WINDOW_HEIGHT;
+    fr->x_scal = (double)fr->x_cor / WINSIZE;
+    fr->y_scal = (double)fr->y_cor / WINSIZE;
     if (fr->zoom_activated == true)
     {
         fr->x_offset = fr->new_x_offset;
@@ -53,9 +53,9 @@ void    print_3D_mandelbrot(t_gui *gui, t_fract *fr, t_color *color)
     fr->y_cor = 0;
     fr->left_padded = false;
     fr->type = MANDELBROT_3D;
-    while (fr->y_cor <= WINDOW_HEIGHT)
+    while (fr->y_cor <= WINSIZE)
     {
-        while (fr->x_cor <= WINDOW_WIDTH)
+        while (fr->x_cor <= WINSIZE)
         {
             fr->iter = calc_mandelbrot(fr);
             colorize_with_gradient(gui, fr, color);
@@ -72,9 +72,9 @@ void    print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color)
     fr->y_cor = 0;
     fr->left_padded = false;
     fr->type = MANDELBROT_STD;
-    while (fr->y_cor <= WINDOW_HEIGHT)
+    while (fr->y_cor <= WINSIZE)
     {
-        while (fr->x_cor <= WINDOW_WIDTH)
+        while (fr->x_cor <= WINSIZE)
         {
             fr->iter = calc_mandelbrot(fr);
             colorize_with_basic_colors(gui, fr, color);
@@ -91,9 +91,9 @@ void    print_psychedelic_mandelbrot(t_gui *gui, t_fract *fr, t_color *color)
     fr->y_cor = 0;
     fr->left_padded = true;
     fr->type = MANDELBROT_PSYCHEDELIC;
-    while (fr->y_cor <= WINDOW_HEIGHT)
+    while (fr->y_cor <= WINSIZE)
     {
-        while (fr->x_cor <= WINDOW_WIDTH)
+        while (fr->x_cor <= WINSIZE)
         {
             fr->iter = calc_mandelbrot(fr);
             colorize_with_aura(gui, fr, color);

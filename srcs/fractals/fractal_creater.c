@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 15:42:33 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 11:18:56 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	my_mlx_pixel_put(t_gui *gui, int x, int y, int color)
 {
     char	*dst;
 
-    dst = gui->addr + (y * gui->line_length + x * (gui->bits_per_pixel / 8));
+    dst = gui->addr + ((y * gui->line_length) + (x * gui->bits_per_pixel / 8));
     *(unsigned int*)dst = color;
 }
 
@@ -58,13 +58,13 @@ void    print_fractal(int argc, char **argv)
     gui.mlx = mlx_init();
     if (!gui.mlx)
         exit(EXIT_FAILURE);
-    gui.win = mlx_new_window(gui.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "fract-ol");
+    gui.win = mlx_new_window(gui.mlx, WINSIZE, WINSIZE, "fract-ol");
     if (!gui.win)
     {
         free(gui.mlx);
         exit(EXIT_FAILURE);
     }
-    gui.img = mlx_new_image(gui.mlx, WINDOW_HEIGHT, WINDOW_WIDTH);
+    gui.img = mlx_new_image(gui.mlx, WINSIZE, WINSIZE);
     gui.addr = mlx_get_data_addr(gui.img, &gui.bits_per_pixel, &gui.line_length, &gui.endian);
     select_fractal(&gui, &fr, &color, argc, argv);
     mlx_put_image_to_window(gui.mlx, gui.win, gui.img, 0, 0);

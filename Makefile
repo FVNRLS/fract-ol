@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/07/26 18:17:48 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/07/26 19:53:10 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME 		= 		fractol
 
 CC 			= 		cc
 
-FLAGS		= 		-Wall -Wextra -Werror -g3
+FLAGS		= 		-Wall -Wextra -Werror -g3 -fsanitize=address
 
-SRC 		= 		./main.c																		\
+SRC 		= 		./main.c																	\
 					./srcs/fractals/fractal_creater.c											\
 					./srcs/fractals/fractal_printer.c											\
 					./srcs/fractals/mandelbrot.c												\

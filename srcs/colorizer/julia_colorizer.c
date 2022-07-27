@@ -16,7 +16,7 @@ static void colorize_bgr(t_gui *img, t_color *color, t_fract *fr)
 {
     double  mod_bgr;
 
-    mod_bgr = (double)fr->x_cor / (double )(WINDOW_WIDTH);
+    mod_bgr = (double)fr->x_cor / (double )(WINSIZE);
     color->out = new_bgr_gradient(color->out, mod_bgr);
     my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->out);
 }
@@ -43,7 +43,7 @@ static void colorize_inner_part(t_gui *img, t_color *color, t_fract *fr)
     int     init_in;
     double  mod_bgr;
 
-    mod_bgr = (double)fr->x_cor / (double )(WINDOW_WIDTH);
+    mod_bgr = (double)fr->x_cor / (double )(WINSIZE);
     init_in = color->in;
     color->in = new_bgr_gradient(color->out, mod_bgr);
     my_mlx_pixel_put(img, fr->x_cor, fr->y_cor, color->outln);
