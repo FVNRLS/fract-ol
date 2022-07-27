@@ -29,7 +29,7 @@ void check_presets(int keycode, t_gui *gui)
     else if (keycode == SEVEN)
         print_mandelbrot_psych_cmyk(gui, gui->fract, gui->color);
     else if (keycode == EIGHT)
-        print_mandelbrot_psych_depressive(gui, gui->fract, gui->color);
+		print_mandelbrot_psych_depress(gui, gui->fract, gui->color);
     else if (keycode == NINE)
         print_mandelbrot_psych_bloody(gui, gui->fract, gui->color);
     else if (keycode == ZERO)

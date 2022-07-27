@@ -6,17 +6,17 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:37:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/26 11:38:55 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 13:38:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color)
+void	check_pres_input(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
     bool    preset_valid;
 
-    preset_valid = check_print_preset(argv, gui, fr, color);
+    preset_valid = print_presets(argv, gui, fr, color);
     if (preset_valid == true)
         return ;
     else
@@ -28,8 +28,7 @@ void    check_mandelbrot_presets(char **argv, t_gui *gui, t_fract *fr, t_color *
 
 void    check_mandelbrot_args(int argc, t_gui *gui)
 {
-    if (argc != 5)
-    {
+    if (argc != 5) {
         if (argc < 5)
             print_error(TOO_FEW_ARGUMENTS);
         else if (argc > 5)

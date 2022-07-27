@@ -46,7 +46,7 @@ static int calc_burning_ship(t_fract *fr)
     return (fr->iter);
 }
 
-void    print_standard_burning_ship(t_gui *gui, t_fract *fr, t_color *color)
+void    print_std_burn_ship(t_gui *gui, t_fract *fr, t_color *color)
 {
     fr->x_cor = 0;
     fr->y_cor = 0;

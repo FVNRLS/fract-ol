@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:51:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/25 18:04:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/27 11:57:04 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTAL_COLORS_H
 
 # include <limits.h>
+# include "structs.h"
 
 # define WHITE          0x00FFFFFF
 # define BLACK          0x00000000
@@ -34,6 +35,5 @@
 
 /*Hint: the max. RGB color value is: 16581375 (255 power 3)*/
 # define NO_COLOR       INT_MAX
-# define SHIFT_FACTOR   10
 
 #endif

@@ -12,7 +12,7 @@
 
 #include "../../../includes/fractol.h"
 
-bool    check_print_preset(char **argv, t_gui *gui, t_fract *fr, t_color *color)
+bool    print_presets(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
     color->preset_found = false;
     if (ft_strcmp(argv[3], "MATRIX") == 0)
@@ -30,7 +30,7 @@ bool    check_print_preset(char **argv, t_gui *gui, t_fract *fr, t_color *color)
     else if (ft_strcmp(argv[3], "CMYK") == 0)
         print_mandelbrot_psych_cmyk(gui, fr, color);
     else if (ft_strcmp(argv[3], "DEPRESSIVE") == 0)
-        print_mandelbrot_psych_depressive(gui, fr, color);
+        print_mandelbrot_psych_depress(gui, fr, color);
     else if (ft_strcmp(argv[3], "BLOODY") == 0)
         print_mandelbrot_psych_bloody(gui, fr, color);
     else if (ft_strcmp(argv[3], "UGLY") == 0)

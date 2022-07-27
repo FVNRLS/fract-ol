@@ -29,7 +29,7 @@ void    print_mandelbrot_psych_cmyk(t_gui *gui, t_fract *fr, t_color *color)
     update_image_to_psychedelic(gui, fr, color);
 }
 
-void    print_mandelbrot_psych_depressive(t_gui *gui, t_fract *fr, t_color *color)
+void	print_mandelbrot_psych_depress(t_gui *gui, t_fract *fr, t_color *color)
 {
     init_mods(fr);
     color->out = GRAY;

@@ -77,6 +77,7 @@ void    print_error(int error)
     print_valid_colors();
     print_valid_julia_consts();
 
+
 }
 
 void    print_usage_info(void)
