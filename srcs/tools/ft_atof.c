@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:01:20 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:08:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 11:21:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ static int	count_digits(char *s)
 	return (i);
 }
 
+/*
+	Converts a string to a float number and returns the number.
+	Reads the string until the '.' character and converts the numbers to the
+	whole numbers. 
+	Then reads the string after the dot until null term. and converts the 
+	numbers to fractional numbers.
+	Then adds both numbers and returns the actual double value.
+*/
 double	ft_atof(const char *s)
 {
 	char	*str;

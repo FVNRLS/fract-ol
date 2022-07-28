@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:12:46 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:10:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 11:24:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ This function return values that are as follows −
 2) if Return value > 0, then it indicates str2 is less than str1.
 3) if Return value = 0, then it indicates str1 is equal to str2.
 */
-
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;

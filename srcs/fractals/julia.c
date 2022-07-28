@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:31:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 10:13:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,16 @@ static void	scale_julia_coords(t_fract *fr)
 	--> scaled y becomes first z_im
 	With the iterations grows the z_real and z_imaginary
 	As long as the (z_real^2 + z_imaginary^2) are smaller than 4,
-	the values remain in the Burning ship set and do not leave the scope,
+	the values remain in the Julia set and do not leave the scope,
 	so the new z will be calculated, based on the previous z_real
 	and z_imaginary values and the provided constant
  	(consists of a real and imaginary parts as well).
 
     For each iteration:
 	--> The next z_real is calculated like this:
-		(z_real^2 + z_imaginary^2) + (fixed!) real constant j_re
+		(z_real^2 + z_imaginary^2) + real constant j_re
 	--> The next z_imaginary is determined like this:
-		2 * (z_real + z_imaginary) + (fixed!) imaginary constant j_im
+		2 * (z_real + z_imaginary) + imaginary constant j_im
 */
 static int	calc_julia(t_fract *fr)
 {
@@ -104,7 +104,7 @@ static int	calc_julia(t_fract *fr)
 	Concept:
 
 	Go through each coordinate (pixel) from the window and throw it
-	into the burning ship formula to calculate the number of iterations.
+	into the Julia formula to calculate the number of iterations.
 	Based on iterations decide with which color the pixel will be colorized.
     Colorize the background with gradient and print Julia depending on the
     input constants (j_re & j_im) and using different colorizing techniques.

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:20:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:33:54 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 10:15:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,17 @@ static void	scale_mandelbrot_coords(t_fract *fr)
  	types can be derived.
 
 	Formula:
-	z = z^2
+	z = z^2 + c
 
 	c is calculated from the provided scaled x and y coordinates.
-	x forms the real constant c_re
-	y forms the imaginary constant c_im
+	x forms the real constant c_re (c real)
+	y forms the imaginary constant c_im (c imaginary)
 
 	The z is a complex number, consists of the real and imaginary parts
  	and is at the beginning 0.
 	With the iterations grows the z_real and z_imaginary
 	As long as the (z_real^2 + z_imaginary^2) are smaller than 4,
-	the values remain in the Burning ship set and do not leave the scope,
+	the values remain in the Mandelbrot set and do not leave the scope,
 	so the new z will be calculated, based on the previous z_real
 	and z_imaginary values.
 
@@ -103,7 +103,7 @@ static int	calc_mandelbrot(t_fract *fr)
 	Concept:
 
 	Go through each coordinate (pixel) from the window and throw it
-	into the burning ship formula to calculate the number of iterations.
+	into the Mandelbrot formula to calculate the number of iterations.
 	Based on iterations decide with which color the pixel will be colorized.
     Colorize the background with gradient and print Mandelbrot in 3D form
     using different colorizing techniques.
@@ -130,7 +130,7 @@ void	print_3d_mandelbrot(t_gui *gui, t_fract *fr, t_color *color)
 /*
 Concept:
 	Go through each coordinate (pixel) from the window and throw it
-	into the burning ship formula to calculate the number of iterations.
+	into the Mandelbrot formula to calculate the number of iterations.
 	Based on iterations decide with which color the pixel will be colorized.
     Colorize the background with persistent color, as well the outline and
     Mandelbrot itself.
@@ -158,7 +158,7 @@ void	print_standard_mandelbrot(t_gui *gui, t_fract *fr, t_color *color)
 /*
 Concept:
 	Go through each coordinate (pixel) from the window and throw it
-	into the burning ship formula to calculate the number of iterations.
+	into the Mandelbrot formula to calculate the number of iterations.
 	Based on iterations decide with which color the pixel will be colorized.
     Use different colors on small iterations to create a psychedelic effect.
 */

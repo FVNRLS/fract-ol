@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:12:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:46:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 10:23:07 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,18 @@ static void	init_outline_color(char **argv, t_color *color)
 	init_additional_outline_colors(argv, color);
 }
 
+/*
+	Checks for the user color input validity and initializes following colors:
+	--> inside, outline, background.
+	If color input is invalid, then the color gets 'NO_COLOR' flag and
+	program exits with a appropriate error message.
+	The available colors can be derived from includes/colors.h
+	
+	Important:
+	The initialization order is important in this function, because each 
+	next step relies on the previous!
+	inside->outside->outline
+*/
 void	init_colors(char **argv, t_color *color)
 {
 	init_inside_color(argv, color);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:34:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:00:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 11:49:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,21 @@ static void	print_terminal_usage(void)
 static void	print_fractal_type(t_fract *fr)
 {
 	if (fr->type == MANDELBROT_3D)
-		ft_printf("\nCurrent fractal:                  3D Mandelbrot\n");
+		ft_printf("\nCurrent fractal:		3D Mandelbrot\n");
 	else if (fr->type == MANDELBROT_STD)
-		ft_printf("\nCurrent fractal:                  Standard Mandelbrot\n");
+		ft_printf("\nCurrent fractal:		Standard Mandelbrot\n");
 	else if (fr->type == MANDELBROT_PSYCHEDELIC)
-		ft_printf("\nCurrent fractal:                  Psychedelic Mandelbrot\n");
+		ft_printf("\nCurrent fractal:		Psychedelic Mandelbrot\n");
 	else if (fr->type == JULIA)
-		ft_printf("\nCurrent fractal:                  Julia \n");
+		ft_printf("\nCurrent fractal:		Julia \n");
 	else if (fr->type == BURNING_SHIP)
-		ft_printf("\nCurrent fractal:                  Burning Ship \n");
+		ft_printf("\nCurrent fractal:		Burning Ship \n");
 }
 
+/*
+	Prints following information on the currently used fractal:
+	1) Fractal type		2) Current RGB color values
+*/
 void	print_current_fractal_info(t_fract *fr, t_color *color)
 {
 	int	r;
@@ -53,9 +57,18 @@ void	print_current_fractal_info(t_fract *fr, t_color *color)
 	r = get_red(color->out);
 	g = get_green(color->out);
 	b = get_blue(color->out);
-	ft_printf("Current background RGB Value:     R:%d  G:%d  B:%d\n\n", r, g, b);
+	ft_printf("Background RGB Value:		R:%d  G:%d  B:%d\n\n", r, g, b);
 }
 
+/*
+	Prints appropriate error, depending on error flag.
+	The flag is set during the checks of fractol tye, presets, colors and
+	number of arguments in the file:
+	input_checker.c
+
+	After the error message prints how to use the program and also
+	valid input parameters (colors and constants (in case of Julia)).
+*/
 void	print_error(int error)
 {
 	if (error == NO_INPUT)
@@ -78,6 +91,10 @@ void	print_error(int error)
 	print_valid_julia_consts();
 }
 
+/*
+	Prints total information how to use the program, incl.
+	valid constants, hotkeys, colors and presets.
+*/
 void	print_usage_info(void)
 {
 	print_terminal_usage();

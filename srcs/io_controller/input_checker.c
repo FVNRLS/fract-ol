@@ -6,12 +6,18 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:37:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:54:17 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 11:17:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
+/*
+	Compares and prints the user input with available presets with the function 
+	print_presets.
+	If both matches - preset is valid 	-> print the preset.
+	If not 								-> free alloc. memory and exit.
+*/
 void	check_pres_input(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 {
 	bool	preset_valid;
@@ -26,6 +32,11 @@ void	check_pres_input(char **argv, t_gui *gui, t_fract *fr, t_color *color)
 	}
 }
 
+/*
+	Checks the number of arguments, provided by user.
+	If the number of args is not 4 (fractal, inside, background, outline colors)
+	--> print appropriate error message, free alloc. memory and exit.
+*/
 void	check_mandelbrot_args(int argc, t_gui *gui)
 {
 	if (argc != 5)
@@ -39,6 +50,11 @@ void	check_mandelbrot_args(int argc, t_gui *gui)
 	}
 }
 
+/*
+	Compares the user input with available colors.
+	If there is no match:
+	-> print the appropriate error message, free alloc. memory and exit.
+*/
 void	check_colors(t_gui *gui, t_color *color)
 {
 	if (color->in == NO_COLOR || color->out == NO_COLOR
@@ -50,6 +66,12 @@ void	check_colors(t_gui *gui, t_color *color)
 	}
 }
 
+/*
+	Checks the number of arguments, provided by user.
+	If the number of args is not 6 
+	(fractal, inside, background, outline colors, real const, imaginary const)
+	--> print appropriate error message, free alloc. memory and exit.
+*/
 void	check_julia_args(int argc, t_gui *gui)
 {
 	if (argc != 7)
@@ -63,6 +85,11 @@ void	check_julia_args(int argc, t_gui *gui)
 	}
 }
 
+/*
+	Checks the number of arguments, provided by user.
+	If the number of args is not 4 (fractal, inside, background, outline colors)
+	--> print appropriate error message, free alloc. memory and exit.
+*/
 void	check_burning_ship_args(int argc, t_gui *gui)
 {
 	if (argc != 5)

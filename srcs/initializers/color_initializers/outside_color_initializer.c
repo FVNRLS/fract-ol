@@ -6,12 +6,16 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:40:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:47:57 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 10:28:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/fractol.h"
 
+/*
+	Compares the second program parameter with the existing main color palette.
+	If both match - initializes the background color with the chosen color.
+*/
 void	init_main_outside_colors(char **argv, t_color *color)
 {
 	if (ft_strcmp(argv[3], "WHITE") == 0)
@@ -32,6 +36,10 @@ void	init_main_outside_colors(char **argv, t_color *color)
 		color->out = MAGENTA;
 }
 
+/*
+	Compares the second program parameter with the existing add. color palette.
+	If both match - initializes the background color with the chosen color.
+*/
 void	init_additional_outside_colors(char **argv, t_color *color)
 {
 	if (ft_strcmp(argv[3], "SILVER") == 0)

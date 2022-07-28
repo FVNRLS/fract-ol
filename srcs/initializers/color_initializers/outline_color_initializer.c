@@ -6,12 +6,16 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 09:54:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:47:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 10:28:13 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/fractol.h"
 
+/*
+	Compares the second program parameter with the existing main color palette.
+	If both match - initializes the outline color with the chosen color.
+*/
 void	init_main_outline_colors(char **argv, t_color *color)
 {
 	if (ft_strcmp(argv[4], "WHITE") == 0)
@@ -32,6 +36,10 @@ void	init_main_outline_colors(char **argv, t_color *color)
 		color->outln = MAGENTA;
 }
 
+/*
+	Compares the second program parameter with the existing add. color palette.
+	If both match - initializes the outline color with the chosen color.
+*/
 void	init_additional_outline_colors(char **argv, t_color *color)
 {
 	if (ft_strcmp(argv[4], "SILVER") == 0)

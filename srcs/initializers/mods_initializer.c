@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:08:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:49:05 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 10:55:42 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,17 @@ static void	init_zoom_factor(t_fract *fr)
 	fr->zoom_activated = false;
 }
 
+/*
+	Initializes the starting modifiers for horizontal and vertical offset, as 
+	well as the view scope.
+	If an action happens (pressing arrow keys or using mouse wheel),
+	the modifiers change and affect the fractal scaling.
+	
+	By default the zoom_activated flag is set to false.
+	When zoom was activated once, the horizontal and vertical offset are
+	derived from the new_x_offset and new_y_offset (not from standard init!).
+	So with every next zooming the calculation relies on the modified offset.
+*/
 void	init_mods(t_fract *fr)
 {
 	init_vert_horiz_mods(fr);

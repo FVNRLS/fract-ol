@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:29 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 15:57:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 11:07:34 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ void	print_valid_colors(void)
 		".--------------------------------------------.\n");
 }
 
+/*
+	Prints some Julia constants examples, ready to use to get
+	different shapes of Julia.
+	Every row is a valid const. combination.
+	First column 	-> real constants
+	Second column	-> imaginary constants	
+*/
 void	print_valid_julia_consts(void)
 {
 	ft_printf("✩░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░✩\n");
