@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:29 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/28 11:07:34 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 13:23:44 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	print_valid_julia_consts(void)
 {
 	ft_printf("✩░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░✩\n");
 	ft_printf(".-------------------------------.\n"
+		"|       REAL:    |   IMAGINARY: |\n"
+		"|                |              |\n"
 		"|       −0.4     |   0.6        |\n"
 		"|        0.285   |   0          |\n"
 		"|        0.285   |   0.01       |\n"
