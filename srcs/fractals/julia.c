@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 13:13:25 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/28 10:13:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 11:53:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	scale_julia_coords(t_fract *fr)
 /*
 	Julia is derived from Mandelbrot fractal.
  	The difference is that real and imaginary constants are not derived from
- 	the x and y coordinates, but are fixed and do not change during the calculation.
+ 	the x and y coordinates, but are fixed and don't change int the calculation.
 
 	Formula:
 	z = (z^2) + c
