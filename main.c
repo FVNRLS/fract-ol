@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:23:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/07/28 12:00:43 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,12 @@
 	Color Shift
 	Zoom into the specific area (zoom follows mouse)
 	Moving the fractal in different directions with arrow keys.
-
-	Translated with www.DeepL.com/Translator (free version)
 */
 
 #include "./includes/fractol.h"
 
-void	check_leaks(void)
-{
-	system("leaks fractol");
-}
-
 int	main(int argc, char **argv)
 {
-	atexit(check_leaks);
 	print_fractal(argc, argv);
 	return (0);
 }
