@@ -29,7 +29,7 @@ _to compile the program on Mac:_
 		PRESETS:        MANDELBROT PRESET PRESET_NAME"
 
 
-	░▒▓▆▅▃▂▁COLORS AND PRESETS▁▂▃▅▆▓▒░   			░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░
+	  ░▒▓▆▅▃▂▁COLORS AND PRESETS▁▂▃▅▆▓▒░   			  ░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░
 
 		
 		COLORS:         PRESETS					REAL:    |   IMAGINARY:
