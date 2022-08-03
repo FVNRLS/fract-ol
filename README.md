@@ -21,7 +21,6 @@ _to compile the program on Mac:_
 
 <br>**Usage**
 
-	                                 ░▒▓▆▅▃▂▁USAGE▁▂▃▅▆▓▒░
 
 		MANDELBROT:     MANDELBROT INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR
 		JULIA:          JULIA INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR REAL_CONSTANT IMAGINARY_CONSTANT
@@ -29,26 +28,58 @@ _to compile the program on Mac:_
 		PRESETS:        MANDELBROT PRESET PRESET_NAME"
 
 
-	  ░▒▓▆▅▃▂▁COLORS AND PRESETS▁▂▃▅▆▓▒░   			  ░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░
+░▒▓▆▅▃▂▁COLORS AND PRESETS▁▂▃▅▆▓▒░   			  ░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░
 
 		
-		COLORS:         PRESETS					REAL:    |   IMAGINARY:
+		COLORS:         PRESETS				REAL:    |   IMAGINARY:
 		WHITE           MATRIX				             	 |
-		BLACK           STD_BLUE				−0.4     |   	 0.6 
-		RED             STD_RED					 0.285   |   	 0
-		LIME            STD_TEAL				 0.285   |   	 0.01
-		BLUE            STD_GREEN				 0.285   |   	 0.01
-		YELLOW          ACID     				 0.285   |   	 0.45
-		CYAN            CMYK      			 	-0.70176 |     	-0.3842
-		MAGENTA         DEPRESSIVE				-0.835   |  	-0.2321
-		SILVER          BLOODY    				-0.8     |   	 0.156
-		GRAY            UGLY      				−0.7269  |   	 0.1889
-		MAROON                    				−0.7269  |   	 0.1889 
-		OLIVE                     				-0.8     |   	 0
+		BLACK           STD_BLUE			−0.4     |   	 0.6 
+		RED             STD_RED				 0.285   |   	 0
+		LIME            STD_TEAL			 0.285   |   	 0.01
+		BLUE            STD_GREEN			 0.285   |   	 0.01
+		YELLOW          ACID     			 0.285   |   	 0.45
+		CYAN            CMYK      			-0.70176 |     	-0.3842
+		MAGENTA         DEPRESSIVE			-0.835   |  	-0.2321
+		SILVER          BLOODY    			-0.8     |   	 0.156
+		GRAY            UGLY      			−0.7269  |   	 0.1889
+		MAROON                    			−0.7269  |   	 0.1889 
+		OLIVE                     			-0.8     |   	 0
 		GREEN                     
 		PURPLE                    
 		TEAL                      
 		NAVY          
+
+░▒▓▆▅▃▂▁HOTKEYS▁▂▃▅▆▓▒░
+
+		MENU KEYS:                          				MANDELBROT PRESETS: 
+		I       SHOW VERBOSE USAGE INFORMATION				1       MATRIX
+		C       SHOW VALID COLORS AND PRESETS 				2       STD_BLUE
+		K       SHOW VALID JULIA CONSTANTS    				3       STD_RED
+		H       SHOW HOTKEYS                    			4       STD_TEAL         
+		ESC     EXIT THE PROGRAM                    			5       STD_GREEN
+										6       ACID
+		OTHER FRACTALS:							7       CMYK
+		J       SWITCH TO JULIA   					8       DEPRESSIVE 
+		B       SWITCH TO BURNING SHIP					9       BLOODY
+		                              					0       UGLY
+
+		MOUSEWHEEL SCROLLING:         					PLAY WITH BACKGROUND COLOR:
+		UP      ZOOM IN               					Q       INCREASE RED VALUE
+		DOWN    ZOOM OUT              					A       DECREASE RED VALUE
+										W       INCREASE GREEN VALUE
+		ARROW KEYS:                   					S       DECREASE GREEN VALUE
+		UP      MOVE PICTURE UP       					E       INCREASE BLUE VALUE
+		DOWN    MOVE PICTURE DOWN     					D       DECREASE BLUE VALUE
+		LEFT    MOVE PICTURE LEFT     
+		RIGHT   MOVE PICTURE RIGHT    
+		                              
+	   
+	    
+		    
+	
+		  
+		 
+		
 
 
 <br>**Roadmap**
