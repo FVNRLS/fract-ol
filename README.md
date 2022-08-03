@@ -15,7 +15,7 @@ _to compile the program on Mac:_
 <br><br>_to compile the program on Linux:_
 <br> 
 * download and install minilibx for Linux
-* extract the minilibx folder from /libs and delete all references to it in  Makefile and headers
+* extract the minilibx folder from /lib and delete all references to it in  Makefile and headers
 
 <br>**Prerequisites**
 
