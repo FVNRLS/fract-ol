@@ -26,11 +26,14 @@ _to compile the program on Mac:_
 
 <br>**Roadmap**
 
-🐢 Resolve slow zooming (in and out) and moving of the fractal:
+1) Resolve slow 🐢 zooming (in and out) and moving of the fractal:
 * pre-calculate the rendering before initial rendering
 * define sufficient but not too high number of iterations for each fractal separately
-* 
 
+2) Add more features:
+
+* change Julia shape depending on the mouse coordinate by clicking and moving the mouse pointer around the window 
+* 
 
 <br>**Contributing**
 
