@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:12:26 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:22:08 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "errors.h"
 # include "hooks.h"
 # include "gui.h"
-# include "bonus.h"
 
 //FRACTAL TYPES MACROS
 # define MANDELBROT_3D              1
@@ -64,7 +63,6 @@ void	init_additional_outside_colors(char **argv, t_color *color);
 void	init_main_outline_colors(char **argv, t_color *color);
 void	init_additional_outline_colors(char **argv, t_color *color);
 void	init_mods(t_fract *fr);
-void	check_mods(t_gui *gui);
 void	update_image(t_gui *gui);
 
 //TOOLS

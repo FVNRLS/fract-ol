@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:51:32 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 14:22:56 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:20:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,15 @@ void	colorize_with_basic_colors(t_gui *img, t_fract *fr, t_color *color);
 void	colorize_with_aura(t_gui *img, t_fract *fr, t_color *color);
 void	colorize_julia_with_gradient(t_gui *img, t_fract *fr, t_color *color);
 void	colorize_burning_ship(t_gui *img, t_fract *fr, t_color *color);
+
+//COLOR RANGE SHIFTER
+# define SHIFT_FACTOR   10
+
+void	increase_red(t_gui *gui);
+void	decrease_red(t_gui *gui);
+void	increase_green(t_gui *gui);
+void	decrease_green(t_gui *gui);
+void	increase_blue(t_gui *gui);
+void	decrease_blue(t_gui *gui);
 
 #endif
