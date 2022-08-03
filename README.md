@@ -21,7 +21,34 @@ _to compile the program on Mac:_
 
 <br>**Usage**
 
+	                                 ░▒▓▆▅▃▂▁USAGE▁▂▃▅▆▓▒░
 
+		MANDELBROT:     MANDELBROT INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR
+		JULIA:          JULIA INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR REAL_CONSTANT IMAGINARY_CONSTANT
+		BURNING_SHIP:   BURNING_SHIP INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR
+		PRESETS:        MANDELBROT PRESET PRESET_NAME"
+
+
+	░▒▓▆▅▃▂▁COLORS AND PRESETS▁▂▃▅▆▓▒░   			░▒▓▆▅▃▂▁JULIA CONSTANTS▁▂▃▅▆▓▒░
+
+		
+		COLORS:         PRESETS					REAL:    |   IMAGINARY:
+		WHITE           MATRIX				             	 |
+		BLACK           STD_BLUE				−0.4     |   	 0.6 
+		RED             STD_RED					 0.285   |   	 0
+		LIME            STD_TEAL				 0.285   |   	 0.01
+		BLUE            STD_GREEN				 0.285   |   	 0.01
+		YELLOW          ACID     				 0.285   |   	 0.45
+		CYAN            CMYK      			 	-0.70176 |     	-0.3842
+		MAGENTA         DEPRESSIVE				-0.835   |  	-0.2321
+		SILVER          BLOODY    				-0.8     |   	 0.156
+		GRAY            UGLY      				−0.7269  |   	 0.1889
+		MAROON                    				−0.7269  |   	 0.1889 
+		OLIVE                     				-0.8     |   	 0
+		GREEN                     
+		PURPLE                    
+		TEAL                      
+		NAVY          
 
 
 <br>**Roadmap**
@@ -33,16 +60,20 @@ _to compile the program on Mac:_
 2) Add more features:
 
 * change Julia shape depending on the mouse coordinate by clicking and moving the mouse pointer around the window 
-* support changing of iterations limit with hotkeys
-* 
+* support changing fractal sharpness with hotkeys
+* support more (maybe all?) colors from the library https://htmlcolorcodes.com/colors/
+* add persistent fluent fractal animation
 
 <br>**Contributing**
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
 
 
-Acknowledgments
+<br>**Acknowledgments**
 
 Many thanks for support and patience to:
 
 💟 Heleen [https://github.com/heleenoomen]
+
+<br>Good color library:
+https://htmlcolorcodes.com/colors/
