@@ -33,6 +33,7 @@ _to compile the program on Mac:_
 2) Add more features:
 
 * change Julia shape depending on the mouse coordinate by clicking and moving the mouse pointer around the window 
+* support changing of iterations limit with hotkeys
 * 
 
 <br>**Contributing**
