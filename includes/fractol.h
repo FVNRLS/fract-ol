@@ -6,15 +6,15 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:16:31 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/03 18:22:08 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:25:21 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "../libs/minilibx/mlx.h"
-# include "../libs/ft_printf/ft_printf.h"
+# include "../lib/minilibx/mlx.h"
+# include "../lib/ft_printf/ft_printf.h"
 # include "structs.h"
 # include "colors.h"
 # include "errors.h"
