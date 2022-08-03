@@ -21,8 +21,10 @@ _to compile the program on Mac:_
 
 <br>**Usage**
 
+_<br>start ./fractol and combine with input of your choice (everything should be written in uppercase!)._
+
 <br>`MANDELBROT:     MANDELBROT INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR`
-<br><br>`JULIA:          JULIA INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR REAL_CONSTANT IMAGINARY_CONSTANT`
+<br><br>`JULIA:      JULIA INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR REAL_CONSTANT IMAGINARY_CONSTANT`
 <br><br>`BURNING_SHIP: BURNING_SHIP INSIDE_COLOR OUTSIDE_COLOR OUTLINE_COLOR`
 <br><br>`PRESETS:        MANDELBROT PRESET PRESET_NAME"`
 
@@ -72,15 +74,6 @@ _to compile the program on Mac:_
 		DOWN    MOVE PICTURE DOWN     					D       DECREASE BLUE VALUE
 		LEFT    MOVE PICTURE LEFT     
 		RIGHT   MOVE PICTURE RIGHT    
-		                              
-	   
-	    
-		    
-	
-		  
-		 
-		
-
 
 <br>**Roadmap**
 
@@ -94,6 +87,7 @@ _to compile the program on Mac:_
 * support changing fractal sharpness with hotkeys
 * support more (maybe all?) colors from the library https://htmlcolorcodes.com/colors/
 * add persistent fluent fractal animation
+* process the input case-insensitive
 
 <br>**Contributing**
 
