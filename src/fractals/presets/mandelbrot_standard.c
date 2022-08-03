@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/fractol.h"
+#include "../../../incl/fractol.h"
 
 /*
 	Lime on Black - Enter the Matrix...

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 /*
 	Paints the whole image with black color to print a new fractal on it.

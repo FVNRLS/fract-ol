@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 void	print_valid_colors(void)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 /*
 	Colorizes the fractal background with a slight gradient (light -> dark).

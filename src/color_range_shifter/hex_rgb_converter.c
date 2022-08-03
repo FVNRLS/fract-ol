@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 /*
 	Separate colors and combine them back together with bit shifting method.

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 /*
 	Initializes the needed starting parameters for Mandelbrot calculation.

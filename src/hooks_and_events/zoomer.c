@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 /*
 	Zooms in the fractol picture to the point of the mouse pointer.
@@ -24,7 +24,7 @@
 	-> im_pos (vertical offset, related to scaled y coordinate).
 	
 	Then the view scope is modified by a standard factor ZOOM, defined in:
-	includes/gui.h
+	incl/gui.h
 	
 	After that the new offsets (horizontal and vertical) should be calculated,
 	which is the difference between, multiplied by the modified view_scope:

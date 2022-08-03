@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   blue_shifter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:25:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:36:33 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:32:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fractol.h"
+#include "../../incl/fractol.h"
 
 /*
 	Increases the Blue value of the RGB value of a predefined color 
 	by a constant value 'SHIFT_FACTOR'.
-	The constant is located and can be modified under: /includes/bonus.h
+	The constant is located and can be modified under: /incl/bonus.h
 
 	The shifting is realized in the following steps:
 	1) TRGB values are extracted from the HEX color value.
@@ -50,7 +50,7 @@ void	increase_blue(t_gui *gui)
 /*
 	Decreases the Blue value of the RGB value of a predefined color 
 	by a constant value 'SHIFT_FACTOR'.
-	The constant is located and can be modified under: /includes/bonus.h
+	The constant is located and can be modified under: /incl/bonus.h
 
 	The shifting is realized in the following steps:
 	1) TRGB values are extracted from the HEX color value.

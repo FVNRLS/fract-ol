@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   image_updater.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:56:22 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/27 16:58:26 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:32:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/fractol.h"
+#include "../../../incl/fractol.h"
 
 /*
 	Main updater of fractal images.
 	Decides which fractal to print on the window based on the fractal type.
 	The types are derived from the macros 
-	and can be modified under /includes/fractol.h
+	and can be modified under /incl/fractol.h
 */
 void	update_image(t_gui *gui)
 {

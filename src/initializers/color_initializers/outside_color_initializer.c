@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/fractol.h"
+#include "../../../incl/fractol.h"
 
 /*
 	Compares the second program parameter with the existing main color palette.

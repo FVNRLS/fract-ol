@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/fractol.h"
+#include "../../../incl/fractol.h"
 
 /*
 	Psychedelic acid effect with use of pungent bright colors 

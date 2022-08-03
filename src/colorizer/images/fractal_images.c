@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/fractol.h"
+#include "../../../incl/fractol.h"
 
 /*
 	Prints a 3D Mandelbrot image on the window.

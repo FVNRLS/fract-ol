@@ -105,7 +105,7 @@ void	ft_apply_prec_mods(t_input *input, t_mod *mods, char *str)
 /*
 	If no precision mod is used, applies the other depending on the
 	conversion spec. and conversion mods.
-	As last also includes a rule, if no mods are used at all.
+	As last also incl a rule, if no mods are used at all.
 	Applies the prefix, if used and prints the pads and the converted string
 	to stdout.
 */

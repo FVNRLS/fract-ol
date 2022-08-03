@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   color_initializer.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:12:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/07/28 10:23:07 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:32:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/fractol.h"
+#include "../../../incl/fractol.h"
 
 static void	init_inside_color(char **argv, t_color *color)
 {
@@ -48,7 +48,7 @@ static void	init_outline_color(char **argv, t_color *color)
 	--> inside, outline, background.
 	If color input is invalid, then the color gets 'NO_COLOR' flag and
 	program exits with a appropriate error message.
-	The available colors can be derived from includes/colors.h
+	The available colors can be derived from incl/colors.h
 	
 	Important:
 	The initialization order is important in this function, because each 

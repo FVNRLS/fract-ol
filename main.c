@@ -26,7 +26,7 @@
 	Moving the fractal in different directions with arrow keys.
 */
 
-#include "./includes/fractol.h"
+#include "./incl/fractol.h"
 
 int	main(int argc, char **argv)
 {
