@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   julia_colorizer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit  rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:27:14 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 18:34:10 by rmazurit         ###   ########.fr       */

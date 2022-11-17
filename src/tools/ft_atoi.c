@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:01:52 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/28 11:23:47 by rmazurit         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   input_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:37:06 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/28 11:17:03 by rmazurit         ###   ########.fr       */

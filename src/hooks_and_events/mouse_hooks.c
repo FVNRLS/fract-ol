@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_hooks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 19:35:53 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 15:42:40 by rmazurit         ###   ########.fr       */

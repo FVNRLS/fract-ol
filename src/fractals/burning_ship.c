@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   burning_ship.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 14:11:10 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 20:10:13 by rmazurit         ###   ########.fr       */

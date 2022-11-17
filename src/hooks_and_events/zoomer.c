@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   zoomer.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:42:06 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/28 11:46:07 by rmazurit         ###   ########.fr       */

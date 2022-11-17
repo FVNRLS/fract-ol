@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   outside_color_initializer.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:40:15 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/28 10:28:58 by rmazurit         ###   ########.fr       */

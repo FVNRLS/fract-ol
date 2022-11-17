@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot_standard.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:57:31 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 18:49:14 by rmazurit         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   vert_horiz_mover.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:26:13 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 15:43:42 by rmazurit         ###   ########.fr       */

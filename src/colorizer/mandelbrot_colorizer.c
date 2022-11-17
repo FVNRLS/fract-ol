@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot_colorizer.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:44:10 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 18:38:13 by rmazurit         ###   ########.fr       */

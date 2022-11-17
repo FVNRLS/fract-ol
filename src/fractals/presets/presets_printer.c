@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   presets_printer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:18:21 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 18:56:21 by rmazurit         ###   ########.fr       */

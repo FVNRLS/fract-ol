@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fractal_printer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:36:36 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 15:34:27 by rmazurit         ###   ########.fr       */

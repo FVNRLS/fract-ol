@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   hex_rgb_converter.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:48:07 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 16:42:10 by rmazurit         ###   ########.fr       */

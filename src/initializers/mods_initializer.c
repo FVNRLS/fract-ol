@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mods_initializer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:08:02 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/28 10:55:42 by rmazurit         ###   ########.fr       */

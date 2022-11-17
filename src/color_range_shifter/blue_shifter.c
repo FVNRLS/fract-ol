@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   blue_shifter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:25:06 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/03 18:32:58 by rmazurit         ###   ########.fr       */

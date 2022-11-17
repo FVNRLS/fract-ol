@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   memory_freer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 16:20:35 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/28 11:22:41 by rmazurit         ###   ########.fr       */

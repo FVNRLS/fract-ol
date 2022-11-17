@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot_psychedelic.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:58:16 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 18:46:59 by rmazurit         ###   ########.fr       */

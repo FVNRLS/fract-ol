@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   effects.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:48:45 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 17:40:25 by rmazurit         ###   ########.fr       */

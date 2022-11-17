@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fractal_creater.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit rmazurit@student.42heilbronn.de   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:45:41 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/07/27 15:30:13 by rmazurit         ###   ########.fr       */
